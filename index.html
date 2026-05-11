@@ -909,7 +909,7 @@
     .success-msg {
       display: none;
       text-align: center;
-      padding: 40px 24px;
+      padding: 32px 0 0;
     }
 
     .success-msg.visible { display: block; }
@@ -933,12 +933,50 @@
       margin-bottom: 10px;
     }
 
-    .success-msg p {
+    .success-msg .success-sub {
       font-size: 0.9rem;
       color: var(--gray-2);
-      max-width: 320px;
-      margin: 0 auto;
+      max-width: 360px;
+      margin: 0 auto 28px;
       line-height: 1.65;
+    }
+
+    .success-msg .calendar-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .success-msg .calendar-divider::before,
+    .success-msg .calendar-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .success-msg .calendar-divider span {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gray-2);
+      white-space: nowrap;
+    }
+
+    .calendar-wrap {
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      min-height: 680px;
+    }
+
+    .calendar-wrap iframe {
+      display: block;
+      width: 100%;
+      min-height: 680px;
+      border: none;
     }
   </style>
 </head>
@@ -1296,8 +1334,12 @@
             <div class="check" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <h3>You're Booked!</h3>
-            <p>We'll reach out within 24 hours to confirm your consultation time. Check your inbox — and get ready to get started.</p>
+            <h3>We've Got Your Info!</h3>
+            <p class="success-sub">We'll be in touch — but if you want to lock in a time right now, pick a slot below and we'll see you there.</p>
+            <div class="calendar-divider"><span>Book Your Consultation</span></div>
+            <div class="calendar-wrap">
+              <iframe src="https://api.leadconnectorhq.com/widget/booking/EFvkjY4TLPEwhQXhtKmM" scrolling="no" id="EFvkjY4TLPEwhQXhtKmM_1778523881515"></iframe>
+            </div>
           </div>
 
         </div>
@@ -1396,6 +1438,7 @@
     });
   </script>
 
+  <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
   <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 
