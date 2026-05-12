@@ -675,7 +675,7 @@
       display: block;
     }
 
-    /* ── Mobile: normal stacked layout ── */
+    /* ── Mobile: stacked tap/swipe layout ── */
     @media (max-width: 768px) {
       .amenities-scroller { height: auto; }
       .amenities-sticky {
@@ -684,11 +684,13 @@
         height: auto;
         grid-template-columns: 1fr;
       }
+      .amenity-img-track { order: -1; }
+      .amenity-text-track { padding: 0 24px; }
       .amenity-text-panel {
         position: relative;
         opacity: 1;
         transform: none;
-        padding: 48px 0 32px;
+        padding: 32px 0 0;
         display: none;
         pointer-events: auto;
       }
@@ -697,14 +699,22 @@
         position: relative;
         opacity: 1;
         transform: none;
-        height: 280px;
+        height: 260px;
         display: none;
       }
       .amenity-img-panel.active { display: block; }
-      .amenity-text-track { padding: 0 24px; }
       .amenity-text-panel p { max-width: 100%; }
-      .amenity-progress { left: auto; right: 24px; top: auto; bottom: 16px; transform: none; flex-direction: row; padding: 0; }
-      .ap-dot.active { height: 6px; width: 24px; border-radius: 3px; }
+      .amenity-progress {
+        position: relative;
+        left: auto; right: auto; top: auto; bottom: auto;
+        transform: none;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+        padding: 20px 0 28px;
+      }
+      .ap-dot { width: 10px; height: 10px; }
+      .ap-dot.active { height: 10px; width: 28px; border-radius: 5px; }
       .amenity-counter { display: none; }
     }
 
@@ -1409,31 +1419,47 @@
       }
 
       function update() {
-        // On mobile just ensure panel 0 is visible and bail
-        if (window.innerWidth < 768) { setPanel(0); return; }
-
+        if (window.innerWidth < 768) return;
         var rect = scroller.getBoundingClientRect();
         var scrolled = -rect.top;
         var range = scroller.offsetHeight - window.innerHeight;
         if (range <= 0) { setPanel(0); return; }
-
         var progress = Math.max(0, Math.min(1, scrolled / range));
         var index = Math.min(Math.floor(progress * PANEL_COUNT), PANEL_COUNT - 1);
         setPanel(index);
       }
 
-      // Dot click: scroll to the position that triggers that panel
+      // Dot click: direct on mobile, scroll-based on desktop
       document.querySelectorAll('.ap-dot').forEach(function (dot) {
         dot.addEventListener('click', function () {
           var i = +dot.dataset.index;
-          var range = scroller.offsetHeight - window.innerHeight;
-          var target = scroller.offsetTop + (i / PANEL_COUNT) * range + range / PANEL_COUNT * 0.01;
-          window.scrollTo({ top: target, behavior: 'smooth' });
+          if (window.innerWidth < 768) {
+            setPanel(i);
+          } else {
+            var range = scroller.offsetHeight - window.innerHeight;
+            var target = scroller.offsetTop + (i / PANEL_COUNT) * range + range / PANEL_COUNT * 0.01;
+            window.scrollTo({ top: target, behavior: 'smooth' });
+          }
         });
       });
 
+      // Touch swipe to change panels on mobile
+      var touchX = 0;
+      scroller.addEventListener('touchstart', function (e) {
+        touchX = e.touches[0].clientX;
+      }, { passive: true });
+      scroller.addEventListener('touchend', function (e) {
+        if (window.innerWidth >= 768) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) {
+          if (dx < 0 && current < PANEL_COUNT - 1) setPanel(current + 1);
+          if (dx > 0 && current > 0) setPanel(current - 1);
+        }
+      }, { passive: true });
+
       window.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update, { passive: true });
+      setPanel(0);
       update();
     })();
   </script>
