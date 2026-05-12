@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACE Performance Gym | King City's Premier Boutique Gym</title>
+  <meta name="description" content="ACE Performance Gym in King City, ON — 25,000 sq ft boutique gym with AI-powered Technogym equipment, InBody 770 assessments, infrared sauna, rooftop track, and expert personal training. Get your FREE 3 Day Pass." />
+  <link rel="canonical" href="https://www.acegym.club/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="ACE Performance Gym | King City's Premier Boutique Gym" />
+  <meta property="og:description" content="25,000 sq ft boutique gym in King City with AI-powered equipment, InBody 770, sauna, rooftop track &amp; expert trainers. FREE 3 Day Pass available." />
+  <meta property="og:url"         content="https://www.acegym.club/" />
+  <meta property="og:image"       content="https://www.acegym.club/og-home.jpg" />
+  <meta property="og:site_name"   content="ACE Performance Gym" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="ACE Performance Gym | King City's Premier Boutique Gym" />
+  <meta name="twitter:description" content="25,000 sq ft boutique gym in King City. AI-powered equipment, InBody 770, sauna, rooftop track." />
+  <meta name="twitter:image"       content="https://www.acegym.club/og-home.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["GymOrHealthClub","LocalBusiness"],
+    "name": "ACE Performance Gym",
+    "description": "King City's premier 25,000 sq ft boutique gym offering personal training, group classes, InBody 770 body composition analysis, infrared sauna, rooftop turf track, and AI-powered Technogym equipment.",
+    "url": "https://www.acegym.club",
+    "telephone": "+19058333130",
+    "email": "info@acegym.club",
+    "priceRange": "$$",
+    "image": "https://www.acegym.club/og-home.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1700 King Rd, Unit #32",
+      "addressLocality": "King City",
+      "addressRegion": "ON",
+      "postalCode": "L7B 0N1",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.9278,
+      "longitude": -79.5278
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "07:00", "closes": "19:00" }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/aceperformancegym",
+      "https://www.facebook.com/ACEPerformanceGym",
+      "https://www.tiktok.com/@acegym.club",
+      "https://www.youtube.com/@ACEPerformanceGym"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Marquee Banner ────────────────────────────────── */
+    .pillars-marquee {
+      overflow: hidden;
+      width: 100%;
+      line-height: 0;
+      position: relative;
+    }
+    .pillars-track {
+      display: flex;
+      flex-wrap: nowrap;
+      width: fit-content;
+      will-change: transform;
+      -webkit-animation: pillars-scroll 28s linear infinite;
+              animation: pillars-scroll 28s linear infinite;
+    }
+    .pillars-track img {
+      height: 52px;
+      width: auto;
+      flex: 0 0 auto;
+      display: block;
+    }
+    @-webkit-keyframes pillars-scroll {
+      from { -webkit-transform: translateX(0); transform: translateX(0); }
+      to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+    }
+    @keyframes pillars-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .pillars-track { animation: none; -webkit-animation: none; }
+    }
+
+    /* ── Home Hero ─────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+    }
+
+    .hero-ph {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 70% 50%, rgba(215,26,33,0.1) 0%, transparent 60%),
+        linear-gradient(135deg, #080808 0%, #111 100%);
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.52) 55%, rgba(0,0,0,0.28) 100%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 660px;
+      padding: 48px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-subtitle);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(215,26,33,0.1);
+      border: 1px solid rgba(215,26,33,0.22);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 8px var(--red);
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.6rem, 9vw, 7.5rem);
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--red-light) 0%, var(--red) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--gray-2);
+      max-width: 500px;
+      margin-bottom: 40px;
+      line-height: 1.75;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      font-family: var(--font-subtitle);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gray-3);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── About Section ─────────────────────────────────── */
+    .about { padding: 96px 0; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--gray-2);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .about-text p:last-of-type { margin-bottom: 0; }
+
+    .about-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: 44px 36px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(215,26,33,0.09) 0%, transparent 60%);
+    }
+
+    .about-card-logo {
+      font-family: var(--font-display);
+      font-size: 6rem;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--red-light), var(--red));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+      position: relative;
+    }
+
+    .about-card-sub {
+      font-family: var(--font-subtitle);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--glass-border);
+      position: relative;
+    }
+
+    .about-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .about-stat span {
+      font-family: var(--font-subtitle);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+
+    /* ── Services Bento ────────────────────────────────── */
+    .services {
+      padding: 96px 0;
+      background: var(--black-2);
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .section-header-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+    .section-header-row .section-sub {
+      font-size: 1rem;
+      color: var(--gray-3);
+      line-height: 1.8;
+      max-width: 420px;
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .section-header-row { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    /* Bento grid */
+    .services-bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: auto;
+      gap: 14px;
+    }
+
+    /* Base card */
+    .sc {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--white);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(10px);
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.28s ease,
+                  border-color 0.28s ease;
+    }
+    .sc::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red-dark), var(--red-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.32s cubic-bezier(0.22,1,0.36,1);
+    }
+    .sc:hover {
+      transform: translateY(-5px);
+      border-color: rgba(215,26,33,0.28);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 48px rgba(215,26,33,0.1);
+    }
+    .sc:hover::after { transform: scaleX(1); }
+
+    /* Grid placement */
+    .sc-pt      { grid-column: 1 / 8; grid-row: 1 / 3; }
+    .sc-inbody  { grid-column: 8 / 13; grid-row: 1; }
+    .sc-classes { grid-column: 8 / 13; grid-row: 2; }
+    .sc-wm      { grid-column: 1 / 5; grid-row: 3; }
+    .sc-fac     { grid-column: 5 / 13; grid-row: 3; }
+    .sc-roof    { grid-column: 1 / 13; grid-row: 4; flex-direction: row; min-height: 220px; }
+
+    /* Media areas */
+    .sc-media { width: 100%; overflow: hidden; flex-shrink: 0; }
+    .sc-pt    .sc-media { height: 280px; }
+    .sc-inbody .sc-media,
+    .sc-classes .sc-media { height: 160px; }
+    .sc-wm    .sc-media,
+    .sc-fac   .sc-media { height: 140px; }
+    .sc-roof  .sc-media { width: 38%; height: 100%; min-height: 220px; }
+
+    .sc-media .img-ph {
+      width: 100%; height: 100%;
+      border-radius: 0;
+      border: none;
+      font-size: 0.75rem;
+      font-family: var(--font-subtitle);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Body */
+    .sc-body {
+      padding: 28px 28px 32px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .sc-roof .sc-body { padding: 36px 40px; justify-content: center; }
+
+    .sc-num {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--red);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .sc-body h3 {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+    .sc-pt .sc-body h3 { font-size: clamp(2rem, 3vw, 2.8rem); }
+    .sc-roof .sc-body h3 { font-size: clamp(1.8rem, 2.8vw, 2.6rem); }
+
+    .sc-body p {
+      font-size: 0.9rem;
+      color: var(--gray-3);
+      line-height: 1.72;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .sc-pt .sc-body p { color: var(--gray-2); }
+
+    /* Tag chips (feature card only) */
+    .sc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .sc-tags span {
+      font-family: var(--font-subtitle);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-2);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      padding: 4px 12px;
+    }
+
+    /* CTA arrow link */
+    .sc-cta {
+      font-family: var(--font-subtitle);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.2s ease;
+    }
+    .sc:hover .sc-cta { gap: 14px; }
+    .sc-pt .sc-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red);
+      color: var(--white);
+      padding: 12px 22px;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      align-self: flex-start;
+      transition: background 0.2s ease, gap 0.2s ease;
+    }
+    .sc-pt:hover .sc-cta { background: var(--red-light); gap: 14px; }
+
+    /* Responsive collapse */
+    @media (max-width: 960px) {
+      .services-bento { grid-template-columns: repeat(6, 1fr); gap: 12px; }
+      .sc-pt      { grid-column: 1 / 7; grid-row: 1; }
+      .sc-inbody  { grid-column: 1 / 4; grid-row: 2; }
+      .sc-classes { grid-column: 4 / 7; grid-row: 2; }
+      .sc-wm      { grid-column: 1 / 4; grid-row: 3; }
+      .sc-fac     { grid-column: 4 / 7; grid-row: 3; }
+      .sc-roof    { grid-column: 1 / 7; grid-row: 4; }
+      .sc-pt .sc-media { height: 220px; }
+    }
+    @media (max-width: 600px) {
+      .services-bento { grid-template-columns: 1fr; }
+      .sc-pt, .sc-inbody, .sc-classes, .sc-wm, .sc-fac, .sc-roof {
+        grid-column: 1; grid-row: auto;
+      }
+      .sc-roof { flex-direction: column; }
+      .sc-roof .sc-media { width: 100%; height: 180px; }
+    }
+
+    /* ── Amenities — sticky scroll section ─────────────── */
+    .amenities { padding-top: 96px; }
+    .amenities-intro {
+      padding-bottom: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+    }
+    .amenities-intro .section-sub { margin: 0; max-width: 420px; }
+    @media (max-width: 768px) { .amenities-intro { grid-template-columns: 1fr; gap: 16px; } }
+
+    /* Scroller gives scroll range — shorter = snappier per-panel feel */
+    .amenities-scroller {
+      height: 180vh;
+      position: relative;
+    }
+
+    /* Sticky container pins while parent scrolls */
+    .amenities-sticky {
+      position: sticky;
+      top: var(--nav-h);
+      height: calc(100vh - var(--nav-h));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      background: var(--black);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    /* ── Text side ── */
+    .amenity-text-track {
+      position: relative;
+      z-index: 2;
+    }
+    .amenity-text-panel {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 56px 72px 56px calc(clamp(32px, 5vw, 88px) + 32px);
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.6s cubic-bezier(0.22,1,0.36,1);
+      pointer-events: none;
+    }
+    .amenity-text-panel.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .amenity-text-panel .section-label { margin-bottom: 10px; }
+    .amenity-text-panel h3 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.0;
+      margin-bottom: 18px;
+    }
+    .amenity-text-panel p {
+      font-size: 0.975rem;
+      color: var(--gray-2);
+      line-height: 1.85;
+      margin-bottom: 14px;
+      max-width: 440px;
+    }
+    .amenity-text-panel p:last-of-type { margin-bottom: 0; }
+
+    /* Stat chip inside text panel */
+    .amenity-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(215,26,33,0.08);
+      border: 1px solid rgba(215,26,33,0.2);
+      border-radius: var(--radius-lg);
+      padding: 12px 20px;
+      margin-bottom: 28px;
+      align-self: flex-start;
+    }
+    .amenity-stat strong {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+    }
+    .amenity-stat span {
+      font-family: var(--font-subtitle);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-2);
+      line-height: 1.4;
+    }
+
+    /* ── Image side ── */
+    .amenity-img-track {
+      position: relative;
+      overflow: hidden;
+    }
+    .amenity-img-panel {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .amenity-img-panel.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .amenity-img-panel .img-ph {
+      width: 100%; height: 100%;
+      border-radius: 0; border: none;
+      font-size: 0.75rem;
+      font-family: var(--font-subtitle);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── Progress dots ── */
+    .amenity-progress {
+      position: absolute;
+      left: clamp(32px, 5vw, 88px);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 10;
+    }
+    .ap-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: none; padding: 0;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease, height 0.3s ease;
+    }
+    .ap-dot.active {
+      background: var(--red);
+      height: 24px;
+      border-radius: 3px;
+      transform: none;
+    }
+
+    /* ── Panel counter ── */
+    .amenity-counter {
+      position: absolute;
+      bottom: 36px;
+      left: clamp(32px, 5vw, 88px);
+      z-index: 10;
+      font-family: var(--font-subtitle);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+    .amenity-counter .ac-cur {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      display: block;
+    }
+
+    /* ── Mobile: normal stacked layout ── */
+    @media (max-width: 768px) {
+      .amenities-scroller { height: auto; }
+      .amenities-sticky {
+        position: relative;
+        top: 0;
+        height: auto;
+        grid-template-columns: 1fr;
+      }
+      .amenity-text-panel {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        padding: 48px 0 32px;
+        display: none;
+        pointer-events: auto;
+      }
+      .amenity-text-panel.active { display: flex; }
+      .amenity-img-panel {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        height: 280px;
+        display: none;
+      }
+      .amenity-img-panel.active { display: block; }
+      .amenity-text-track { padding: 0 24px; }
+      .amenity-text-panel p { max-width: 100%; }
+      .amenity-progress { left: auto; right: 24px; top: auto; bottom: 16px; transform: none; flex-direction: row; padding: 0; }
+      .ap-dot.active { height: 6px; width: 24px; border-radius: 3px; }
+      .amenity-counter { display: none; }
+    }
+
+    /* ── Gallery ────────────────────────────────────────── */
+    .gallery { padding: 96px 0; background: var(--black-2); border-top: 1px solid var(--glass-border); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 240px 240px;
+      gap: 16px;
+    }
+
+    .gallery-item { border-radius: var(--radius-lg); overflow: hidden; }
+    .gallery-item .img-ph { width: 100%; height: 100%; border-radius: 0; border: none; }
+    .gallery-item.tall { grid-row: span 2; }
+
+    /* ── Testimonials ───────────────────────────────────── */
+    .testimonials { padding: 96px 0; }
+
+    @media (max-width: 960px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .amenity-block { grid-template-columns: 1fr; gap: 36px; }
+      .amenity-block.reverse .amenity-visual { order: 0; }
+      .amenity-visual { height: 300px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.tall { grid-row: span 1; }
+    }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: clamp(3rem, 14vw, 4.5rem); }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn-primary { justify-content: center; }
+      .amenity-visual { height: 260px; }
+    }
+
+    /* ── Hero: left-align ───────────────────────────────── */
+    .hero .container {
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: max(48px, 6vw);
+      padding-right: max(48px, 6vw);
+    }
+
+    @media (max-width: 768px) {
+      .about       { padding: 64px 0; }
+      .services    { padding: 64px 0; }
+      .amenities   { padding-top: 64px; }
+      .gallery     { padding: 64px 0; }
+      .testimonials { padding: 64px 0; }
+    }
+
+    @media (max-width: 560px) {
+      .about       { padding: 48px 0; }
+      .services    { padding: 48px 0; }
+      .amenities   { padding-top: 48px; }
+      .gallery     { padding: 48px 0; }
+      .testimonials { padding: 48px 0; }
+      .hero .container { padding-left: 20px; padding-right: 20px; }
+      .about-card  { padding: 32px 22px; }
+      .sc-body     { padding: 20px 20px 24px; }
+      .sc-roof .sc-body { padding: 24px 20px; }
+    }
+
+    /* Volume button */
+    .hero-vol {
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      z-index: 3;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+    .hero-vol:hover { background: rgba(215,26,33,0.5); border-color: rgba(215,26,33,0.5); }
+    .hero-vol svg { width: 18px; height: 18px; }
+
+    /* ── Gallery hover ──────────────────────────────────── */
+    .gallery-item {
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s ease;
+    }
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(215,26,33,0);
+      transition: border-color 0.28s ease, box-shadow 0.28s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .gallery-item:hover { transform: translateY(-6px); z-index: 2; }
+    .gallery-item:hover::after {
+      border-color: rgba(215,26,33,0.35);
+      box-shadow: 0 0 40px rgba(215,26,33,0.15);
+    }
+    .gallery-item .img-ph { transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); transform-origin: center; }
+    .gallery-item:hover .img-ph { transform: scale(1.04); }
+
+    /* ── Testimonial card hover ─────────────────────────── */
+    .review-card {
+      position: relative;
+      transition: transform 0.28s cubic-bezier(0.22,1,0.36,1),
+                  box-shadow 0.28s ease,
+                  border-color 0.28s ease;
+    }
+    .review-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red-dark), var(--red-light));
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.32s cubic-bezier(0.22,1,0.36,1);
+    }
+    .review-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(215,26,33,0.28) !important;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.7), 0 0 48px rgba(215,26,33,0.1) !important;
+    }
+    .review-card:hover::before { transform: scaleX(1); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home">
+        <img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="42" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown" role="menu">
+            <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="personal-training.html#inbody" role="menuitem">InBody 770</a>
+            <a href="facilities.html" role="menuitem">Facilities</a>
+          </div>
+        </div>
+        <a href="classes.html" class="nav-link">Classes</a>
+        <a href="rates.html" class="nav-link">Rates</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            More
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown" role="menu">
+            <a href="promos.html" role="menuitem">Promos</a>
+            <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
+            <a href="awards.html" role="menuitem">Awards</a>
+          </div>
+        </div>
+      </div>
+      <a href="landing.html" class="nav-cta">FREE 3 Day Pass</a>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+      <source src="hero-audio.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <button class="hero-vol" id="heroVol" aria-label="Unmute video">
+      <!-- muted icon (default) -->
+      <svg id="volIconMuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <!-- unmuted icon (hidden) -->
+      <svg id="volIconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      </svg>
+    </button>
+    <div class="container">
+      <div class="hero-content">
+        <h1 id="hero-h1">
+          Achieve.<br/>
+          Conquer.<br/>
+          <em>Excel.</em>
+        </h1>
+        <p class="hero-sub">
+          King City's premier 25,000 sq ft boutique gym — where AI-powered equipment, expert coaches, and a community that pushes you forward combine to unlock your full potential.
+        </p>
+        <div class="hero-ctas">
+          <a href="landing.html" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Get Your FREE 3 Day Pass
+          </a>
+          <a href="classes.html" class="btn-secondary">View Classes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Infinite scrolling marquee -->
+  <div class="pillars-marquee" aria-hidden="true">
+    <div class="pillars-track">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+      <img src="pillars-banner.png" alt="">
+    </div>
+  </div>
+
+
+  <!-- ABOUT -->
+  <main>
+  <section class="about" aria-labelledby="about-h2">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-label">About ACE</span>
+          <h2 class="section-title" id="about-h2">Best Gym in<br/><em>King City</em></h2>
+          <p>At ACE Performance Gym, we're not just about fitness — we're about community. As a proud member of King City and its surrounding areas, we believe in the power of supporting one another and the local businesses that make our community thrive.</p>
+          <p>Our mission is to empower individuals to lead fulfilling lives by promoting holistic well-being and personal growth. Through our diverse range of services, classes, and nutrition guidance, we strive to elevate the overall quality of life within the King City community.</p>
+          <p>At ACE, we live by the philosophy of <strong>Achieve, Conquer, and Excel</strong> — inspiring and guiding our members toward optimal physical, mental, and emotional health.</p>
+          <br/>
+          <a href="personal-training.html" class="btn-primary" style="margin-top:8px">Book a Free Consultation</a>
+        </div>
+        <div class="about-card">
+          <img src="ace-logo.png" alt="ACE Performance Gym" style="height:140px;width:auto;margin:0 auto 24px;" />
+          <img src="pillars-banner.png" alt="Achieve · Conquer · Excel" style="width:100%;display:block;margin:0 auto 36px;border-radius:var(--radius-sm);" />
+          <div class="about-stats">
+            <div class="about-stat">
+              <strong>25K</strong>
+              <span>Square Feet</span>
+            </div>
+            <div class="about-stat">
+              <strong>3+</strong>
+              <span>Years Strong</span>
+            </div>
+            <div class="about-stat">
+              <strong>6+</strong>
+              <span>Instructors</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- STATS ROW -->
+  <div class="stats-row" role="complementary" aria-label="Gym statistics">
+    <div class="stat-item">
+      <div class="stat-num">25K</div>
+      <div class="stat-label">Square Feet</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6+</div>
+      <div class="stat-label">Certified Trainers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Weekly Classes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">11K</div>
+      <div class="stat-label">Sq Ft Rooftop</div>
+    </div>
+  </div>
+
+
+  <!-- SERVICES -->
+  <section class="services" aria-labelledby="services-h2">
+    <div class="container">
+      <div class="section-header-row">
+        <div>
+          <span class="section-label">What We Offer</span>
+          <h2 class="section-title" id="services-h2">Built for<br/>Every Goal. Every <em>Level.</em></h2>
+        </div>
+        <p class="section-sub">From first-timers to competitive athletes — ACE has the space, equipment, and expertise for where you are and where you're going.</p>
+      </div>
+
+      <div class="services-bento">
+
+        <!-- 01 Personal Training — feature card, tall left -->
+        <a href="personal-training.html" class="sc sc-pt" aria-label="Personal Training">
+          <div class="sc-media">
+            <div class="img-ph">Personal Training</div>
+          </div>
+          <div class="sc-body">
+            <span class="sc-num">01</span>
+            <h3>Personal Training</h3>
+            <p>One trainer. Your program. No cookie-cutter plans — just focused work toward the results you actually want.</p>
+            <div class="sc-tags">
+              <span>Certified Trainers</span>
+              <span>Custom Programs</span>
+              <span>All Fitness Levels</span>
+              <span>1-on-1 Sessions</span>
+            </div>
+            <span class="sc-cta">Book a free consult →</span>
+          </div>
+        </a>
+
+        <!-- 02 InBody 770 — top right -->
+        <a href="personal-training.html#inbody" class="sc sc-inbody" aria-label="InBody 770 body scan">
+          <div class="sc-media">
+            <div class="img-ph">InBody 770</div>
+          </div>
+          <div class="sc-body">
+            <span class="sc-num">02</span>
+            <h3>InBody 770</h3>
+            <p>Clinical-grade body composition in 60 seconds. Know exactly what's changing — muscle, fat, hydration.</p>
+            <span class="sc-cta">Get scanned →</span>
+          </div>
+        </a>
+
+        <!-- 03 Group Classes — mid right -->
+        <a href="classes.html" class="sc sc-classes" aria-label="Group fitness classes">
+          <div class="sc-media">
+            <div class="img-ph">Group Classes</div>
+          </div>
+          <div class="sc-body">
+            <span class="sc-num">03</span>
+            <h3>Group Classes</h3>
+            <p>Spin, HIIT, Power Yoga, and more. No membership required — class packs available to anyone.</p>
+            <span class="sc-cta">View schedule →</span>
+          </div>
+        </a>
+
+        <!-- 04 Weight Management — bottom left -->
+        <a href="personal-training.html" class="sc sc-wm" aria-label="Weight management program">
+          <div class="sc-media">
+            <div class="img-ph">Weight Management</div>
+          </div>
+          <div class="sc-body">
+            <span class="sc-num">04</span>
+            <h3>Weight Management</h3>
+            <p>Nutrition coaching backed by InBody data. Real accountability, lasting change.</p>
+            <span class="sc-cta">Learn more →</span>
+          </div>
+        </a>
+
+        <!-- 05 Facilities — bottom right, wider -->
+        <a href="facilities.html" class="sc sc-fac" aria-label="Gym facilities">
+          <div class="sc-media">
+            <div class="img-ph">Facilities</div>
+          </div>
+          <div class="sc-body">
+            <span class="sc-num">05</span>
+            <h3>World-Class Facilities</h3>
+            <p>Infrared sauna, ACE Bar &amp; Co., turf zone, lounge, and showers — 25,000 sq ft built with intent.</p>
+            <span class="sc-cta">Explore the space →</span>
+          </div>
+        </a>
+
+        <!-- 06 Rent Our Roof — full-width horizontal -->
+        <a href="rent-our-roof.html" class="sc sc-roof" aria-label="Rent our rooftop">
+          <div class="sc-media">
+            <div class="img-ph">Rooftop Track</div>
+          </div>
+          <div class="sc-body">
+            <span class="sc-num">06</span>
+            <h3>Rent Our Rooftop</h3>
+            <p>11,000 sq ft of open-air turf above King City. Corporate events, team days, and group workouts — nothing else like it in the region.</p>
+            <span class="sc-cta">Book the roof →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- AMENITIES -->
+  <section class="amenities" aria-labelledby="amenities-h2">
+    <div class="container amenities-intro">
+      <div>
+        <span class="section-label">Our Amenities</span>
+        <h2 class="section-title" id="amenities-h2">Elevate Every<br/>Part of Your <em>Journey</em></h2>
+      </div>
+      <p class="section-sub">Every corner of ACE is built to give you an edge — from warm-up to cool-down and everything in between. Scroll to explore.</p>
+    </div>
+
+    <!-- Sticky scroll region -->
+    <div class="amenities-scroller" id="amenitiesScroller">
+      <div class="amenities-sticky">
+
+        <!-- Left: text panels -->
+        <div class="amenity-text-track">
+
+          <div class="amenity-text-panel active" data-panel="0">
+            <span class="section-label">Precision Training</span>
+            <h3>Technogym Biostrength</h3>
+            <div class="amenity-stat">
+              <strong>+30%</strong>
+              <span>Faster<br/>Results</span>
+            </div>
+            <p>Stop guessing — start precision training. Our Biostrength system uses patented Biodrive aerospace technology for maximum neuromuscular activation.</p>
+            <p>Hand-assembled in Italy. Adapts to your strength curve in real time — perfect form and optimal load, every rep.</p>
+            <a href="facilities.html" class="btn-secondary" style="margin-top:20px;align-self:flex-start">Explore the Facility</a>
+          </div>
+
+          <div class="amenity-text-panel" data-panel="1">
+            <span class="section-label">Recovery</span>
+            <h3>Infrared Sauna</h3>
+            <div class="amenity-stat">
+              <strong>600</strong>
+              <span>Calories<br/>Per Session</span>
+            </div>
+            <p>Far Infrared Light penetrates deeper than traditional heat — skin cleansing, reduced soreness, and genuine stress relief through endorphin release.</p>
+            <p>Recovery is training. Treat it that way.</p>
+          </div>
+
+          <div class="amenity-text-panel" data-panel="2">
+            <span class="section-label">Fuel Up</span>
+            <h3>ACE Bar &amp; Co.</h3>
+            <p>Where flavor meets recovery. Fresh, high-quality blends made from real ingredients — everything you need after pushing your limits.</p>
+            <p>Sit down, refuel, enjoy the vibe. You earned it.</p>
+          </div>
+
+          <!-- Progress indicator -->
+          <div class="amenity-progress" aria-label="Amenity navigation">
+            <button class="ap-dot active" data-index="0" aria-label="Technogym Biostrength"></button>
+            <button class="ap-dot" data-index="1" aria-label="Infrared Sauna"></button>
+            <button class="ap-dot" data-index="2" aria-label="ACE Bar &amp; Co."></button>
+          </div>
+
+          <!-- Counter -->
+          <div class="amenity-counter" aria-hidden="true">
+            <span class="ac-cur">01</span>
+            <span>/ 03</span>
+          </div>
+
+        </div>
+
+        <!-- Right: image panels -->
+        <div class="amenity-img-track">
+          <div class="amenity-img-panel active" data-panel="0">
+            <div class="img-ph">Technogym Biostrength</div>
+          </div>
+          <div class="amenity-img-panel" data-panel="1">
+            <div class="img-ph">Infrared Sauna</div>
+          </div>
+          <div class="amenity-img-panel" data-panel="2">
+            <div class="img-ph">ACE Bar &amp; Co.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GALLERY -->
+  <section class="gallery" aria-labelledby="gallery-h2">
+    <div class="container">
+      <span class="section-label">Inside ACE</span>
+      <h2 class="section-title" id="gallery-h2">See the <em>Space</em></h2>
+      <p class="section-sub">25,000 sq ft of premium training space built to push your performance.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item tall">
+          <div class="img-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>Gym Floor</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="img-ph"><span>Rooftop Track</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="img-ph"><span>Technogym Area</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="img-ph"><span>Spin Studio</span></div>
+        </div>
+        <div class="gallery-item tall">
+          <div class="img-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>ACE Bar & Co.</span>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <div class="img-ph"><span>Sauna</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" aria-labelledby="reviews-h2">
+    <div class="container">
+      <span class="section-label">Member Stories</span>
+      <h2 class="section-title" id="reviews-h2">Real People.<br/><em>Real Results.</em></h2>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote>"The facilities are incredible — the Technogym equipment alone is worth it. My trainer designed a program around my specific goals and I've seen more progress in 2 months here than in a year at my old gym."</blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" aria-hidden="true">M</div>
+            <div class="reviewer-info">
+              <strong>Michael T.</strong>
+              <span>Member since 2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote>"The spin classes are absolutely addictive. Anna and Ashley bring so much energy — I look forward to every session. The rooftop classes in summer are a whole experience. Nothing else like it in King City."</blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" aria-hidden="true">S</div>
+            <div class="reviewer-info">
+              <strong>Sandra R.</strong>
+              <span>Spin Class Regular</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars" aria-label="5 out of 5 stars">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <blockquote>"Used ACE's rooftop for our company team day — the team at ACE made the whole thing seamless. 40 people, incredible views, and a really memorable experience. We're already planning the next one."</blockquote>
+          <div class="reviewer">
+            <div class="reviewer-avatar" aria-hidden="true">J</div>
+            <div class="reviewer-info">
+              <strong>James K.</strong>
+              <span>Corporate Event Organizer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner" aria-labelledby="cta-h2">
+    <div class="container">
+      <span class="section-label">Start Today</span>
+      <h2 class="section-title" id="cta-h2">Ready to <em>Achieve</em>,<br/>Conquer &amp; Excel?</h2>
+      <p class="section-sub">Try ACE Performance Gym free for 3 days — no commitment, no pressure. Just show up and let the facility speak for itself.</p>
+      <div class="cta-btns">
+        <a href="landing.html" class="btn-primary">Get My FREE 3 Day Pass</a>
+        <a href="rates.html" class="btn-secondary">View Membership Rates</a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="46" />
+          <p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
+          <div class="footer-social" aria-label="Social media links">
+            <a href="https://www.instagram.com/aceperformancegym" target="_blank" rel="noopener noreferrer" aria-label="Follow ACE on Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.facebook.com/ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Follow ACE on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@acegym.club" target="_blank" rel="noopener noreferrer" aria-label="Follow ACE on TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1-.42z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Follow ACE on YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Services">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="personal-training.html">Personal Training</a></li>
+            <li><a href="personal-training.html#inbody">InBody 770</a></li>
+            <li><a href="facilities.html">Facilities</a></li>
+            <li><a href="classes.html">Classes</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Explore">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="rates.html">Rates</a></li>
+            <li><a href="promos.html">Promos</a></li>
+            <li><a href="rent-our-roof.html">Rent Our Roof</a></li>
+            <li><a href="awards.html">Awards</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address>
+            1700 King Rd, Unit #32<br/>
+            King City, ON L7B 0N1
+          </address>
+          <a href="tel:+19058333130">(905) 833-3130</a>
+          <a href="mailto:info@acegym.club">info@acegym.club</a>
+          <div class="footer-hours">
+            <p>Mon–Fri: 5:00 AM – 10:00 PM</p>
+            <p>Sat–Sun: 7:00 AM – 7:00 PM</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 ACE Performance Gym. All rights reserved.</p>
+        <p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    // Volume toggle
+    (function () {
+      var btn = document.getElementById('heroVol');
+      var vid = document.querySelector('.hero-video');
+      if (!btn || !vid) return;
+      btn.addEventListener('click', function () {
+        vid.muted = !vid.muted;
+        document.getElementById('volIconMuted').style.display = vid.muted ? '' : 'none';
+        document.getElementById('volIconOn').style.display = vid.muted ? 'none' : '';
+        btn.setAttribute('aria-label', vid.muted ? 'Unmute video' : 'Mute video');
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var scroller = document.getElementById('amenitiesScroller');
+      if (!scroller) return;
+
+      var PANEL_COUNT = 3;
+      var current = -1;
+
+      function setPanel(index) {
+        if (index === current) return;
+        current = index;
+
+        // Update text + image panels
+        document.querySelectorAll('[data-panel]').forEach(function (el) {
+          el.classList.toggle('active', +el.dataset.panel === index);
+        });
+
+        // Update dots
+        document.querySelectorAll('.ap-dot').forEach(function (dot, i) {
+          dot.classList.toggle('active', i === index);
+        });
+
+        // Update counter
+        var cur = document.querySelector('.ac-cur');
+        if (cur) cur.textContent = String(index + 1).padStart(2, '0');
+      }
+
+      function update() {
+        // On mobile just ensure panel 0 is visible and bail
+        if (window.innerWidth < 768) { setPanel(0); return; }
+
+        var rect = scroller.getBoundingClientRect();
+        var scrolled = -rect.top;
+        var range = scroller.offsetHeight - window.innerHeight;
+        if (range <= 0) { setPanel(0); return; }
+
+        var progress = Math.max(0, Math.min(1, scrolled / range));
+        var index = Math.min(Math.floor(progress * PANEL_COUNT), PANEL_COUNT - 1);
+        setPanel(index);
+      }
+
+      // Dot click: scroll to the position that triggers that panel
+      document.querySelectorAll('.ap-dot').forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          var i = +dot.dataset.index;
+          var range = scroller.offsetHeight - window.innerHeight;
+          var target = scroller.offsetTop + (i / PANEL_COUNT) * range + range / PANEL_COUNT * 0.01;
+          window.scrollTo({ top: target, behavior: 'smooth' });
+        });
+      });
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update, { passive: true });
+      update();
+    })();
+  </script>
+</body>
+</html>
