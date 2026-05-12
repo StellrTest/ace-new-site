@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Group Fitness Classes | ACE Performance Gym — King City</title>
+  <meta name="description" content="Group fitness classes at ACE Performance Gym in King City — Spin, HIIT, Power Yoga, Strength & Conditioning. Expert instructors, no membership required for class packs." />
+  <link rel="canonical" href="https://www.acegym.club/classes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Group Fitness Classes | ACE Performance Gym" />
+  <meta property="og:description" content="Spin, HIIT, Power Yoga and more in King City. No membership required for class packs." />
+  <meta property="og:url" content="https://www.acegym.club/classes" />
+  <meta property="og:image" content="https://www.acegym.club/og-classes.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .classes-intro { padding: 88px 0 64px; }
+
+    .notice-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(215,26,33,0.07);
+      border: 1px solid rgba(215,26,33,0.18);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 52px;
+      font-family: var(--font-subtitle);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-2);
+      letter-spacing: 0.03em;
+    }
+
+    .notice-bar svg { color: var(--red); flex-shrink: 0; }
+
+    .featured-class {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+      margin-bottom: 88px;
+      backdrop-filter: blur(12px);
+    }
+
+    .featured-img { height: 380px; }
+
+    .featured-body {
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-schedule {
+      font-family: var(--font-subtitle);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 10px;
+    }
+
+    .featured-body h2 {
+      font-family: var(--font-display);
+      font-size: 3.6rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .featured-body p {
+      font-size: 0.95rem;
+      color: var(--gray-2);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .instructors-section { padding: 0 0 88px; background: var(--black-2); border-top: 1px solid var(--glass-border); padding: 88px 0; }
+
+    @media (max-width: 768px) {
+      .featured-class { grid-template-columns: 1fr; }
+      .featured-img { height: 240px; }
+      .featured-body { padding: 32px 28px; }
+      .featured-body h2 { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home">
+        <img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="42" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="facilities.html" role="menuitem">Facilities</a>
+          </div>
+        </div>
+        <a href="classes.html" class="nav-link active">Classes</a>
+        <a href="rates.html" class="nav-link">Rates</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="promos.html" role="menuitem">Promos</a>
+            <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
+            <a href="awards.html" role="menuitem">Awards</a>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="nav-cta">FREE 3 Day Pass</a>
+    </div>
+  </nav>
+
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Classes Hero Photo</span></div></div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Classes</span>
+        </nav>
+        <span class="section-label">Group Fitness</span>
+        <h1 class="section-title" id="page-title">Group <em>Classes</em></h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="classes-intro" aria-labelledby="classes-intro-h2">
+      <div class="container">
+
+        <div class="notice-bar" role="note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Purchasing class packs does <strong>&nbsp;NOT&nbsp;</strong> require a membership. All are welcome.
+        </div>
+
+        <h2 class="section-title" id="classes-intro-h2">Where Fitness<br/>Meets <em>Inspiration</em></h2>
+        <p class="section-sub">Welcome to ACE Performance Gym, where our diverse range of classes are designed to elevate your workout experience and empower you to reach new heights of strength, agility, and vitality. Whether you're a seasoned athlete or just beginning your fitness journey, our expert instructors are here to guide and motivate you every step of the way.</p>
+
+        <!-- FEATURED CLASS -->
+        <article class="featured-class" aria-labelledby="spin-h2">
+          <div class="featured-img img-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+            <span>Spin Class Photo</span>
+          </div>
+          <div class="featured-body">
+            <p class="featured-schedule">Schedule: Everyday Except Thursdays</p>
+            <h2 id="spin-h2">Spin</h2>
+            <p>Spin class, utilizing stationary bicycles, offers a dynamic, high-intensity, yet low-impact workout that targets endurance, strength, and recovery. This indoor cycling experience not only enhances cardiovascular and lower body strength but also contributes to mental well-being. Burn calories, boost your metabolism, and achieve your fitness goals with this stimulating workout.</p>
+            <a href="../index.html" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Schedule a Class
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- INSTRUCTORS -->
+    <section class="instructors-section" aria-labelledby="instructors-h2">
+      <div class="container">
+        <span class="section-label">Our Team</span>
+        <h2 class="section-title" id="instructors-h2">Meet the <em>Instructors</em></h2>
+        <p class="section-sub">World-class coaches with one shared mission: to push you past what you thought was possible.</p>
+
+        <div class="instructors-grid">
+
+          <article class="instructor-card" aria-labelledby="ashley-name">
+            <div class="instructor-photo img-ph"><span>Ashley Soldera Photo</span></div>
+            <div class="instructor-body">
+              <div class="instructor-tags">
+                <span class="tag">Spin</span>
+                <span class="tag">Bootcamp</span>
+                <span class="tag">Pilates</span>
+              </div>
+              <h3 id="ashley-name">Ashley Soldera</h3>
+              <p>A fitness expert with a passion for motivating others through Spinning, Bootcamp, Full Body HIIT and Pilates. Inspired by her own athletic journey, she advocates for holistic health, emphasizing fitness for mental clarity and heart health. As a certified nutritionist and massage therapist, Ashley is committed to helping others live healthier lives.</p>
+            </div>
+          </article>
+
+          <article class="instructor-card" aria-labelledby="anna-name">
+            <div class="instructor-photo img-ph"><span>Anna Stavrakos Photo</span></div>
+            <div class="instructor-body">
+              <div class="instructor-tags">
+                <span class="tag">Spin</span>
+              </div>
+              <h3 id="anna-name">Anna Stavrakos</h3>
+              <p>Anna redefines fitness, prioritizing inner transformation for a lighter, lifted, and energized you. A Schwinn Certified spin pro who brings unmatched energy to every session, fueled by heart-pounding music. Passionate about fitness and healthcare innovation in Canada.</p>
+            </div>
+          </article>
+
+          <article class="instructor-card" aria-labelledby="nadia-name">
+            <div class="instructor-photo img-ph"><span>Nadia Racco Photo</span></div>
+            <div class="instructor-body">
+              <div class="instructor-tags">
+                <span class="tag">Spin</span>
+                <span class="tag">Strength</span>
+              </div>
+              <h3 id="nadia-name">Nadia Racco</h3>
+              <p>With 15 years of experience in the gym and on the bike, Nadia leads high-energy classes that combine infectious playlists, challenging intervals, and empowering encouragement. "Let's spin, sweat, and smile our way to a stronger, more confident you."</p>
+            </div>
+          </article>
+
+          <article class="instructor-card" aria-labelledby="victor-name">
+            <div class="instructor-photo img-ph"><span>Victor De Giorgio Photo</span></div>
+            <div class="instructor-body">
+              <div class="instructor-tags">
+                <span class="tag">HIIT</span>
+                <span class="tag">Team Training</span>
+              </div>
+              <h3 id="victor-name">Victor De Giorgio</h3>
+              <p>Your dynamic personal trainer and HIIT/team training instructor. Specializing in maximizing performance for young athletes across various sports, Vic leads invigorating group sessions on our rooftop track. With a background representing the U21 Malta National Team in soccer, Victor brings elite athleticism to every class.</p>
+            </div>
+          </article>
+
+          <article class="instructor-card" aria-labelledby="paniz-name">
+            <div class="instructor-photo img-ph"><span>Paniz Riahizadeh Photo</span></div>
+            <div class="instructor-body">
+              <div class="instructor-tags">
+                <span class="tag">Power Yoga</span>
+                <span class="tag">Weight Mgmt</span>
+                <span class="tag">PT</span>
+              </div>
+              <h3 id="paniz-name">Paniz Riahizadeh</h3>
+              <p>A seasoned expert in personal training and weight management with over 10 years of experience. Specializing in tailored fitness programs and nutrition plans, Paniz integrates yoga and Pilates with mindful movement and injury prevention — ensuring every client reaches their goals safely and sustainably.</p>
+            </div>
+          </article>
+
+          <article class="instructor-card" aria-labelledby="alessia-name">
+            <div class="instructor-photo img-ph"><span>Alessia Gileppo Photo</span></div>
+            <div class="instructor-body">
+              <div class="instructor-tags">
+                <span class="tag">Spin</span>
+              </div>
+              <h3 id="alessia-name">Alessia Gileppo</h3>
+              <p>A certified spin instructor with 4 years of experience and a passion for creating fun, high-energy classes with the best music. "Each class is a chance to grow stronger, push your limits, and enjoy the ride! Let's spin towards greatness and to becoming your best self!"</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner" aria-labelledby="classes-cta-h2">
+      <div class="container">
+        <span class="section-label">Join Us</span>
+        <h2 class="section-title" id="classes-cta-h2">Ready to <em>Ride, Sweat</em><br/>&amp; Transform?</h2>
+        <p class="section-sub">No membership required for class packs. Jump in and experience the ACE difference.</p>
+        <div class="cta-btns">
+          <a href="../index.html" class="btn-primary">Get My FREE 3 Day Pass</a>
+          <a href="rates.html" class="btn-secondary">View Class Pack Pricing</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="46" />
+          <p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/aceperformancegym" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.tiktok.com/@acegym.club" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1-.42z"/></svg></a>
+            <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
+        <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ACE Performance Gym. All rights reserved.</p>
+        <p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent Our Rooftop | ACE Performance Gym — King City Events</title>
+  <meta name="description" content="Rent ACE Performance Gym's 11,000 sq ft rooftop in King City for corporate events, team retreats, and outdoor workouts. Rates starting at $200/hr. Stunning sunset views." />
+  <link rel="canonical" href="https://www.acegym.club/rent-our-roof" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rent Our Rooftop | ACE Performance Gym" />
+  <meta property="og:description" content="11,000 sq ft rooftop for events, retreats & outdoor fitness in King City. Rates from $200/hr." />
+  <meta property="og:url" content="https://www.acegym.club/rent-our-roof" />
+  <meta property="og:image" content="https://www.acegym.club/og-rooftop.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .roof-intro { padding: 96px 0; }
+    .roof-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .roof-img { height: 440px; border-radius: var(--radius-xl); }
+    .roof-text p { font-size: 1rem; color: var(--gray-2); line-height: 1.8; margin-bottom: 16px; }
+
+    .rates-table-section { padding: 96px 0; background: var(--black-2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+
+    .rates-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 48px;
+    }
+
+    .rates-table th {
+      font-family: var(--font-subtitle);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      padding: 14px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .rates-table td {
+      padding: 16px 20px;
+      font-size: 0.925rem;
+      color: var(--gray-2);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .rates-table tr:last-child td { border-bottom: none; }
+
+    .rates-table td:first-child {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--red);
+    }
+
+    .rates-table tr:hover td { background: var(--glass-bg); }
+
+    .rates-note-box {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 28px;
+      font-size: 0.875rem;
+      color: var(--gray-2);
+      line-height: 1.7;
+    }
+
+    .day-pass-section { padding: 88px 0; }
+
+    .day-pass-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: center;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: 52px 48px;
+      backdrop-filter: blur(16px);
+    }
+
+    .day-pass-card h2 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+    }
+
+    .day-pass-card p { font-size: 0.95rem; color: var(--gray-2); line-height: 1.8; margin-bottom: 16px; }
+
+    .day-pass-price {
+      text-align: center;
+      background: rgba(215,26,33,0.06);
+      border: 1px solid rgba(215,26,33,0.16);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+    }
+
+    .day-pass-price strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 5rem;
+      font-weight: 600;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .day-pass-price span {
+      font-family: var(--font-subtitle);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+
+    .gallery-roof { padding: 88px 0; background: var(--black-2); border-top: 1px solid var(--glass-border); }
+    .gallery-roof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .gallery-roof-item { height: 220px; border-radius: var(--radius-lg); overflow: hidden; }
+    .gallery-roof-item .img-ph { height: 100%; border-radius: 0; border: none; }
+
+    .contact-box {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: 52px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+      margin-top: 52px;
+    }
+
+    .contact-box h2 { font-family: var(--font-display); font-size: 2.6rem; font-weight: 600; margin-bottom: 12px; }
+    .contact-box p { font-size: 1rem; color: var(--gray-2); margin-bottom: 28px; line-height: 1.7; }
+    .contact-methods { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .roof-split { grid-template-columns: 1fr; gap: 40px; }
+      .roof-img { height: 280px; }
+      .day-pass-card { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
+      .gallery-roof-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-box { padding: 36px 24px; }
+    }
+
+    @media (max-width: 768px) {
+      .roof-intro, .rates-table-section, .day-pass-section, .gallery-roof { padding: 64px 0; }
+    }
+
+    @media (max-width: 560px) {
+      .gallery-roof-grid { grid-template-columns: 1fr; }
+      .rates-table th, .rates-table td { padding: 12px 14px; }
+      .roof-intro, .rates-table-section, .day-pass-section, .gallery-roof { padding: 48px 0; }
+      .contact-box h2 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home"><img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="42" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="facilities.html" role="menuitem">Facilities</a>
+          </div>
+        </div>
+        <a href="classes.html" class="nav-link">Classes</a>
+        <a href="rates.html" class="nav-link">Rates</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="promos.html" role="menuitem">Promos</a>
+            <a href="rent-our-roof.html" role="menuitem" style="color:var(--white)">Rent Our Roof</a>
+            <a href="awards.html" role="menuitem">Awards</a>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="nav-cta">FREE 3 Day Pass</a>
+    </div>
+  </nav>
+
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Rooftop Hero Photo</span></div></div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span aria-current="page">Rent Our Roof</span>
+        </nav>
+        <span class="section-label">11,000 Sq Ft Rooftop</span>
+        <h1 class="section-title" id="page-title">Rent An <em>Experience</em></h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="roof-intro" aria-labelledby="roof-h2">
+      <div class="container">
+        <div class="roof-split">
+          <div class="roof-text">
+            <span class="section-label">For Your Next Event</span>
+            <h2 class="section-title" id="roof-h2">For Your Next Event<br/>or <em>Company Retreat</em></h2>
+            <p>Enjoy this special place where you can connect with your teams, friends, and colleagues — all while breathing in the fresh air and admiring the sunset from the comfort of our 11,000 sq ft rooftop.</p>
+            <p>Whether it's a corporate wellness day, a team-building retreat, a community fitness event, or an outdoor group workout, ACE's rooftop provides an unforgettable backdrop that no traditional event venue can match.</p>
+            <p>It's an experience you will not forget.</p>
+            <br/>
+            <a href="tel:+19058333130" class="btn-primary">Call to Book</a>
+            <span style="display:inline-block;width:12px"></span>
+            <a href="mailto:annalisa@acegym.club" class="btn-secondary">Email Annalisa</a>
+          </div>
+          <div class="roof-img img-ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 20h20M4 20V10M20 20V10M12 4l8 6H4l8-6z"/></svg>
+            <span>Rooftop Event Photo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-row" role="complementary">
+      <div class="stat-item"><div class="stat-num">11K</div><div class="stat-label">Sq Ft Rooftop</div></div>
+      <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Min Participants</div></div>
+      <div class="stat-item"><div class="stat-num">$200</div><div class="stat-label">Starting Rate / Hr</div></div>
+      <div class="stat-item"><div class="stat-num">$10</div><div class="stat-label">Day Pass Add-On</div></div>
+    </div>
+
+    <!-- RATES TABLE -->
+    <section class="rates-table-section" aria-labelledby="rooftop-rates-h2">
+      <div class="container">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title" id="rooftop-rates-h2">Rooftop <em>Rates</em></h2>
+        <p class="section-sub">All packages require a minimum of 20 participants. Rates include use of the full rooftop turf space.</p>
+
+        <div style="overflow-x:auto">
+          <table class="rates-table" aria-label="Rooftop rental rates">
+            <thead>
+              <tr>
+                <th>Rate</th>
+                <th>Duration</th>
+                <th>Per Participant</th>
+                <th>Min. Participants</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>$200</td>
+                <td>1 Hour</td>
+                <td>$20 / person</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>$350</td>
+                <td>2 Hours</td>
+                <td>$17.50 / person</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>$500</td>
+                <td>4 Hours</td>
+                <td>$12.50 / person</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>$650</td>
+                <td>6 Hours</td>
+                <td>$11 / person</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>$850</td>
+                <td>Full Day (8hrs)</td>
+                <td>$10 / person</td>
+                <td>20</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rates-note-box">
+          <strong>Please note:</strong> Shower and towel service are not included with rooftop rentals. These can be added on for an additional fee per person.
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY PASS ADD-ON -->
+    <section class="day-pass-section" aria-labelledby="daypass-h2">
+      <div class="container">
+        <div class="day-pass-card">
+          <div>
+            <span class="section-label">Optional Add-On</span>
+            <h2 id="daypass-h2">Full Gym Access<br/>for Your Group</h2>
+            <p>Want to give your participants access to the full ACE Performance Gym experience beyond just the rooftop? For an extra $10 per person — the regular price of a day pass — each participant can receive a full day pass to explore the entire 25,000 sq ft facility.</p>
+            <p>That includes the gym floor, sauna, ACE Bar & Co., locker rooms, shower facilities, and more. It's the full ACE experience for your entire group.</p>
+          </div>
+          <div class="day-pass-price">
+            <strong>$10</strong>
+            <span>per person<br/>full day access add-on</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-roof" aria-labelledby="roof-gallery-h2">
+      <div class="container">
+        <span class="section-label">Our Rooftop</span>
+        <h2 class="section-title" id="roof-gallery-h2">See the <em>Space</em></h2>
+        <div class="gallery-roof-grid">
+          <div class="gallery-roof-item"><div class="img-ph"><span>Rooftop View 1</span></div></div>
+          <div class="gallery-roof-item"><div class="img-ph"><span>Rooftop Event Setup</span></div></div>
+          <div class="gallery-roof-item"><div class="img-ph"><span>Sunset View</span></div></div>
+          <div class="gallery-roof-item"><div class="img-ph"><span>Group Training</span></div></div>
+          <div class="gallery-roof-item"><div class="img-ph"><span>Turf Surface</span></div></div>
+          <div class="gallery-roof-item"><div class="img-ph"><span>King City Skyline</span></div></div>
+        </div>
+
+        <div class="contact-box">
+          <h2>Ready to Book?</h2>
+          <p>Contact Annalisa to check availability and reserve your date. We'll walk you through everything and make sure your event is a success.</p>
+          <div class="contact-methods">
+            <a href="tel:+19058333130" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Call (905) 833-3130
+            </a>
+            <a href="mailto:annalisa@acegym.club" class="btn-secondary">Email annalisa@acegym.club</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="46" /><p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/aceperformancegym" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.tiktok.com/@acegym.club" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1-.42z"/></svg></a>
+            <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
+        <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 ACE Performance Gym. All rights reserved.</p><p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p></div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

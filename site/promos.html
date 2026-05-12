@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promotions & Corporate Discounts | ACE Performance Gym</title>
+  <meta name="description" content="ACE Performance Gym promotions in King City — corporate discounts, first responder rates, and YRDSB staff membership at $85/month with complimentary InBody 770 and group classes." />
+  <link rel="canonical" href="https://www.acegym.club/promos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Promotions & Corporate Discounts | ACE Performance Gym" />
+  <meta property="og:description" content="Corporate, first responder, and YRDSB staff discounts at ACE Performance Gym, King City." />
+  <meta property="og:url" content="https://www.acegym.club/promos" />
+  <meta property="og:image" content="https://www.acegym.club/og-promos.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .promos-section { padding: 96px 0; }
+    .promo-block {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: 52px 48px;
+      margin-bottom: 32px;
+      backdrop-filter: blur(12px);
+      position: relative;
+      overflow: hidden;
+    }
+    .promo-block::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red-dark), var(--red-light));
+    }
+    .promo-block h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .promo-block .promo-sub {
+      font-family: var(--font-subtitle);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+    .promo-block p { font-size: 0.975rem; color: var(--gray-2); line-height: 1.8; margin-bottom: 16px; }
+    .promo-block p:last-of-type { margin-bottom: 0; }
+
+    .promo-price-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(215,26,33,0.08);
+      border: 1px solid rgba(215,26,33,0.2);
+      border-radius: var(--radius-md);
+      padding: 12px 20px;
+      margin: 16px 0;
+    }
+
+    .promo-price-chip strong {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .promo-price-chip span {
+      font-family: var(--font-subtitle);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+
+    .promo-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .promo-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--gray-2);
+      line-height: 1.6;
+    }
+
+    .promo-feature::before {
+      content: '';
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d71a21' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
+    }
+
+    .promo-block-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .promo-img { height: 300px; border-radius: var(--radius-lg); }
+
+    @media (max-width: 768px) {
+      .promo-block { padding: 36px 28px; }
+      .promo-block-inner { grid-template-columns: 1fr; gap: 28px; }
+      .promo-img { height: 200px; }
+      .promo-features { grid-template-columns: 1fr; }
+      .promos-section { padding: 64px 0; }
+    }
+
+    @media (max-width: 560px) {
+      .promos-section { padding: 48px 0; }
+      .promo-block { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home"><img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="42" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="facilities.html" role="menuitem">Facilities</a>
+          </div>
+        </div>
+        <a href="classes.html" class="nav-link">Classes</a>
+        <a href="rates.html" class="nav-link">Rates</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="promos.html" role="menuitem" style="color:var(--white)">Promos</a>
+            <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
+            <a href="awards.html" role="menuitem">Awards</a>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="nav-cta">FREE 3 Day Pass</a>
+    </div>
+  </nav>
+
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Promos Hero Photo</span></div></div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span aria-current="page">Promos</span>
+        </nav>
+        <span class="section-label">Special Offers</span>
+        <h1 class="section-title" id="page-title">Promotions &amp;<br/><em>Discounts</em></h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="promos-section" aria-labelledby="promos-h2">
+      <div class="container">
+        <span class="section-label">Exclusive Rates</span>
+        <h2 class="section-title" id="promos-h2">Special Pricing for<br/><em>Our Community</em></h2>
+        <p class="section-sub">ACE Performance Gym is proud to support the King City community with exclusive membership rates for corporations, first responders, and local organizations.</p>
+
+        <!-- CORPORATE -->
+        <div class="promo-block">
+          <div class="promo-block-inner">
+            <div>
+              <p class="promo-sub">For Organizations</p>
+              <h2>Corporate Promotions</h2>
+              <p>We partner with local businesses and corporations to provide their employees with access to King City's premier fitness facility at exclusive group rates. Investing in your team's health leads to better productivity, morale, and retention.</p>
+              <p>Corporate memberships are customized based on group size and commitment. Contact us to discuss a package that works for your organization.</p>
+              <br/>
+              <a href="tel:+19058333130" class="btn-primary">Call to Discuss Rates</a>
+            </div>
+            <div class="promo-img img-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Corporate Team Photo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FIRST RESPONDERS -->
+        <div class="promo-block">
+          <div class="promo-block-inner">
+            <div class="promo-img img-ph">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>First Responders Photo</span>
+            </div>
+            <div>
+              <p class="promo-sub">Honouring Our Heroes</p>
+              <h2>First Responders</h2>
+              <p>ACE Performance Gym is proud to honour the men and women who serve our community — police officers, firefighters, paramedics, nurses, and other first responders — with exclusive membership discounts.</p>
+              <p>Contact us directly with valid identification to receive your special rate. It's the least we can do for those who give so much.</p>
+              <br/>
+              <a href="mailto:info@acegym.club" class="btn-primary">Email for Details</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- YRDSB -->
+        <div class="promo-block">
+          <p class="promo-sub">Community Partnership</p>
+          <h2>York Region District School Board × ACE Performance Gym</h2>
+          <p>Our goal over the last year has been to provide YRDSB staff with a state-of-the-art fitness facility for all their health, fitness, and wellness needs. We're proud to offer YRDSB employees an exclusive membership rate with premium benefits.</p>
+
+          <div class="promo-price-chip">
+            <strong>$85</strong>
+            <span>/ month · 12-month commitment<br/>15–20% off regular membership</span>
+          </div>
+
+          <p>This partnership extends our commitment to the King City community and helps YRDSB staff access the resources they need to stay healthy, energized, and performing at their best.</p>
+
+          <div class="promo-features">
+            <div class="promo-feature">Complimentary InBody 770 body composition analysis</div>
+            <div class="promo-feature">Complimentary fitness consultation</div>
+            <div class="promo-feature">Complimentary weight management consultation</div>
+            <div class="promo-feature">Full access to 25,000+ sq ft facility</div>
+            <div class="promo-feature">Infrared &amp; dry heat sauna included</div>
+            <div class="promo-feature">Rooftop turf track access</div>
+            <div class="promo-feature">Full towel service</div>
+            <div class="promo-feature">Group fitness classes included</div>
+            <div class="promo-feature">AI-powered Technogym Biostrength equipment</div>
+            <div class="promo-feature">ACE Bar &amp; Co. lounge access</div>
+          </div>
+
+          <a href="mailto:info@acegym.club" class="btn-primary">Email to Sign Up</a>
+          <span style="display:inline-block;width:12px"></span>
+          <a href="../index.html" class="btn-secondary">Try Free for 3 Days First</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cta-banner" aria-labelledby="promos-cta-h2">
+      <div class="container">
+        <span class="section-label">Not Sure Which Applies?</span>
+        <h2 class="section-title" id="promos-cta-h2">Try ACE Free<br/>for <em>3 Days</em></h2>
+        <p class="section-sub">The best way to know if ACE is right for you is to come in. No credit card, no commitment — just 3 free days to experience the facility.</p>
+        <div class="cta-btns">
+          <a href="../index.html" class="btn-primary">Get My FREE 3 Day Pass</a>
+          <a href="tel:+19058333130" class="btn-secondary">Call (905) 833-3130</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="46" /><p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/aceperformancegym" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.tiktok.com/@acegym.club" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1-.42z"/></svg></a>
+            <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
+        <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 ACE Performance Gym. All rights reserved.</p><p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p></div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym Membership Rates | ACE Performance Gym — King City</title>
+  <meta name="description" content="View ACE Performance Gym membership rates and class pack pricing in King City, ON. Flexible memberships, day passes, and class packs — no membership required for classes." />
+  <link rel="canonical" href="https://www.acegym.club/rates" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Gym Membership Rates | ACE Performance Gym" />
+  <meta property="og:description" content="Flexible memberships, day passes, and class packs at ACE Performance Gym, King City. Start with a FREE 3 Day Pass." />
+  <meta property="og:url" content="https://www.acegym.club/rates" />
+  <meta property="og:image" content="https://www.acegym.club/og-rates.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    .rates-section { padding: 96px 0; }
+    .rates-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: rgba(215,26,33,0.06);
+      border: 1px solid rgba(215,26,33,0.14);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 52px;
+      font-size: 0.9rem;
+      color: var(--gray-2);
+      line-height: 1.6;
+    }
+    .rates-note svg { color: var(--red); flex-shrink: 0; margin-top: 2px; }
+    .rates-note strong { color: var(--white); }
+
+    /* Pricing cards are in main.css */
+
+    .add-ons-section { padding: 88px 0; background: var(--black-2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+
+    .add-ons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .add-on-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+    }
+
+    .add-on-price {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .add-on-period {
+      font-family: var(--font-subtitle);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 18px;
+    }
+
+    .add-on-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .add-on-card p {
+      font-size: 0.85rem;
+      color: var(--gray-2);
+      line-height: 1.65;
+    }
+
+    .hours-section { padding: 88px 0; }
+    .hours-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+
+    .hours-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+    }
+
+    .hours-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--glass-border);
+      font-size: 0.9rem;
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+
+    .hours-row .day {
+      font-family: var(--font-subtitle);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--gray-2);
+    }
+
+    .hours-row .time {
+      font-family: var(--font-subtitle);
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .pricing-alt {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      margin-bottom: 24px;
+    }
+    .pricing-alt-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 6px;
+    }
+    .pricing-alt-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.85rem;
+      gap: 8px;
+    }
+    .pricing-alt-row .alt-price {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--gray-2);
+      line-height: 1;
+    }
+    .pricing-alt-row .alt-detail {
+      font-size: 0.72rem;
+      color: var(--gray-3);
+    }
+
+    .class-packs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .pack-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .pack-card:hover {
+      border-color: rgba(215,26,33,0.28);
+      transform: translateY(-3px);
+    }
+    .pack-price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .pack-credits {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin-bottom: 16px;
+    }
+    .pack-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+    .pack-card p {
+      font-size: 0.8rem;
+      color: var(--gray-3);
+      line-height: 1.6;
+    }
+
+    .extras-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .pack-card-horizontal {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .class-packs-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .add-ons-grid  { grid-template-columns: 1fr; }
+      .hours-grid    { grid-template-columns: 1fr; }
+      .extras-grid   { grid-template-columns: 1fr; }
+      .rates-section { padding: 64px 0; }
+      .add-ons-section { padding: 64px 0; }
+      .hours-section { padding: 64px 0; }
+    }
+    @media (max-width: 560px) {
+      .class-packs-grid { grid-template-columns: 1fr; }
+      .pack-card-horizontal { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .rates-section { padding: 48px 0; }
+      .add-ons-section { padding: 48px 0; }
+      .hours-section { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home"><img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="42" /></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="personal-training.html#inbody" role="menuitem">InBody 770</a>
+            <a href="facilities.html" role="menuitem">Facilities</a>
+          </div>
+        </div>
+        <a href="classes.html" class="nav-link">Classes</a>
+        <a href="rates.html" class="nav-link active">Rates</a>
+        <div class="nav-item">
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <div class="nav-dropdown" role="menu">
+            <a href="promos.html" role="menuitem">Promos</a>
+            <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
+            <a href="awards.html" role="menuitem">Awards</a>
+          </div>
+        </div>
+      </div>
+      <a href="../index.html" class="nav-cta">FREE 3 Day Pass</a>
+    </div>
+  </nav>
+
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Rates Hero Photo</span></div></div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span aria-current="page">Rates</span>
+        </nav>
+        <span class="section-label">Membership Options</span>
+        <h1 class="section-title" id="page-title">Membership <em>Rates</em></h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- MEMBERSHIPS -->
+    <section class="rates-section" aria-labelledby="rates-h2">
+      <div class="container">
+
+        <div class="rates-note" role="note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Not sure yet?</strong> Try ACE Performance Gym completely free for 3 days — no credit card, no commitment. <a href="../index.html" style="color:var(--red);text-decoration:none;font-weight:700">Claim your FREE 3 Day Pass →</a></div>
+        </div>
+
+        <span class="section-label">Memberships</span>
+        <h2 class="section-title" id="rates-h2">Choose Your <em>Plan</em></h2>
+        <p class="section-sub">All memberships include full facility access, all indoor &amp; outdoor classes, towel service, and a complimentary InBody 770 welcome scan. A $100 joining fee applies. All prices + HST.</p>
+
+        <div class="pricing-grid">
+
+          <div class="pricing-card">
+            <div class="pricing-badge" style="background:rgba(255,255,255,0.08);color:var(--gray-2);box-shadow:none">Limited Offer</div>
+            <h3>1 Month Trial</h3>
+            <div class="pricing-price"><sup style="font-size:1.6rem;vertical-align:super;line-height:0">$</sup>145</div>
+            <p class="pricing-period">+ HST · one per person</p>
+            <ul class="pricing-features">
+              <li>Full gym floor access</li>
+              <li>All group classes included</li>
+              <li>Towel service &amp; amenities</li>
+              <li>InBody 770 welcome scan</li>
+              <li>Rooftop track access</li>
+            </ul>
+            <a href="tel:+19058333130" class="btn-secondary">Call to Sign Up</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>6 Month</h3>
+            <div class="pricing-price"><sup style="font-size:1.6rem;vertical-align:super;line-height:0">$</sup>55</div>
+            <p class="pricing-period">bi-weekly · $100 joining fee</p>
+            <ul class="pricing-features">
+              <li>Full gym floor access</li>
+              <li>All indoor &amp; outdoor classes</li>
+              <li>Towel service &amp; amenities</li>
+              <li>InBody 770 welcome scan</li>
+              <li>Free 3-day guest pass</li>
+            </ul>
+            <div class="pricing-alt">
+              <p class="pricing-alt-label">Or pay in full</p>
+              <div class="pricing-alt-row">
+                <span class="alt-price">$660</span>
+                <span class="alt-detail">+ $50 joining fee</span>
+              </div>
+            </div>
+            <a href="tel:+19058333130" class="btn-secondary">Call to Sign Up</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most Popular</div>
+            <h3>12 Month</h3>
+            <div class="pricing-price"><sup style="font-size:1.6rem;vertical-align:super;line-height:0">$</sup>47<span style="font-size:2rem">.50</span></div>
+            <p class="pricing-period">bi-weekly · $100 joining fee</p>
+            <ul class="pricing-features">
+              <li>Full gym floor access</li>
+              <li>All indoor &amp; outdoor classes</li>
+              <li>Towel service &amp; amenities</li>
+              <li>InBody 770 welcome scan</li>
+              <li>Free 3-day guest pass</li>
+            </ul>
+            <div class="pricing-alt">
+              <p class="pricing-alt-label">Or pay in full</p>
+              <div class="pricing-alt-row">
+                <span class="alt-price">$1,140</span>
+                <span class="alt-detail">+ $100 joining fee</span>
+              </div>
+            </div>
+            <a href="../index.html" class="btn-primary">Get Started Free</a>
+          </div>
+
+        </div>
+
+        <div class="rates-note" style="margin-top:28px;margin-bottom:0" role="note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div><strong>Facility Enhancement Fee (FEF):</strong> A $30/year fee is charged 30 days after membership start, then annually. This goes directly toward equipment upgrades and maintaining a world-class training environment.</div>
+        </div>
+
+        <p style="text-align:center;font-size:0.85rem;color:var(--gray-3);margin-top:20px">
+          Corporate and group rates available. <a href="promos.html" style="color:var(--red);text-decoration:none">View promotions →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- CLASS PACKS -->
+    <section class="add-ons-section" aria-labelledby="packs-h2">
+      <div class="container">
+        <span class="section-label">No Membership Required</span>
+        <h2 class="section-title" id="packs-h2">Class Packs &amp; <em>Drop-Ins</em></h2>
+        <p class="section-sub">Buy class credits without a membership. Valid for spin, HIIT, yoga, and strength classes. Age 13+. Not valid for personal training sessions.</p>
+
+        <div class="class-packs-grid">
+          <div class="pack-card">
+            <div class="pack-price">$30</div>
+            <p class="pack-credits">1 Credit · Valid 1 month</p>
+            <h3>Single Class</h3>
+            <p>Drop in for any scheduled class. Must be 13 or older to attend.</p>
+          </div>
+          <div class="pack-card">
+            <div class="pack-price">$80</div>
+            <p class="pack-credits">3 Credits · Valid 3 months</p>
+            <h3>3 Class Pack</h3>
+            <p>Great for trying out a variety of classes at your own pace.</p>
+          </div>
+          <div class="pack-card" style="border-color:rgba(215,26,33,0.25)">
+            <div class="pack-price">$135</div>
+            <p class="pack-credits">5 Credits · Valid 1 year</p>
+            <h3>5 Class Pack</h3>
+            <p>Best value for occasional attendees. Credits valid for a full year.</p>
+          </div>
+          <div class="pack-card">
+            <div class="pack-price">$250</div>
+            <p class="pack-credits">10 Credits · Valid 1 year</p>
+            <h3>10 Class Pack</h3>
+            <p>Most credits per dollar. A full year to use them however you like.</p>
+          </div>
+        </div>
+
+        <div class="extras-grid">
+          <div class="pack-card pack-card-horizontal">
+            <div style="flex-shrink:0">
+              <div class="pack-price" style="font-size:2.2rem">$90</div>
+              <p class="pack-credits" style="margin-bottom:0">+ HST · Valid 1 week</p>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display);font-size:1.6rem;margin-bottom:6px">Week Pass</h3>
+              <p style="font-size:0.82rem;color:var(--gray-3);line-height:1.6">Full gym access for one week. Perfect for visitors or testing the facility.</p>
+            </div>
+          </div>
+          <div class="pack-card pack-card-horizontal">
+            <div style="flex-shrink:0">
+              <div class="pack-price" style="font-size:2.2rem">$49<span style="font-size:1.2rem">.95</span></div>
+              <p class="pack-credits" style="margin-bottom:0">Single · or 3-pack $99.95</p>
+            </div>
+            <div>
+              <h3 style="font-family:var(--font-display);font-size:1.6rem;margin-bottom:6px">InBody 770 Scan</h3>
+              <p style="font-size:0.82rem;color:var(--gray-3);line-height:1.6">Book a stand-alone body composition scan. <a href="personal-training.html#inbody" style="color:var(--red);text-decoration:none">Learn more →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOURS -->
+    <section class="hours-section" aria-labelledby="hours-h2">
+      <div class="container">
+        <span class="section-label">When We're Open</span>
+        <h2 class="section-title" id="hours-h2">Hours of <em>Operation</em></h2>
+        <div class="hours-grid">
+          <div class="hours-card">
+            <h3>Regular Hours</h3>
+            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">5:00 AM – 10:00 PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time">7:00 AM – 7:00 PM</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="time">7:00 AM – 7:00 PM</span></div>
+          </div>
+          <div class="hours-card">
+            <h3>Holiday Hours</h3>
+            <div class="hours-row"><span class="day">Holiday Hours (selected)</span><span class="time">7:00 AM – 1:00 PM</span></div>
+            <div class="hours-row" style="padding:12px 0;display:block"><p style="font-size:0.82rem;color:var(--gray-3);line-height:1.7">Reduced hours apply on: Family Day, Good Friday, Victoria Day, Canada Day, Labour Day, Thanksgiving Day, Boxing Day.</p></div>
+            <div class="hours-row"><span class="day">Closed</span><span class="time">Easter, Christmas, New Year's</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner" aria-labelledby="rates-cta-h2">
+      <div class="container">
+        <span class="section-label">Try Before You Buy</span>
+        <h2 class="section-title" id="rates-cta-h2">3 Days Free.<br/><em>No Strings Attached.</em></h2>
+        <p class="section-sub">Experience everything ACE has to offer before committing to a membership. Your 3-day pass gives you full access to the facility.</p>
+        <div class="cta-btns">
+          <a href="../index.html" class="btn-primary">Get My FREE 3 Day Pass</a>
+          <a href="tel:+19058333130" class="btn-secondary">Call (905) 833-3130</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="../ace-logo.png" alt="ACE Performance Gym" width="120" height="46" /><p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/aceperformancegym" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://www.facebook.com/ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.tiktok.com/@acegym.club" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.04a8.16 8.16 0 0 0 4.77 1.52V7.11a4.85 4.85 0 0 1-1-.42z"/></svg></a>
+            <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
+        <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 ACE Performance Gym. All rights reserved.</p><p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p></div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
