@@ -28,6 +28,17 @@ document.querySelectorAll('.dropdown-btn').forEach(btn => {
   });
 });
 
+// ── In-overlay close button ───────────────────────────
+const navClose = document.getElementById('navClose');
+if (navClose && navMenu && navToggle) {
+  navClose.addEventListener('click', () => {
+    navMenu.classList.remove('open');
+    navToggle.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+}
+
 // ── Close mobile nav on outside click ─────────────────
 document.addEventListener('click', e => {
   if (!e.target.closest('.site-nav') && navMenu?.classList.contains('open')) {

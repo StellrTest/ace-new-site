@@ -1197,11 +1197,11 @@ button { font-family: inherit; }
 
   .nav-dropdown a {
     font-family: var(--font-display);
-    font-size: clamp(2.4rem, 10vw, 3.4rem);
+    font-size: clamp(2.8rem, 12vw, 4rem);
     font-weight: 700;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.55);
     padding: 6px 0;
     text-align: center;
     background: none;
@@ -1210,6 +1210,32 @@ button { font-family: inherit; }
   }
 
   .nav-dropdown a:hover { color: var(--red); background: none; }
+
+  /* Close button inside overlay */
+  .nav-close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 201;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-close-btn svg { width: 24px; height: 24px; stroke: #fff; stroke-width: 2; }
+
+  .nav-menu.open .nav-close-btn {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
   .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
   .reviews-grid { grid-template-columns: 1fr; }
