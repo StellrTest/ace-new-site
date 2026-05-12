@@ -724,13 +724,22 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 240px 240px;
+      grid-auto-rows: 240px;
       gap: 16px;
     }
 
     .gallery-item { border-radius: var(--radius-lg); overflow: hidden; }
-    .gallery-item .img-ph { width: 100%; height: 100%; border-radius: 0; border: none; }
-    .gallery-item.tall { grid-row: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); transform-origin: center; }
+    .gallery-item:hover img { transform: scale(1.04); }
+
+    /* Explicit placement — 3-col × 3-row bento layout */
+    .gi-1 { grid-column: 1; grid-row: 1 / 3; }
+    .gi-2 { grid-column: 2; grid-row: 1; }
+    .gi-3 { grid-column: 3; grid-row: 1; }
+    .gi-4 { grid-column: 2; grid-row: 2; }
+    .gi-5 { grid-column: 3; grid-row: 2 / 4; }
+    .gi-6 { grid-column: 1; grid-row: 3; }
+    .gi-7 { grid-column: 2; grid-row: 3; }
 
     /* ── Testimonials ───────────────────────────────────── */
     .testimonials { padding: 96px 0; }
@@ -741,7 +750,7 @@
       .amenity-block.reverse .amenity-visual { order: 0; }
       .amenity-visual { height: 300px; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-item.tall { grid-row: span 1; }
+      .gi-1,.gi-2,.gi-3,.gi-4,.gi-5,.gi-6,.gi-7 { grid-column: auto; grid-row: auto; }
     }
 
     @media (max-width: 560px) {
@@ -823,8 +832,6 @@
       border-color: rgba(215,26,33,0.35);
       box-shadow: 0 0 40px rgba(215,26,33,0.15);
     }
-    .gallery-item .img-ph { transition: transform 0.55s cubic-bezier(0.22,1,0.36,1); transform-origin: center; }
-    .gallery-item:hover .img-ph { transform: scale(1.04); }
 
     /* ── Testimonial card hover ─────────────────────────── */
     .review-card {
@@ -1200,29 +1207,26 @@
       <p class="section-sub">25,000 sq ft of premium training space built to push your performance.</p>
 
       <div class="gallery-grid">
-        <div class="gallery-item tall">
-          <div class="img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>Gym Floor</span>
-          </div>
+        <div class="gallery-item gi-1">
+          <img src="g-gymfloor.jpg" alt="ACE gym floor aerial view with members training" style="object-position:center 30%;">
         </div>
-        <div class="gallery-item">
-          <div class="img-ph"><span>Rooftop Track</span></div>
+        <div class="gallery-item gi-2">
+          <img src="g-spin.jpg" alt="ACE spin studio with red neon lighting">
         </div>
-        <div class="gallery-item">
-          <div class="img-ph"><span>Technogym Area</span></div>
+        <div class="gallery-item gi-3">
+          <img src="g-weights.jpg" alt="YORK dumbbell wall on dark wood shelving" style="object-position:center 40%;">
         </div>
-        <div class="gallery-item">
-          <div class="img-ph"><span>Spin Studio</span></div>
+        <div class="gallery-item gi-4">
+          <img src="g-maingym.jpg" alt="ACE main gym floor with hexagonal ceiling lights">
         </div>
-        <div class="gallery-item tall">
-          <div class="img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span>ACE Bar & Co.</span>
-          </div>
+        <div class="gallery-item gi-5">
+          <img src="g-acelogo.jpg" alt="ACE Performance Gym logo on red feature wall" style="object-position:center 30%;">
         </div>
-        <div class="gallery-item">
-          <div class="img-ph"><span>Sauna</span></div>
+        <div class="gallery-item gi-6">
+          <img src="g-forma.jpg" alt="Forma by ACE pilates studio with olive trees and mirrors">
+        </div>
+        <div class="gallery-item gi-7">
+          <img src="g-stretch.jpg" alt="ACE stretch zone and functional training area">
         </div>
       </div>
     </div>
