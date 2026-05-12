@@ -1097,6 +1097,12 @@ button { font-family: inherit; }
 @media (max-width: 960px) {
   .nav-toggle { display: flex; }
 
+  /* Remove backdrop-filter so position:fixed children escape the containing block */
+  .site-nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   /* ── Full-screen nav overlay ── */
   .nav-menu {
     position: fixed;
