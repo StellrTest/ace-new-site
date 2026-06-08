@@ -16,80 +16,151 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
-    .classes-intro { padding: 88px 0 64px; }
+    /* ── Section rhythm ────────────────────────────────── */
+    .cl-section { padding: 130px 0; }
+    .cl-section.alt {
+      background: var(--black-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
 
+    /* ── Notice bar ────────────────────────────────────── */
     .notice-bar {
       display: flex;
       align-items: center;
       gap: 14px;
       background: rgba(215,26,33,0.07);
       border: 1px solid rgba(215,26,33,0.18);
-      border-radius: var(--radius-md);
-      padding: 14px 20px;
-      margin-bottom: 52px;
+      border-radius: var(--radius-sm);
+      padding: 16px 22px;
+      margin-bottom: 60px;
       font-family: var(--font-subtitle);
       font-size: 0.82rem;
       font-weight: 600;
       color: var(--gray-2);
       letter-spacing: 0.03em;
     }
+    .notice-bar svg { color: var(--red-light); flex-shrink: 0; }
 
-    .notice-bar svg { color: var(--red); flex-shrink: 0; }
-
-    .featured-class {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
+    /* ── Class Types grid ──────────────────────────────── */
+    .class-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      overflow: hidden;
-      margin-bottom: 88px;
-      backdrop-filter: blur(12px);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
-
-    .featured-img { height: 380px; }
-
-    .featured-body {
-      padding: 48px 44px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .class-card-media { height: 232px; }
+    .class-card .ghost-num {
+      position: absolute;
+      top: 14px; right: 22px;
+      z-index: 4;
     }
-
-    .featured-schedule {
-      font-family: var(--font-subtitle);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gray-3);
-      margin-bottom: 10px;
-    }
-
-    .featured-body h2 {
+    .class-card h3 {
       font-family: var(--font-display);
-      font-size: 3.6rem;
-      font-weight: 600;
+      font-size: 1.85rem;
+      font-weight: 400;
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 18px;
+      line-height: 1.04;
+      margin: 2px 0 8px;
     }
-
-    .featured-body p {
-      font-size: 0.95rem;
+    .class-card .class-meta {
+      font-family: var(--font-subtitle);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 14px;
+    }
+    .class-card p {
+      font-size: 0.93rem;
       color: var(--gray-2);
-      line-height: 1.75;
-      margin-bottom: 28px;
+      line-height: 1.74;
     }
 
-    .instructors-section { padding: 0 0 88px; background: var(--black-2); border-top: 1px solid var(--glass-border); padding: 88px 0; }
+    /* ── Featured Spin split ───────────────────────────── */
+    .spin-media { height: 540px; }
+    .featured-schedule {
+      font-family: var(--font-subtitle);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      margin: 24px 0 4px;
+    }
 
+    /* ── Instructor cards — monogram, no photo ─────────── */
+    .instructor-card { display: flex; flex-direction: column; }
+    .instructor-monogram {
+      position: relative;
+      height: 196px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(ellipse 75% 110% at 50% 0%, rgba(215,26,33,0.22) 0%, transparent 62%),
+        linear-gradient(160deg, var(--black-4) 0%, #0a0a0a 100%);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .instructor-monogram::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 2px;
+      background: var(--red);
+    }
+    .instructor-monogram span {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 5.4rem;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-shadow: 0 14px 40px rgba(0,0,0,0.6);
+    }
+    .instructor-monogram .im-tag {
+      position: absolute;
+      bottom: 14px; right: 16px;
+      font-family: var(--font-subtitle);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+    }
+    .instructor-body { padding: 28px 26px 30px; }
+
+    /* ── Schedule strip ────────────────────────────────── */
+    .schedule-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--black-3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 24px 26px;
+      margin-top: 36px;
+    }
+    .schedule-note svg { color: var(--red-light); flex-shrink: 0; margin-top: 2px; }
+    .schedule-note strong { display: block; font-size: 0.95rem; font-weight: 600; margin-bottom: 5px; }
+    .schedule-note p { font-size: 0.87rem; color: var(--gray-2); line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .class-grid { grid-template-columns: 1fr; }
+      .spin-media { height: 380px; }
+    }
     @media (max-width: 768px) {
-      .featured-class { grid-template-columns: 1fr; }
-      .featured-img { height: 240px; }
-      .featured-body { padding: 32px 28px; }
-      .featured-body h2 { font-size: 2.6rem; }
+      .cl-section { padding: 84px 0; }
+      .notice-bar { margin-bottom: 44px; }
+      .class-card-media { height: 200px; }
+      .instructor-monogram { height: 168px; }
+      .instructor-monogram span { font-size: 4.4rem; }
+    }
+    @media (max-width: 560px) {
+      .cl-section { padding: 62px 0; }
+      .spin-media { height: 280px; }
     }
   </style>
 </head>
@@ -104,18 +175,28 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-menu" id="navMenu">
+        <button class="nav-close-btn" id="navClose" aria-label="Close navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
         <a href="index.html" class="nav-link">Home</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="personal-training.html#inbody" role="menuitem">InBody 770</a>
             <a href="facilities.html" role="menuitem">Facilities</a>
           </div>
         </div>
         <a href="classes.html" class="nav-link active">Classes</a>
         <a href="rates.html" class="nav-link">Rates</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            More
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="promos.html" role="menuitem">Promos</a>
             <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
@@ -127,24 +208,41 @@
     </div>
   </nav>
 
+  <!-- PAGE HERO -->
   <header class="page-hero" aria-labelledby="page-title">
-    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Classes Hero Photo</span></div></div>
+    <div class="page-hero-bg">
+      <img src="classes-hero.jpg" alt="Group fitness class training together on the ACE rooftop turf" />
+    </div>
     <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="page-hero-content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span aria-current="page">Classes</span>
         </nav>
         <span class="section-label">Group Fitness</span>
         <h1 class="section-title" id="page-title">Group <em>Classes</em></h1>
+        <p class="page-hero-sub">Spin, HIIT, yoga, and strength — led by expert instructors in a room full of people pushing alongside you. No membership required.</p>
+        <div class="hero-meta" aria-hidden="true">
+          <div class="hero-meta-item"><strong>20+</strong><span>Weekly Classes</span></div>
+          <div class="hero-meta-item"><strong>6</strong><span>Instructors</span></div>
+          <div class="hero-meta-item"><strong>No</strong><span>Membership Needed</span></div>
+        </div>
+        <div style="margin-top:30px">
+          <a href="landing.html" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Schedule a Class
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
 
-    <section class="classes-intro" aria-labelledby="classes-intro-h2">
+    <!-- INTRO -->
+    <section class="cl-section" aria-labelledby="classes-intro-h2">
       <div class="container">
 
         <div class="notice-bar" role="note">
@@ -152,40 +250,133 @@
           Purchasing class packs does <strong>&nbsp;NOT&nbsp;</strong> require a membership. All are welcome.
         </div>
 
-        <h2 class="section-title" id="classes-intro-h2">Where Fitness<br/>Meets <em>Inspiration</em></h2>
-        <p class="section-sub">Welcome to ACE Performance Gym, where our diverse range of classes are designed to elevate your workout experience and empower you to reach new heights of strength, agility, and vitality. Whether you're a seasoned athlete or just beginning your fitness journey, our expert instructors are here to guide and motivate you every step of the way.</p>
-
-        <!-- FEATURED CLASS -->
-        <article class="featured-class" aria-labelledby="spin-h2">
-          <div class="featured-img img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
-            <span>Spin Class Photo</span>
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">Group Fitness</span>
+            <h2 class="section-title" id="classes-intro-h2">Where Fitness<br/>Meets <em>Inspiration</em></h2>
           </div>
-          <div class="featured-body">
-            <p class="featured-schedule">Schedule: Everyday Except Thursdays</p>
-            <h2 id="spin-h2">Spin</h2>
-            <p>Spin class, utilizing stationary bicycles, offers a dynamic, high-intensity, yet low-impact workout that targets endurance, strength, and recovery. This indoor cycling experience not only enhances cardiovascular and lower body strength but also contributes to mental well-being. Burn calories, boost your metabolism, and achieve your fitness goals with this stimulating workout.</p>
-            <a href="landing.html" class="btn-primary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Schedule a Class
-            </a>
-          </div>
-        </article>
+          <p class="section-sub">A diverse roster of classes built to elevate your workout and push you toward new heights of strength, agility, and vitality. Whether you're a seasoned athlete or just starting out, our expert instructors guide and motivate you every step of the way.</p>
+        </div>
 
       </div>
     </section>
 
-    <!-- INSTRUCTORS -->
-    <section class="instructors-section" aria-labelledby="instructors-h2">
+    <!-- CLASS TYPES -->
+    <section class="cl-section alt" aria-labelledby="types-h2">
       <div class="container">
-        <span class="section-label">Our Team</span>
-        <h2 class="section-title" id="instructors-h2">Meet the <em>Instructors</em></h2>
-        <p class="section-sub">World-class coaches with one shared mission: to push you past what you thought was possible.</p>
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">What We Run</span>
+            <h2 class="section-title" id="types-h2">Four Ways<br/>to <em>Train</em></h2>
+          </div>
+          <p class="section-sub">Every class is led by a certified instructor and built around real intensity — pick the discipline that matches your goal, or rotate through them all.</p>
+        </div>
+
+        <div class="class-grid">
+
+          <article class="media-card class-card" data-reveal data-reveal-delay="1">
+            <span class="ghost-num" aria-hidden="true">01</span>
+            <div class="media-card-media class-card-media">
+              <img src="g-spin.jpg" alt="ACE spin studio with stationary bikes and red ambient lighting" />
+            </div>
+            <div class="media-card-body">
+              <p class="class-meta">Cardio · Low Impact</p>
+              <h3>Spin</h3>
+              <p>High-intensity, low-impact indoor cycling that targets endurance, leg strength, and recovery. Heart-pounding playlists, real coaching, and serious calorie burn — every ride.</p>
+            </div>
+          </article>
+
+          <article class="media-card class-card" data-reveal data-reveal-delay="2">
+            <span class="ghost-num" aria-hidden="true">02</span>
+            <div class="media-card-media class-card-media">
+              <img src="classes-hero.jpg" alt="HIIT and bootcamp class training on the ACE rooftop turf" />
+            </div>
+            <div class="media-card-body">
+              <p class="class-meta">Conditioning · Full Body</p>
+              <h3>HIIT &amp; Bootcamp</h3>
+              <p>Explosive interval training that torches calories long after the session ends. Full-body circuits run on our rooftop track — built to spike your fitness fast.</p>
+            </div>
+          </article>
+
+          <article class="media-card class-card" data-reveal data-reveal-delay="3">
+            <span class="ghost-num" aria-hidden="true">03</span>
+            <div class="media-card-media class-card-media">
+              <img src="g-forma.jpg" alt="Forma by ACE pilates and yoga studio with mirrors and olive trees" />
+            </div>
+            <div class="media-card-body">
+              <p class="class-meta">Mobility · Mindful</p>
+              <h3>Power Yoga &amp; Pilates</h3>
+              <p>Mindful movement that builds core strength, flexibility, and balance. Controlled flows with a focus on injury prevention — recovery and performance in one practice.</p>
+            </div>
+          </article>
+
+          <article class="media-card class-card" data-reveal data-reveal-delay="4">
+            <span class="ghost-num" aria-hidden="true">04</span>
+            <div class="media-card-media class-card-media">
+              <img src="g-stretch.jpg" alt="ACE strength and conditioning zone with functional training equipment" />
+            </div>
+            <div class="media-card-body">
+              <p class="class-meta">Strength · Performance</p>
+              <h3>Strength &amp; Conditioning</h3>
+              <p>Coached resistance training and athletic conditioning to build muscle, power, and durability. Structured progression for every level — from first-timer to competitor.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="text-marquee" aria-hidden="true">
+      <div class="text-marquee-track">
+        <span class="fill">Spin</span><span class="dot">&bull;</span><span>HIIT</span><span class="dot">&bull;</span><span class="fill">Power Yoga</span><span class="dot">&bull;</span><span>Strength</span><span class="dot">&bull;</span><span class="fill">Bootcamp</span><span class="dot">&bull;</span><span>Pilates</span><span class="dot">&bull;</span>
+        <span class="fill">Spin</span><span class="dot">&bull;</span><span>HIIT</span><span class="dot">&bull;</span><span class="fill">Power Yoga</span><span class="dot">&bull;</span><span>Strength</span><span class="dot">&bull;</span><span class="fill">Bootcamp</span><span class="dot">&bull;</span><span>Pilates</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+
+    <!-- FEATURED — SPIN -->
+    <section class="cl-section" aria-labelledby="spin-h2">
+      <div class="container">
+        <div class="split wide-media">
+          <div class="media-frame solo spin-media" data-reveal="left">
+            <img src="g-spin.jpg" alt="ACE spin studio lit with red neon and rows of bikes" />
+            <span class="media-tag">The Spin Studio · King City</span>
+          </div>
+          <div data-reveal="right">
+            <span class="section-label">Signature Class</span>
+            <h2 class="section-title" id="spin-h2">Spin</h2>
+            <p class="lead">Spin class, on stationary bikes, delivers a dynamic, high-intensity, low-impact workout that targets endurance, strength, and recovery.</p>
+            <p class="lead">This indoor cycling experience builds cardiovascular and lower-body strength while supporting mental well-being. <strong>Burn calories, boost your metabolism, and hit your goals</strong> in one stimulating session.</p>
+            <p class="featured-schedule">Schedule — Everyday Except Thursdays</p>
+            <div style="margin-top:24px">
+              <a href="landing.html" class="btn-primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Schedule a Class
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTRUCTORS -->
+    <section class="cl-section alt" aria-labelledby="instructors-h2">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">Our Team</span>
+            <h2 class="section-title" id="instructors-h2">Meet the<br/><em>Instructors</em></h2>
+          </div>
+          <p class="section-sub">World-class coaches with one shared mission: to push you past what you thought was possible — and make you enjoy the ride.</p>
+        </div>
 
         <div class="instructors-grid">
 
           <article class="instructor-card" aria-labelledby="ashley-name">
-            <div class="instructor-photo img-ph"><span>Ashley Soldera Photo</span></div>
+            <div class="instructor-monogram" aria-hidden="true">
+              <span>AS</span>
+              <span class="im-tag">Instructor</span>
+            </div>
             <div class="instructor-body">
               <div class="instructor-tags">
                 <span class="tag">Spin</span>
@@ -198,7 +389,10 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="anna-name">
-            <div class="instructor-photo img-ph"><span>Anna Stavrakos Photo</span></div>
+            <div class="instructor-monogram" aria-hidden="true">
+              <span>AS</span>
+              <span class="im-tag">Instructor</span>
+            </div>
             <div class="instructor-body">
               <div class="instructor-tags">
                 <span class="tag">Spin</span>
@@ -209,7 +403,10 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="nadia-name">
-            <div class="instructor-photo img-ph"><span>Nadia Racco Photo</span></div>
+            <div class="instructor-monogram" aria-hidden="true">
+              <span>NR</span>
+              <span class="im-tag">Instructor</span>
+            </div>
             <div class="instructor-body">
               <div class="instructor-tags">
                 <span class="tag">Spin</span>
@@ -221,7 +418,10 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="victor-name">
-            <div class="instructor-photo img-ph"><span>Victor De Giorgio Photo</span></div>
+            <div class="instructor-monogram" aria-hidden="true">
+              <span>VD</span>
+              <span class="im-tag">Instructor</span>
+            </div>
             <div class="instructor-body">
               <div class="instructor-tags">
                 <span class="tag">HIIT</span>
@@ -233,7 +433,10 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="paniz-name">
-            <div class="instructor-photo img-ph"><span>Paniz Riahizadeh Photo</span></div>
+            <div class="instructor-monogram" aria-hidden="true">
+              <span>PR</span>
+              <span class="im-tag">Instructor</span>
+            </div>
             <div class="instructor-body">
               <div class="instructor-tags">
                 <span class="tag">Power Yoga</span>
@@ -246,7 +449,10 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="alessia-name">
-            <div class="instructor-photo img-ph"><span>Alessia Gileppo Photo</span></div>
+            <div class="instructor-monogram" aria-hidden="true">
+              <span>AG</span>
+              <span class="im-tag">Instructor</span>
+            </div>
             <div class="instructor-body">
               <div class="instructor-tags">
                 <span class="tag">Spin</span>
@@ -256,6 +462,14 @@
             </div>
           </article>
 
+        </div>
+
+        <div class="schedule-note" data-reveal>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <strong>No membership? No problem.</strong>
+            <p>Class packs are open to everyone — members and non-members alike. Reach out and we'll help you find a class and a time that fits your week.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -288,7 +502,7 @@
             <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
           </div>
         </div>
-        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="personal-training.html#inbody">InBody 770</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
         <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
         <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
       </div>

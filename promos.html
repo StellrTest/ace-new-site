@@ -16,116 +16,221 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
-    .promos-section { padding: 96px 0; }
-    .promo-block {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      padding: 52px 48px;
-      margin-bottom: 32px;
-      backdrop-filter: blur(12px);
+    /* ── Section rhythm ────────────────────────────────── */
+    .promo-section { padding: 130px 0; }
+    .promo-section.alt {
+      background: var(--black-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ── Split media heights ───────────────────────────── */
+    .promo-media { height: 520px; }
+
+    /* ── Discount eyebrow stat in split copy ───────────── */
+    .promo-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-md);
+      padding: 14px 22px;
+      margin: 26px 0 8px;
+    }
+    .promo-tagline strong {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 2.2rem;
+      color: var(--red);
+      line-height: 1;
+    }
+    .promo-tagline span {
+      font-family: var(--font-subtitle);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--gray-2);
+      line-height: 1.5;
+    }
+
+    .promo-cta-row { margin-top: 32px; }
+
+    /* ── YRDSB featured partnership panel ──────────────── */
+    .partner-panel {
       position: relative;
+      border: 1px solid rgba(215,26,33,0.5);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(ellipse 70% 60% at 8% 0%, rgba(215,26,33,0.16) 0%, transparent 62%),
+        linear-gradient(180deg, rgba(215,26,33,0.08) 0%, var(--black-3) 38%);
       overflow: hidden;
     }
-    .promo-block::before {
+    .partner-panel::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--red-dark), var(--red-light));
+      background: var(--red);
+      z-index: 4;
     }
-    .promo-block h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .promo-block .promo-sub {
-      font-family: var(--font-subtitle);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-    .promo-block p { font-size: 0.975rem; color: var(--gray-2); line-height: 1.8; margin-bottom: 16px; }
-    .promo-block p:last-of-type { margin-bottom: 0; }
 
-    .promo-price-chip {
+    .partner-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+    }
+
+    .partner-media {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+    }
+    .partner-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 420px;
+      transition: transform 0.7s var(--ease);
+    }
+    .partner-panel:hover .partner-media img { transform: scale(1.05); }
+    .partner-media .media-tag { left: 20px; bottom: 20px; }
+
+    .partner-body { padding: 60px 56px 56px; }
+
+    .partner-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(215,26,33,0.08);
-      border: 1px solid rgba(215,26,33,0.2);
-      border-radius: var(--radius-md);
-      padding: 12px 20px;
-      margin: 16px 0;
-    }
-
-    .promo-price-chip strong {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 600;
-      color: var(--red);
-      line-height: 1;
-    }
-
-    .promo-price-chip span {
+      gap: 9px;
       font-family: var(--font-subtitle);
-      font-size: 0.75rem;
+      font-size: 0.64rem;
       font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--red);
+      border-radius: var(--radius-sm);
+      padding: 7px 13px;
+      margin-bottom: 22px;
+    }
+
+    .partner-body h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.2rem, 3.6vw, 3.1rem);
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      line-height: 0.98;
+      margin-bottom: 18px;
+    }
+    .partner-body h2 em { font-style: normal; color: var(--red); }
+
+    /* price chip */
+    .partner-price {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--black);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-md);
+      padding: 20px 26px;
+      margin: 26px 0 28px;
+    }
+    .partner-price .pp-amount {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 3.6rem;
+      color: var(--white);
+      line-height: 0.9;
+    }
+    .partner-price .pp-amount sup {
+      font-size: 1.5rem;
+      vertical-align: super;
+      color: var(--red);
+      line-height: 0;
+    }
+    .partner-price .pp-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-left: 20px;
+      border-left: 1px solid var(--line-strong);
+    }
+    .partner-price .pp-period {
+      font-family: var(--font-subtitle);
+      font-size: 0.72rem;
+      font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      color: var(--gray-2);
+    }
+    .partner-price .pp-save {
+      font-family: var(--font-subtitle);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red-light);
+    }
+
+    /* benefits checklist */
+    .partner-benefits-label {
+      font-family: var(--font-subtitle);
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       color: var(--gray-3);
+      margin: 6px 0 18px;
     }
-
-    .promo-features {
+    .partner-benefits {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin: 24px 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px 28px;
+      margin-bottom: 34px;
     }
-
-    .promo-feature {
+    .partner-benefits li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: 0.875rem;
-      color: var(--gray-2);
-      line-height: 1.6;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--gray-1);
+      line-height: 1.55;
     }
-
-    .promo-feature::before {
+    .partner-benefits li::before {
       content: '';
       width: 16px; height: 16px;
       flex-shrink: 0;
       margin-top: 2px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d71a21' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e8342a' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
     }
 
-    .promo-block-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 52px;
-      align-items: center;
+    .partner-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    .promo-img { height: 300px; border-radius: var(--radius-lg); }
-
+    /* ── Responsive ────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .promo-media { height: 360px; }
+      .partner-grid { grid-template-columns: 1fr; }
+      .partner-media { order: -1; }
+      .partner-media img { min-height: 300px; }
+    }
     @media (max-width: 768px) {
-      .promo-block { padding: 36px 28px; }
-      .promo-block-inner { grid-template-columns: 1fr; gap: 28px; }
-      .promo-img { height: 200px; }
-      .promo-features { grid-template-columns: 1fr; }
-      .promos-section { padding: 64px 0; }
+      .promo-section { padding: 84px 0; }
+      .partner-body { padding: 44px 32px 40px; }
+      .partner-benefits { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 560px) {
-      .promos-section { padding: 48px 0; }
-      .promo-block { padding: 28px 20px; }
+      .promo-section { padding: 62px 0; }
+      .promo-media { height: 280px; }
+      .partner-body { padding: 36px 22px 34px; }
+      .partner-price { flex-wrap: wrap; gap: 14px; }
+      .partner-price .pp-meta { padding-left: 0; border-left: none; }
+      .partner-ctas .btn-primary,
+      .partner-ctas .btn-secondary { width: 100%; }
     }
   </style>
 </head>
@@ -133,21 +238,35 @@
 
   <nav class="site-nav" aria-label="Site navigation">
     <div class="container">
-      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home"><img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="42" /></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home">
+        <img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="42" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-menu" id="navMenu">
+        <button class="nav-close-btn" id="navClose" aria-label="Close navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
         <a href="index.html" class="nav-link">Home</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="personal-training.html#inbody" role="menuitem">InBody 770</a>
             <a href="facilities.html" role="menuitem">Facilities</a>
           </div>
         </div>
         <a href="classes.html" class="nav-link">Classes</a>
         <a href="rates.html" class="nav-link">Rates</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            More
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="promos.html" role="menuitem" style="color:var(--white)">Promos</a>
             <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
@@ -159,97 +278,181 @@
     </div>
   </nav>
 
+  <!-- PAGE HERO -->
   <header class="page-hero" aria-labelledby="page-title">
-    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Promos Hero Photo</span></div></div>
+    <div class="page-hero-bg">
+      <img src="g-maingym.jpg" alt="The main training floor at ACE Performance Gym in King City" />
+    </div>
     <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="page-hero-content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span aria-current="page">Promos</span>
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Promos</span>
         </nav>
         <span class="section-label">Special Offers</span>
         <h1 class="section-title" id="page-title">Promotions &amp;<br/><em>Discounts</em></h1>
+        <p class="page-hero-sub">Exclusive membership rates for the people who build our community — corporations, first responders, and York Region District School Board staff.</p>
+        <div class="hero-meta" aria-hidden="true">
+          <div class="hero-meta-item"><strong>3</strong><span>Exclusive Programs</span></div>
+          <div class="hero-meta-item"><strong>20%</strong><span>Off Regular Rates</span></div>
+          <div class="hero-meta-item"><strong>$85</strong><span>YRDSB Per Month</span></div>
+        </div>
+        <div style="margin-top:30px">
+          <a href="landing.html" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Get Your FREE 3 Day Pass
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="promos-section" aria-labelledby="promos-h2">
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
       <div class="container">
-        <span class="section-label">Exclusive Rates</span>
-        <h2 class="section-title" id="promos-h2">Special Pricing for<br/><em>Our Community</em></h2>
-        <p class="section-sub">ACE Performance Gym is proud to support the King City community with exclusive membership rates for corporations, first responders, and local organizations.</p>
+        <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Corporate Group Rates</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>First Responder Discounts</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>YRDSB Staff Partnership</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>Proudly Local to King City</div>
+      </div>
+    </div>
 
-        <!-- CORPORATE -->
-        <div class="promo-block">
-          <div class="promo-block-inner">
-            <div>
-              <p class="promo-sub">For Organizations</p>
-              <h2>Corporate Promotions</h2>
-              <p>We partner with local businesses and corporations to provide their employees with access to King City's premier fitness facility at exclusive group rates. Investing in your team's health leads to better productivity, morale, and retention.</p>
-              <p>Corporate memberships are customized based on group size and commitment. Contact us to discuss a package that works for your organization.</p>
-              <br/>
-              <a href="tel:+19058333130" class="btn-primary">Call to Discuss Rates</a>
-            </div>
-            <div class="promo-img img-ph">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <span>Corporate Team Photo</span>
-            </div>
+    <!-- INTRO + CORPORATE -->
+    <section class="promo-section" aria-labelledby="corporate-h2">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">Exclusive Rates</span>
+            <h2 class="section-title">Special Pricing for<br/><em>Our Community</em></h2>
           </div>
+          <p class="section-sub">ACE Performance Gym is proud to support the King City community with exclusive membership rates for corporations, first responders, and local organizations.</p>
         </div>
 
-        <!-- FIRST RESPONDERS -->
-        <div class="promo-block">
-          <div class="promo-block-inner">
-            <div class="promo-img img-ph">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>First Responders Photo</span>
-            </div>
-            <div>
-              <p class="promo-sub">Honouring Our Heroes</p>
-              <h2>First Responders</h2>
-              <p>ACE Performance Gym is proud to honour the men and women who serve our community — police officers, firefighters, paramedics, nurses, and other first responders — with exclusive membership discounts.</p>
-              <p>Contact us directly with valid identification to receive your special rate. It's the least we can do for those who give so much.</p>
-              <br/>
-              <a href="mailto:info@acegym.club" class="btn-primary">Email for Details</a>
+        <div class="split wide-text">
+          <div>
+            <span class="section-label">For Organizations</span>
+            <h2 class="section-title" id="corporate-h2">Corporate<br/><em>Promotions</em></h2>
+            <p class="lead">We partner with local businesses and corporations to provide their employees with access to King City's premier fitness facility at exclusive group rates. Investing in your team's health leads to better productivity, morale, and retention.</p>
+            <p class="lead">Corporate memberships are <strong>customized based on group size and commitment.</strong> Contact us to discuss a package that works for your organization.</p>
+            <div class="promo-cta-row">
+              <a href="tel:+19058333130" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call to Discuss Rates
+              </a>
             </div>
           </div>
-        </div>
-
-        <!-- YRDSB -->
-        <div class="promo-block">
-          <p class="promo-sub">Community Partnership</p>
-          <h2>York Region District School Board × ACE Performance Gym</h2>
-          <p>Our goal over the last year has been to provide YRDSB staff with a state-of-the-art fitness facility for all their health, fitness, and wellness needs. We're proud to offer YRDSB employees an exclusive membership rate with premium benefits.</p>
-
-          <div class="promo-price-chip">
-            <strong>$85</strong>
-            <span>/ month · 12-month commitment<br/>15–20% off regular membership</span>
+          <div class="media-frame solo promo-media" data-reveal="scale">
+            <img src="facility-hero.jpg" alt="The ACE Performance Gym training floor across two levels in King City" />
+            <span class="media-tag">25,000 Sq Ft Facility</span>
           </div>
-
-          <p>This partnership extends our commitment to the King City community and helps YRDSB staff access the resources they need to stay healthy, energized, and performing at their best.</p>
-
-          <div class="promo-features">
-            <div class="promo-feature">Complimentary InBody 770 body composition analysis</div>
-            <div class="promo-feature">Complimentary fitness consultation</div>
-            <div class="promo-feature">Complimentary weight management consultation</div>
-            <div class="promo-feature">Full access to 25,000+ sq ft facility</div>
-            <div class="promo-feature">Infrared &amp; dry heat sauna included</div>
-            <div class="promo-feature">Rooftop turf track access</div>
-            <div class="promo-feature">Full towel service</div>
-            <div class="promo-feature">Group fitness classes included</div>
-            <div class="promo-feature">AI-powered Technogym Biostrength equipment</div>
-            <div class="promo-feature">ACE Bar &amp; Co. lounge access</div>
-          </div>
-
-          <a href="mailto:info@acegym.club" class="btn-primary">Email to Sign Up</a>
-          <span style="display:inline-block;width:12px"></span>
-          <a href="landing.html" class="btn-secondary">Try Free for 3 Days First</a>
         </div>
-
       </div>
     </section>
 
+    <!-- FIRST RESPONDERS -->
+    <section class="promo-section alt" aria-labelledby="responders-h2">
+      <div class="container">
+        <div class="split reverse wide-text">
+          <div>
+            <span class="section-label">Honouring Our Heroes</span>
+            <h2 class="section-title" id="responders-h2">First<br/><em>Responders</em></h2>
+            <p class="lead">ACE Performance Gym is proud to honour the men and women who serve our community — police officers, firefighters, paramedics, nurses, and other first responders — with exclusive membership discounts.</p>
+            <p class="lead">Contact us directly with valid identification to receive your special rate. <strong>It's the least we can do for those who give so much.</strong></p>
+            <div class="promo-tagline" data-reveal>
+              <strong>Thank You</strong>
+              <span>For Keeping<br/>King City Safe</span>
+            </div>
+            <div class="promo-cta-row">
+              <a href="mailto:info@acegym.club" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                Email for Details
+              </a>
+            </div>
+          </div>
+          <div class="media-frame solo promo-media" data-reveal="left">
+            <img src="g-weights.jpg" alt="The YORK dumbbell wall and free-weight zone at ACE Performance Gym" />
+            <span class="media-tag">Free-Weight Training Zone</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="text-marquee" aria-hidden="true">
+      <div class="text-marquee-track">
+        <span class="fill">Achieve</span><span class="dot">&bull;</span><span>Conquer</span><span class="dot">&bull;</span><span class="fill">Excel</span><span class="dot">&bull;</span><span>Built for Our Community</span><span class="dot">&bull;</span>
+        <span class="fill">Achieve</span><span class="dot">&bull;</span><span>Conquer</span><span class="dot">&bull;</span><span class="fill">Excel</span><span class="dot">&bull;</span><span>Built for Our Community</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+
+    <!-- YRDSB PARTNERSHIP — FEATURED -->
+    <section class="promo-section" aria-labelledby="yrdsb-h2">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">Featured Partnership</span>
+            <h2 class="section-title">A Year in the<br/><em>Making</em></h2>
+          </div>
+          <p class="section-sub">Our goal over the last year has been to give York Region District School Board staff a state-of-the-art facility for every health, fitness, and wellness need.</p>
+        </div>
+
+        <div class="partner-panel" data-reveal="scale">
+          <div class="partner-grid">
+            <div class="partner-body">
+              <span class="partner-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                YRDSB &times; ACE
+              </span>
+              <h2 id="yrdsb-h2">York Region District<br/>School Board <em>&times; ACE</em></h2>
+              <p class="lead">We're proud to offer YRDSB employees an exclusive membership rate with premium benefits — extending our commitment to the King City community and helping staff stay healthy, energized, and performing at their best.</p>
+
+              <div class="partner-price">
+                <span class="pp-amount"><sup>$</sup>85</span>
+                <span class="pp-meta">
+                  <span class="pp-period">/ Month &middot; 12-Month Commitment</span>
+                  <span class="pp-save">15–20% Off Regular Membership</span>
+                </span>
+              </div>
+
+              <p class="partner-benefits-label">Everything Included</p>
+              <ul class="partner-benefits">
+                <li>Complimentary InBody 770 body composition analysis</li>
+                <li>Complimentary fitness consultation</li>
+                <li>Complimentary weight management consultation</li>
+                <li>Full access to 25,000+ sq ft facility</li>
+                <li>Infrared &amp; dry heat sauna included</li>
+                <li>Rooftop turf track access</li>
+                <li>Full towel service</li>
+                <li>Group fitness classes included</li>
+                <li>AI-powered Technogym Biostrength equipment</li>
+                <li>ACE Bar &amp; Co. lounge access</li>
+              </ul>
+
+              <div class="partner-ctas">
+                <a href="mailto:info@acegym.club" class="btn-primary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                  Email to Sign Up
+                </a>
+                <a href="landing.html" class="btn-secondary">Try Free for 3 Days First</a>
+              </div>
+            </div>
+            <div class="partner-media">
+              <img src="technogym-hero.jpg" alt="AI-powered Technogym Biostrength equipment on the ACE training floor" />
+              <span class="media-tag">AI-Powered Technogym Floor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-banner" aria-labelledby="promos-cta-h2">
       <div class="container">
         <span class="section-label">Not Sure Which Applies?</span>
@@ -261,12 +464,15 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="46" /><p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
+        <div class="footer-brand">
+          <img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="46" />
+          <p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/aceperformancegym" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
             <a href="https://www.facebook.com/ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -274,13 +480,17 @@
             <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
           </div>
         </div>
-        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="personal-training.html#inbody">InBody 770</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
         <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
         <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
       </div>
-      <div class="footer-bottom"><p>© 2025 ACE Performance Gym. All rights reserved.</p><p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p></div>
+      <div class="footer-bottom">
+        <p>© 2025 ACE Performance Gym. All rights reserved.</p>
+        <p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p>
+      </div>
     </div>
   </footer>
+
   <script src="js/main.js" defer></script>
 </body>
 </html>

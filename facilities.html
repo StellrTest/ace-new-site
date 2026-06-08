@@ -15,106 +15,87 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
+
   <style>
-    .facility-section { padding: 96px 0; }
-    .facility-section:nth-child(even) { background: var(--black-2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
-
-    .facility-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
+    /* ── Section rhythm ────────────────────────────────── */
+    .fac-section { padding: 130px 0; }
+    .fac-section.alt {
+      background: var(--black-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .facility-grid.reverse { direction: rtl; }
-    .facility-grid.reverse > * { direction: ltr; }
+    /* ── Facility split media ──────────────────────────── */
+    .fac-media { height: 560px; }
 
-    .facility-img { height: 440px; border-radius: var(--radius-xl); }
-
-    .facility-text h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 18px;
-    }
-
-    .facility-text p {
-      font-size: 0.975rem;
-      color: var(--gray-2);
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-
-    .facility-text p:last-of-type { margin-bottom: 0; }
-
+    /* ── Highlight stat chip ───────────────────────────── */
     .highlight-stat {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 600;
+      font-weight: 400;
+      font-size: 1.85rem;
+      letter-spacing: 0.03em;
       color: var(--red);
-      background: rgba(215,26,33,0.07);
-      border: 1px solid rgba(215,26,33,0.16);
-      border-radius: var(--radius-md);
-      padding: 10px 18px;
-      margin-bottom: 20px;
+      background: var(--glass-bg);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      padding: 11px 20px;
+      margin-bottom: 22px;
     }
 
-    .benefit-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 20px 0;
-    }
+    .benefit-list { margin: 26px 0 0; }
 
-    .benefit-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
-      color: var(--gray-2);
-      line-height: 1.6;
+    /* ── Secondary 2-up detail frame ───────────────────── */
+    .fac-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
     }
+    .fac-duo .media-frame { height: 190px; }
 
-    .benefit-list li::before {
-      content: '';
-      width: 16px; height: 16px;
-      flex-shrink: 0;
-      margin-top: 2px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d71a21' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
-    }
-
-    .img-grid {
+    /* ── More amenities grid ───────────────────────────── */
+    .amenity-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 32px;
+      gap: 16px;
     }
-
-    .img-grid-item { height: 180px; border-radius: var(--radius-md); overflow: hidden; }
-    .img-grid-item .img-ph { height: 100%; border-radius: 0; border: none; }
+    .amenity-card { padding: 40px 32px 38px; }
+    .amenity-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.6rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.02;
+      margin-bottom: 11px;
+    }
+    .amenity-card p {
+      font-size: 0.93rem;
+      color: var(--gray-2);
+      line-height: 1.74;
+    }
+    .amenity-card .ghost-num {
+      position: absolute;
+      top: 20px; right: 26px;
+      font-size: 3.6rem;
+    }
 
     @media (max-width: 900px) {
-      .facility-grid { grid-template-columns: 1fr; gap: 40px; }
-      .facility-grid.reverse { direction: ltr; }
-      .facility-img { height: 280px; }
-      .img-grid { grid-template-columns: repeat(2, 1fr); }
+      .fac-media { height: 380px; }
+      .amenity-grid { grid-template-columns: 1fr 1fr; }
     }
-
     @media (max-width: 768px) {
-      .facility-section { padding: 64px 0; }
-      .amenities-extra  { padding: 64px 0; }
+      .fac-section { padding: 84px 0; }
+      .amenity-grid { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 560px) {
-      .img-grid { grid-template-columns: 1fr; }
-      .facility-section { padding: 48px 0; }
-      .amenities-extra  { padding: 48px 0; }
+      .fac-section { padding: 62px 0; }
+      .fac-media { height: 300px; }
+      .fac-duo .media-frame { height: 150px; }
+      .amenity-card { padding: 34px 26px 32px; }
     }
   </style>
 </head>
@@ -129,9 +110,15 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-menu" id="navMenu">
+        <button class="nav-close-btn" id="navClose" aria-label="Close navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
         <a href="index.html" class="nav-link">Home</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="personal-training.html" role="menuitem">Personal Training</a>
             <a href="personal-training.html#inbody" role="menuitem">InBody 770</a>
@@ -141,7 +128,10 @@
         <a href="classes.html" class="nav-link">Classes</a>
         <a href="rates.html" class="nav-link">Rates</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            More
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="promos.html" role="menuitem">Promos</a>
             <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
@@ -153,25 +143,43 @@
     </div>
   </nav>
 
+  <!-- PAGE HERO -->
   <header class="page-hero" aria-labelledby="page-title">
-    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Facilities Hero Photo</span></div></div>
+    <div class="page-hero-bg">
+      <img src="facility-hero.jpg" alt="The ACE Performance Gym training floor showing two levels and Achieve Conquer Excel signage" />
+    </div>
     <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="page-hero-content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <a href="#">Services</a><span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>Services</span>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span aria-current="page">Facilities</span>
         </nav>
-        <span class="section-label">25,000 Sq Ft</span>
-        <h1 class="section-title" id="page-title">Our <em>Facilities</em></h1>
+        <span class="section-label">25,000 Sq Ft in King City</span>
+        <h1 class="section-title" id="page-title">Our<br/><em>Facilities</em></h1>
+        <p class="page-hero-sub">A boutique gym built with intent — AI-powered equipment, an infrared sauna, a fresh smoothie bar, and an 11,000 sq ft rooftop track above King City.</p>
+        <div class="hero-meta" aria-hidden="true">
+          <div class="hero-meta-item"><strong>25K</strong><span>Sq Ft Facility</span></div>
+          <div class="hero-meta-item"><strong>11K</strong><span>Sq Ft Rooftop</span></div>
+          <div class="hero-meta-item"><strong>+30%</strong><span>Faster Results</span></div>
+        </div>
+        <div style="margin-top:30px">
+          <a href="landing.html" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Tour ACE on a Free 3 Day Pass
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
 
-    <div class="stats-row" role="complementary">
+    <!-- STATS ROW -->
+    <div class="stats-row" role="complementary" aria-label="Facility statistics">
       <div class="stat-item"><div class="stat-num">25K</div><div class="stat-label">Square Feet</div></div>
       <div class="stat-item"><div class="stat-num">+30%</div><div class="stat-label">Results w/ Technogym</div></div>
       <div class="stat-item"><div class="stat-num">11K</div><div class="stat-label">Sq Ft Rooftop</div></div>
@@ -179,15 +187,15 @@
     </div>
 
     <!-- TECHNOGYM -->
-    <section class="facility-section" aria-labelledby="technogym-h2">
+    <section class="fac-section" aria-labelledby="technogym-h2">
       <div class="container">
-        <div class="facility-grid">
-          <div class="facility-text">
+        <div class="split wide-text">
+          <div>
             <span class="section-label">Precision Training</span>
             <div class="highlight-stat">+30% Results</div>
-            <h2 id="technogym-h2">Technogym<br/>Biostrength</h2>
-            <p>Stop guessing — start precision training at ACE Performance Gym with Technogym Biostrength. Our patented Biodrive system uses revolutionary aerospace technology powered by AI to deliver maximum neuromuscular activation and ensure perfect exercise execution on every rep.</p>
-            <p>Hand-assembled in Italy, these machines adapt dynamically to your strength curve, loading each repetition optimally. The result: up to 30% greater results in the same amount of time compared to conventional machines.</p>
+            <h2 class="section-title" id="technogym-h2">Technogym<br/><em>Biostrength</em></h2>
+            <p class="lead">Stop guessing — start precision training. Our patented Biodrive system uses revolutionary aerospace technology powered by AI to deliver maximum neuromuscular activation and perfect exercise execution on every rep.</p>
+            <p class="lead">Hand-assembled in Italy, these machines adapt dynamically to your strength curve, loading each repetition optimally — <strong>up to 30% greater results in the same time</strong> compared to conventional machines.</p>
             <ul class="benefit-list">
               <li>AI-driven resistance adjustment in real time</li>
               <li>Maximum neuromuscular activation</li>
@@ -196,14 +204,17 @@
             </ul>
           </div>
           <div>
-            <div class="facility-img img-ph">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/></svg>
-              <span>Technogym Biostrength Photo</span>
+            <div class="media-frame solo fac-media" data-reveal="scale">
+              <img src="technogym-hero.jpg" alt="AI-powered Technogym Biostrength equipment on the ACE training floor" />
+              <span class="media-tag">AI-Powered Technogym Floor</span>
             </div>
-            <div class="img-grid">
-              <div class="img-grid-item"><div class="img-ph"><span>Equipment 1</span></div></div>
-              <div class="img-grid-item"><div class="img-ph"><span>Equipment 2</span></div></div>
-              <div class="img-grid-item"><div class="img-ph"><span>Equipment 3</span></div></div>
+            <div class="fac-duo">
+              <div class="media-frame solo" data-reveal data-reveal-delay="1">
+                <img src="g-weights.jpg" alt="YORK dumbbell wall on dark wood shelving at ACE" />
+              </div>
+              <div class="media-frame solo" data-reveal data-reveal-delay="2">
+                <img src="g-maingym.jpg" alt="ACE main gym floor with hexagonal ceiling lights" />
+              </div>
             </div>
           </div>
         </div>
@@ -211,115 +222,134 @@
     </section>
 
     <!-- SAUNA -->
-    <section class="facility-section" aria-labelledby="sauna-h2">
+    <section class="fac-section alt" aria-labelledby="sauna-h2">
       <div class="container">
-        <div class="facility-grid reverse">
-          <div class="facility-text">
-            <span class="section-label">Recovery &amp; Wellness</span>
-            <h2 id="sauna-h2">Infrared<br/>Sauna</h2>
-            <p>Far Infrared Light — more effective when combined with traditional heat. Our state-of-the-art sauna combines two powerful heat technologies to deliver results that go well beyond simple relaxation.</p>
-            <ul class="benefit-list">
-              <li><strong>Health &amp; Beauty:</strong> Deep skin cleansing, cellulite reduction, up to 600 calorie burn per session</li>
-              <li><strong>Mindful Therapy:</strong> Stress relief, endorphin release, improved sleep quality</li>
-              <li><strong>Innovative Technology:</strong> Far infrared penetrates deeper than conventional saunas for greater therapeutic benefit</li>
-            </ul>
+        <div class="split reverse wide-media">
+          <div class="media-frame solo fac-media" data-reveal="right">
+            <img src="sauna-hero.jpg" alt="The infrared sauna at ACE Performance Gym with warm ambient lighting" />
+            <span class="media-tag">Infrared Sauna · Recovery Suite</span>
           </div>
-          <div class="facility-img img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-            <span>Sauna Photo</span>
+          <div>
+            <span class="section-label">Recovery &amp; Wellness</span>
+            <div class="highlight-stat">600 Cal / Session</div>
+            <h2 class="section-title" id="sauna-h2">Infrared<br/><em>Sauna</em></h2>
+            <p class="lead">Far infrared light is even more effective combined with traditional heat. Our state-of-the-art sauna pairs two powerful technologies to deliver results that go well beyond simple relaxation.</p>
+            <ul class="benefit-list">
+              <li><strong>Health &amp; Beauty</strong> — deep skin cleansing, cellulite reduction, and up to a 600-calorie burn per session</li>
+              <li><strong>Mindful Therapy</strong> — stress relief, endorphin release, and improved sleep quality</li>
+              <li><strong>Innovative Technology</strong> — far infrared penetrates deeper than conventional saunas for greater therapeutic benefit</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="text-marquee" aria-hidden="true">
+      <div class="text-marquee-track">
+        <span class="fill">Achieve</span><span class="dot">&bull;</span><span>Conquer</span><span class="dot">&bull;</span><span class="fill">Excel</span><span class="dot">&bull;</span><span>25,000 Sq Ft</span><span class="dot">&bull;</span>
+        <span class="fill">Achieve</span><span class="dot">&bull;</span><span>Conquer</span><span class="dot">&bull;</span><span class="fill">Excel</span><span class="dot">&bull;</span><span>25,000 Sq Ft</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+
     <!-- ACE BAR -->
-    <section class="facility-section" aria-labelledby="bar-h2">
+    <section class="fac-section" aria-labelledby="bar-h2">
       <div class="container">
-        <div class="facility-grid">
-          <div class="facility-text">
-            <span class="section-label">Fuel Your Performance</span>
-            <h2 id="bar-h2">ACE Bar<br/>&amp; Co.</h2>
-            <p>Welcome to where flavor meets relaxation. Our on-site smoothie bar serves the freshest, most delicious blends made from natural, high-quality ingredients — crafted to help you refuel, recover, and keep going.</p>
-            <p>Post-workout or mid-session, ACE Bar & Co. is your go-to for clean, nutrition-packed refreshment in a welcoming lounge atmosphere designed for connection and recovery.</p>
-          </div>
+        <div class="split wide-text">
           <div>
-            <div class="facility-img img-ph">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-              <span>ACE Bar & Co. Photo</span>
-            </div>
-            <div class="img-grid">
-              <div class="img-grid-item"><div class="img-ph"><span>Smoothies</span></div></div>
-              <div class="img-grid-item"><div class="img-ph"><span>Lounge Area</span></div></div>
-              <div class="img-grid-item"><div class="img-ph"><span>Bar Counter</span></div></div>
-            </div>
+            <span class="section-label">Fuel Your Performance</span>
+            <h2 class="section-title" id="bar-h2">ACE Bar<br/>&amp; <em>Co.</em></h2>
+            <p class="lead">Welcome to where flavor meets relaxation. Our on-site smoothie bar serves the freshest, most delicious blends — made from natural, high-quality ingredients crafted to help you refuel, recover, and keep going.</p>
+            <p class="lead">Post-workout or mid-session, ACE Bar &amp; Co. is your go-to for clean, nutrition-packed refreshment in a <strong>welcoming lounge atmosphere</strong> built for connection and recovery.</p>
+            <ul class="benefit-list">
+              <li>Fresh smoothies blended from real, natural ingredients</li>
+              <li>Protein-packed options for post-workout recovery</li>
+              <li>A relaxed lounge setting to sit down and refuel</li>
+            </ul>
+          </div>
+          <div class="media-frame solo fac-media" data-reveal="scale">
+            <img src="acebar-hero.jpg" alt="Fresh smoothies on the counter at ACE Bar and Co." />
+            <span class="media-tag">ACE Bar &amp; Co. · Smoothie Bar</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ROOFTOP -->
-    <section class="facility-section" aria-labelledby="rooftop-h2">
+    <section class="fac-section alt" aria-labelledby="rooftop-h2">
       <div class="container">
-        <div class="facility-grid reverse">
-          <div class="facility-text">
+        <div class="split reverse wide-media">
+          <div class="media-frame solo fac-media" data-reveal="right">
+            <img src="roof-hero.jpg" alt="The 11,000 sq ft rooftop turf track at ACE Performance Gym at sunset" />
+            <span class="media-tag">Rooftop Turf Track · 11,000 Sq Ft</span>
+          </div>
+          <div>
             <span class="section-label">Outdoor Training</span>
             <div class="highlight-stat">11,000 Sq Ft</div>
-            <h2 id="rooftop-h2">Rooftop<br/>Turf Track</h2>
-            <p>Enjoy this special place where you can connect with your teams, friends, and colleagues — all while breathing fresh air and taking in the sunset from the comfort of our massive rooftop.</p>
-            <p>The rooftop hosts outdoor HIIT sessions, team training, group classes, and private events. It's more than a workout space — it's an experience.</p>
+            <h2 class="section-title" id="rooftop-h2">Rooftop<br/><em>Turf Track</em></h2>
+            <p class="lead">A special place to connect with your team, friends, and colleagues — breathing fresh air and taking in the sunset from the comfort of our massive rooftop.</p>
+            <p class="lead">The rooftop hosts outdoor HIIT sessions, team training, group classes, and private events. <strong>It's more than a workout space — it's an experience.</strong></p>
             <ul class="benefit-list">
               <li>11,000 sq ft of premium turf surface</li>
               <li>Outdoor HIIT and team training classes</li>
               <li>Available for corporate events and retreats</li>
               <li>Stunning sunset views over King City</li>
             </ul>
-            <br/>
-            <a href="rent-our-roof.html" class="btn-secondary">Rent the Rooftop</a>
-          </div>
-          <div class="facility-img img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 20h20M4 20V10M20 20V10M12 4l8 6H4l8-6z"/></svg>
-            <span>Rooftop Track Photo</span>
+            <div style="margin-top:30px">
+              <a href="rent-our-roof.html" class="btn-secondary">Rent the Rooftop</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ADDITIONAL AMENITIES -->
-    <section class="amenities-extra" style="background:var(--black-2); border-top:1px solid var(--glass-border); padding:88px 0;" aria-labelledby="amenities-h2">
+    <!-- MORE AMENITIES -->
+    <section class="fac-section" aria-labelledby="amenities-h2">
       <div class="container">
-        <span class="section-label">More Amenities</span>
-        <h2 class="section-title" id="amenities-h2">Everything You<br/>Need Under <em>One Roof</em></h2>
-        <p class="section-sub">From your warm-up to your cool-down — every detail is taken care of.</p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:0">
-          <div class="glass-card" style="padding:24px 22px">
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">More Amenities</span>
+            <h2 class="section-title" id="amenities-h2">Everything You<br/>Need Under <em>One Roof</em></h2>
+          </div>
+          <p class="section-sub">From your warm-up to your cool-down — every detail of the ACE experience is taken care of.</p>
+        </div>
+
+        <div class="amenity-grid">
+          <div class="glass-card amenity-card">
+            <span class="ghost-num" aria-hidden="true">01</span>
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Lounge Area</h3>
-            <p style="font-size:0.85rem;color:var(--gray-2);line-height:1.65">A chic post-workout lounge to decompress, connect, and recharge after your session.</p>
+            <h3>Lounge Area</h3>
+            <p>A chic post-workout lounge to decompress, connect, and recharge after your session.</p>
           </div>
-          <div class="glass-card" style="padding:24px 22px">
+          <div class="glass-card amenity-card">
+            <span class="ghost-num" aria-hidden="true">02</span>
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Towel Service</h3>
-            <p style="font-size:0.85rem;color:var(--gray-2);line-height:1.65">Premium towels provided on-site so you can train light and leave fresh.</p>
+            <h3>Towel Service</h3>
+            <p>Premium towels provided on-site so you can train light and leave fresh.</p>
           </div>
-          <div class="glass-card" style="padding:24px 22px">
+          <div class="glass-card amenity-card">
+            <span class="ghost-num" aria-hidden="true">03</span>
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Change Rooms</h3>
-            <p style="font-size:0.85rem;color:var(--gray-2);line-height:1.65">Modern shower facilities and secure lockers to keep your belongings safe.</p>
+            <h3>Change Rooms</h3>
+            <p>Modern shower facilities and secure lockers to keep your belongings safe.</p>
           </div>
-          <div class="glass-card" style="padding:24px 22px">
+          <div class="glass-card amenity-card">
+            <span class="ghost-num" aria-hidden="true">04</span>
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Indoor Turf Zone</h3>
-            <p style="font-size:0.85rem;color:var(--gray-2);line-height:1.65">Dedicated indoor turf for dynamic training, functional movement, and team drills.</p>
+            <h3>Indoor Turf Zone</h3>
+            <p>Dedicated indoor turf for dynamic training, functional movement, and team drills.</p>
           </div>
-          <div class="glass-card" style="padding:24px 22px">
+          <div class="glass-card amenity-card">
+            <span class="ghost-num" aria-hidden="true">05</span>
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Stretch Zone</h3>
-            <p style="font-size:0.85rem;color:var(--gray-2);line-height:1.65">A dedicated recovery space designed for post-workout stretching, foam rolling, and mobility work.</p>
+            <h3>Stretch Zone</h3>
+            <p>A dedicated recovery space for post-workout stretching, foam rolling, and mobility work.</p>
           </div>
-          <div class="glass-card" style="padding:24px 22px">
+          <div class="glass-card amenity-card">
+            <span class="ghost-num" aria-hidden="true">06</span>
             <div class="icon-box"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-            <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;margin-bottom:8px">Hexagon Lighting</h3>
-            <p style="font-size:0.85rem;color:var(--gray-2);line-height:1.65">The upstairs gym area features striking hexagon lighting for an electrifying, motivating training ambiance.</p>
+            <h3>Hexagon Lighting</h3>
+            <p>The upstairs gym features striking hexagon lighting for an electrifying, motivating ambiance.</p>
           </div>
         </div>
       </div>
@@ -329,7 +359,7 @@
     <section class="cta-banner" aria-labelledby="fac-cta-h2">
       <div class="container">
         <span class="section-label">See It for Yourself</span>
-        <h2 class="section-title" id="fac-cta-h2">Experience the Facility<br/>for <em>FREE</em></h2>
+        <h2 class="section-title" id="fac-cta-h2">Experience the Facility<br/>for <em>Free</em></h2>
         <p class="section-sub">Come in for 3 days on us. No commitment, no credit card — just the best gym experience in King City.</p>
         <div class="cta-btns">
           <a href="landing.html" class="btn-primary">Get My FREE 3 Day Pass</a>
@@ -353,7 +383,7 @@
             <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
           </div>
         </div>
-        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="personal-training.html#inbody">InBody 770</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
         <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
         <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
       </div>

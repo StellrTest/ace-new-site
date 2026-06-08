@@ -153,6 +153,11 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   apply('.instructor-card',  '',       true);
   apply('.add-on-card',      '',       true);
   apply('.glass-card',       '',       true);
+  apply('.media-card',       '',       true);
+  apply('.media-frame',      'scale',  true);
+  apply('.pt-card',          '',       true);
+  apply('.class-card',       '',       true);
+  apply('.amenity-block',    '',       true);
   apply('.promo-block',      '',       false);
 
   // Gallery items

@@ -41,193 +41,186 @@
   </script>
 
   <style>
-    .trainer-section {
-      padding: 96px 0;
+    /* ── Section rhythm ────────────────────────────────── */
+    .pt-section { padding: 130px 0; }
+    .pt-section.alt {
+      background: var(--black-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .trainer-card {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 56px;
-      align-items: center;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      padding: 48px;
-      backdrop-filter: blur(16px);
-      margin-bottom: 48px;
-    }
+    /* ── Approach split ────────────────────────────────── */
+    .approach-media { height: 540px; }
+    .benefit-list { margin-top: 28px; }
 
-    .trainer-photo {
-      width: 100%;
-      height: 360px;
-      border-radius: var(--radius-lg);
-    }
-
-    .trainer-name {
+    /* ── Coach spotlight ───────────────────────────────── */
+    .coach-media { height: 560px; }
+    .coach-eyebrow { margin-bottom: 18px; }
+    .coach-name {
       font-family: var(--font-display);
-      font-size: 2.8rem;
-      font-weight: 600;
+      font-weight: 400;
+      font-size: clamp(2.7rem, 4.4vw, 3.9rem);
       letter-spacing: 0.02em;
-      margin-bottom: 4px;
-    }
-
-    .trainer-title {
-      font-family: var(--font-subtitle);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 20px;
-    }
-
-    .trainer-bio {
-      font-size: 0.975rem;
-      color: var(--gray-2);
-      line-height: 1.8;
-      margin-bottom: 28px;
-    }
-
-    .services-detail { padding: 0 0 96px; background: var(--black-2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 96px 0; }
-
-    .detail-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 52px;
-    }
-
-    .detail-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 32px 28px;
-      backdrop-filter: blur(12px);
-      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
-    }
-
-    .detail-card:hover {
-      border-color: rgba(215,26,33,0.28);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow), var(--shadow-card);
-    }
-
-    .detail-num {
-      font-family: var(--font-display);
-      font-size: 4.5rem;
-      font-weight: 600;
-      color: rgba(215,26,33,0.08);
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .detail-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      line-height: 0.92;
       margin-bottom: 10px;
     }
-
-    .detail-card p {
-      font-size: 0.875rem;
-      color: var(--gray-2);
-      line-height: 1.7;
+    .coach-role {
+      font-family: var(--font-subtitle);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 26px;
+    }
+    .coach-chips { display: flex; flex-wrap: wrap; gap: 7px; margin: 26px 0 30px; }
+    .coach-stats {
+      display: flex;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 34px;
+    }
+    .coach-stat {
+      flex: 1;
+      padding: 24px 18px 24px 0;
+      border-right: 1px solid var(--line);
+    }
+    .coach-stat:last-child { border-right: none; padding-right: 0; }
+    .coach-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 2.6rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .coach-stat span {
+      font-family: var(--font-subtitle);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      line-height: 1.5;
     }
 
-    /* InBody section */
-    .inbody-section {
-      padding: 96px 0;
-    }
-
-    .inbody-grid {
+    /* ── Included cards ────────────────────────────────── */
+    .pt-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pt-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition),
+                  box-shadow var(--transition);
+    }
+    .pt-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.34s var(--ease);
+    }
+    .pt-card:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-glow);
+    }
+    .pt-card:hover::before { transform: scaleX(1); }
+    .pt-card .ghost-num {
+      position: absolute;
+      top: 22px; right: 28px;
+    }
+    .pt-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin: 4px 0 12px;
+    }
+    .pt-card p {
+      font-size: 0.93rem;
+      color: var(--gray-2);
+      line-height: 1.74;
     }
 
-    .inbody-visual {
-      height: 480px;
-      border-radius: var(--radius-xl);
-    }
-
+    /* ── InBody ────────────────────────────────────────── */
+    .inbody-media { height: 540px; }
     .inbody-stats {
       display: flex;
-      gap: 36px;
-      margin: 28px 0;
+      gap: 34px;
+      margin: 30px 0;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
-
     .inbody-stat strong {
       display: block;
       font-family: var(--font-display);
       font-size: 3rem;
-      font-weight: 600;
+      font-weight: 400;
       color: var(--red);
       line-height: 1;
+      margin-bottom: 8px;
     }
-
     .inbody-stat span {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
+      font-family: var(--font-subtitle);
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--gray-3);
+      line-height: 1.45;
     }
 
-    @media (max-width: 900px) {
-      .inbody-grid { grid-template-columns: 1fr; gap: 40px; }
-      .inbody-visual { height: 280px; }
-    }
-
-    .process-section { padding: 96px 0; }
-
+    /* ── Process ───────────────────────────────────────── */
     .process-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-      margin-top: 52px;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 80px;
+      align-items: start;
     }
-
     .guarantee-box {
       display: flex;
       align-items: flex-start;
       gap: 16px;
-      background: rgba(215,26,33,0.06);
-      border: 1px solid rgba(215,26,33,0.14);
+      background: var(--black-3);
+      border: 1px solid var(--line);
       border-radius: var(--radius-md);
-      padding: 20px 22px;
-      margin-top: 24px;
+      padding: 24px 26px;
+      margin-top: 30px;
     }
-
-    .guarantee-box svg { color: var(--red); flex-shrink: 0; margin-top: 2px; }
-
-    .guarantee-box strong { display: block; font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
-
-    .guarantee-box p { font-size: 0.84rem; color: var(--gray-2); line-height: 1.65; }
+    .guarantee-box svg { color: var(--red-light); flex-shrink: 0; margin-top: 2px; }
+    .guarantee-box strong { display: block; font-size: 0.95rem; font-weight: 600; margin-bottom: 5px; }
+    .guarantee-box p { font-size: 0.87rem; color: var(--gray-2); line-height: 1.7; }
 
     @media (max-width: 900px) {
-      .trainer-card { grid-template-columns: 1fr; }
-      .trainer-photo { height: 280px; }
-      .detail-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; gap: 40px; }
+      .approach-media, .coach-media, .inbody-media { height: 380px; }
+      .pt-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; gap: 48px; }
+      .coach-stat strong { font-size: 2.1rem; }
     }
-
     @media (max-width: 768px) {
-      .trainer-section  { padding: 64px 0; }
-      .services-detail  { padding: 64px 0; }
-      .inbody-section   { padding: 64px 0; }
-      .process-section  { padding: 64px 0; }
+      .pt-section { padding: 84px 0; }
+      .inbody-stats { gap: 22px; }
     }
-
     @media (max-width: 560px) {
-      .trainer-section  { padding: 48px 0; }
-      .services-detail  { padding: 48px 0; }
-      .inbody-section   { padding: 48px 0; }
-      .process-section  { padding: 48px 0; }
-      .trainer-card     { padding: 28px 20px; gap: 36px; }
+      .pt-section { padding: 62px 0; }
+      .pt-card { padding: 36px 26px 32px; }
+      .inbody-stats { flex-wrap: wrap; gap: 24px 30px; }
     }
   </style>
 </head>
@@ -242,10 +235,14 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-menu" id="navMenu">
+        <button class="nav-close-btn" id="navClose" aria-label="Close navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
         <a href="index.html" class="nav-link">Home</a>
         <div class="nav-item">
           <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
-            Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            Services
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
           </button>
           <div class="nav-dropdown" role="menu">
             <a href="personal-training.html" role="menuitem" style="color:var(--white)">Personal Training</a>
@@ -257,7 +254,8 @@
         <a href="rates.html" class="nav-link">Rates</a>
         <div class="nav-item">
           <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
-            More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+            More
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
           </button>
           <div class="nav-dropdown" role="menu">
             <a href="promos.html" role="menuitem">Promos</a>
@@ -273,9 +271,7 @@
   <!-- PAGE HERO -->
   <header class="page-hero" aria-labelledby="page-title">
     <div class="page-hero-bg">
-      <div class="img-ph" style="background: linear-gradient(135deg,#0a0a0a,#111);">
-        <span>Personal Training Hero Photo</span>
-      </div>
+      <img src="pt-hero.jpg" alt="Athlete pushing a training sled on the ACE rooftop turf at sunset" />
     </div>
     <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="container">
@@ -283,12 +279,24 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="index.html">Home</a>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
-          <a href="#">Services</a>
+          <span>Services</span>
           <span class="breadcrumb-sep" aria-hidden="true">/</span>
           <span aria-current="page">Personal Training</span>
         </nav>
-        <span class="section-label">Expert Guidance</span>
+        <span class="section-label">Expert 1-on-1 Coaching</span>
         <h1 class="section-title" id="page-title">Personal<br/><em>Training</em></h1>
+        <p class="page-hero-sub">A certified coach, a program built for your body alone, and the accountability to actually follow through — in King City.</p>
+        <div class="hero-meta" aria-hidden="true">
+          <div class="hero-meta-item"><strong>6+</strong><span>Certified Coaches</span></div>
+          <div class="hero-meta-item"><strong>1:1</strong><span>Every Session</span></div>
+          <div class="hero-meta-item"><strong>770</strong><span>InBody Tracking</span></div>
+        </div>
+        <div style="margin-top:30px">
+          <a href="landing.html" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book a Free Consultation
+          </a>
+        </div>
       </div>
     </div>
   </header>
@@ -308,23 +316,55 @@
       </div>
     </div>
 
-    <!-- TRAINER SECTION -->
-    <section class="trainer-section" aria-labelledby="trainer-h2">
+    <!-- APPROACH -->
+    <section class="pt-section" aria-labelledby="approach-h2">
       <div class="container">
-        <span class="section-label">Meet Your Trainer</span>
-        <h2 class="section-title" id="trainer-h2">Book Your Free<br/><em>Consultation</em></h2>
-        <p class="section-sub">Our fitness team starts by understanding exactly where you are and where you want to go — before designing a single workout.</p>
-
-        <div class="trainer-card">
-          <div class="trainer-photo img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            <span>Trainer Photo</span>
+        <div class="split wide-text">
+          <div>
+            <span class="section-label">The ACE Approach</span>
+            <h2 class="section-title" id="approach-h2">Coaching Built<br/><em>Around You</em></h2>
+            <p class="lead">Most gyms hand you a template and a key fob. We start with a conversation — your history, your goals, your schedule, the things that have stopped you before.</p>
+            <p class="lead">Only then does your coach design the program. <strong>No cookie-cutter plans. No guesswork.</strong> Just focused, measurable work toward the results you actually came for.</p>
+            <ul class="benefit-list">
+              <li>A program engineered for your body and your goals</li>
+              <li>Real-time form correction on every single rep</li>
+              <li>Progress tracked with clinical-grade InBody data</li>
+              <li>A coach who adjusts the plan as you evolve</li>
+            </ul>
           </div>
-          <div class="trainer-info">
-            <h3 class="trainer-name">Massimo Barbera</h3>
-            <p class="trainer-title">Fitness Manager &amp; Head Trainer</p>
-            <p class="trainer-bio">As a dedicated Kinesiology Health Science graduate, Massimo has immersed himself in the art and science of human movement and wellness. With 6+ years of hands-on experience in fitness training, he specializes in weight loss, body composition improvement, and performance-based programming.</p>
-            <p class="trainer-bio">Massimo's approach is simple: understand the person first, build the program second. Every client receives a customized plan that fits their lifestyle, goals, and schedule — not a template pulled off the shelf.</p>
+          <div class="media-frame solo approach-media" data-reveal="scale">
+            <img src="technogym-hero.jpg" alt="AI-powered Technogym Biostrength equipment on the ACE training floor" />
+            <span class="media-tag">AI-Powered Technogym Floor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COACH SPOTLIGHT -->
+    <section class="pt-section alt" aria-labelledby="coach-h2">
+      <div class="container">
+        <div class="split wide-media">
+          <div class="media-frame solo coach-media" data-reveal="left">
+            <img src="g-maingym.jpg" alt="The main training floor at ACE Performance Gym in King City" />
+            <span class="media-tag">ACE Performance Gym · King City</span>
+          </div>
+          <div data-reveal="right">
+            <span class="section-label coach-eyebrow">Meet Your Coach</span>
+            <p class="coach-name" id="coach-h2">Massimo Barbera</p>
+            <p class="coach-role">Fitness Manager &amp; Head Trainer</p>
+            <p class="lead">A Kinesiology &amp; Health Science graduate, Massimo has spent his career studying the art and science of human movement — specializing in weight loss, body composition, and performance-based programming.</p>
+            <p class="lead">His method is simple: <strong>understand the person first, build the program second.</strong> Every client gets a plan that fits their lifestyle and goals — never a template pulled off the shelf.</p>
+            <div class="coach-chips">
+              <span class="tag">Kinesiology BSc</span>
+              <span class="tag">Body Composition</span>
+              <span class="tag">Weight Loss</span>
+              <span class="tag">Performance</span>
+            </div>
+            <div class="coach-stats">
+              <div class="coach-stat"><strong>6+</strong><span>Years<br/>Coaching</span></div>
+              <div class="coach-stat"><strong>100s</strong><span>Clients<br/>Guided</span></div>
+              <div class="coach-stat"><strong>1:1</strong><span>Tailored<br/>Programs</span></div>
+            </div>
             <a href="landing.html" class="btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               Book My Free Consultation
@@ -334,66 +374,69 @@
       </div>
     </section>
 
-    <!-- SERVICE DETAILS -->
-    <section class="services-detail" aria-labelledby="details-h2">
+    <!-- WHAT'S INCLUDED -->
+    <section class="pt-section" aria-labelledby="included-h2">
       <div class="container">
-        <span class="section-label">What's Included</span>
-        <h2 class="section-title" id="details-h2">Personal Training<br/><em>In King City</em></h2>
-        <p class="section-sub">Elevate your fitness journey with personalized guidance from our experienced team. Every element of your training is designed around you.</p>
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">What's Included</span>
+            <h2 class="section-title" id="included-h2">Every Detail,<br/><em>Engineered</em></h2>
+          </div>
+          <p class="section-sub">Personal training at ACE is built on three pillars — attention, precision, and proof. Here is what every client gets.</p>
+        </div>
 
-        <div class="detail-grid">
-          <div class="detail-card">
-            <div class="detail-num">01</div>
+        <div class="pt-grid">
+          <div class="pt-card">
+            <span class="ghost-num" aria-hidden="true">01</span>
             <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-            <h3>One-on-One Sessions</h3>
-            <p>Every session is just you and your trainer — full attention, precise form cues, and real-time adjustments to keep you progressing safely and efficiently toward your goals.</p>
+            <h3>One-on-One<br/>Sessions</h3>
+            <p>Every session is just you and your coach — full attention, precise form cues, and real-time adjustments that keep you progressing safely and efficiently.</p>
           </div>
-          <div class="detail-card">
-            <div class="detail-num">02</div>
+          <div class="pt-card">
+            <span class="ghost-num" aria-hidden="true">02</span>
             <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-            <h3>Customized Workout Plans</h3>
-            <p>Say goodbye to one-size-fits-all workouts. Your plan is built around your body, your history, your schedule, and your specific goals — adjusted as you progress.</p>
+            <h3>Customized<br/>Workout Plans</h3>
+            <p>No one-size-fits-all routines. Your plan is built around your body, your history, your schedule, and your goals — and refined every step of the way.</p>
           </div>
-          <div class="detail-card">
-            <div class="detail-num">03</div>
-            <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg></div>
-            <h3>InBody 770 Progress Tracking</h3>
-            <p>We use the world's most advanced body composition scanner to track exactly how your body is changing — muscle mass, fat percentage, hydration, and metabolic rate.</p>
+          <div class="pt-card">
+            <span class="ghost-num" aria-hidden="true">03</span>
+            <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <h3>InBody 770<br/>Progress Tracking</h3>
+            <p>The world's most advanced body composition scanner tracks exactly how your body is changing — muscle mass, body fat, hydration, and metabolic rate.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="text-marquee" aria-hidden="true">
+      <div class="text-marquee-track">
+        <span class="fill">Achieve</span><span class="dot">&bull;</span><span>Conquer</span><span class="dot">&bull;</span><span class="fill">Excel</span><span class="dot">&bull;</span><span>Train With Intent</span><span class="dot">&bull;</span>
+        <span class="fill">Achieve</span><span class="dot">&bull;</span><span>Conquer</span><span class="dot">&bull;</span><span class="fill">Excel</span><span class="dot">&bull;</span><span>Train With Intent</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+
     <!-- INBODY 770 -->
-    <section class="inbody-section" id="inbody" aria-labelledby="inbody-h2">
+    <section class="pt-section alt" id="inbody" aria-labelledby="inbody-h2">
       <div class="container">
-        <div class="inbody-grid">
-          <div class="inbody-visual img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="13" y2="14"/></svg>
-            <span>InBody 770 Machine</span>
+        <div class="split reverse wide-media">
+          <div class="media-frame solo inbody-media" data-reveal="right">
+            <img src="inbody-hero.jpg" alt="Person using the InBody 770 body composition analyzer at ACE Performance Gym" />
+            <span class="media-tag">InBody 770 · 60-Second Scan</span>
           </div>
-          <div>
+          <div data-reveal="left">
             <span class="section-label">Precision Tracking</span>
             <h2 class="section-title" id="inbody-h2">InBody 770<br/><em>Body Analysis</em></h2>
-            <p class="section-sub" style="margin-bottom:0">Clinical-grade body composition in 60 seconds. Know exactly what's changing — muscle mass, fat, hydration, and metabolic rate.</p>
+            <p class="lead">Clinical-grade body composition in 60 seconds. Stop guessing what the scale means — know exactly what's changing.</p>
             <div class="inbody-stats">
-              <div class="inbody-stat">
-                <strong>30</strong>
-                <span>Impedance<br/>Values</span>
-              </div>
-              <div class="inbody-stat">
-                <strong>6</strong>
-                <span>Test<br/>Frequencies</span>
-              </div>
-              <div class="inbody-stat">
-                <strong>60s</strong>
-                <span>Scan<br/>Time</span>
-              </div>
+              <div class="inbody-stat"><strong>30</strong><span>Impedance<br/>Values</span></div>
+              <div class="inbody-stat"><strong>6</strong><span>Test<br/>Frequencies</span></div>
+              <div class="inbody-stat"><strong>60s</strong><span>Scan<br/>Time</span></div>
             </div>
-            <p style="font-size:0.9rem;color:var(--gray-2);line-height:1.8;margin-bottom:28px">The InBody 770 uses 6 frequencies to generate 30 impedance values — no other device in the world matches its accuracy. With it, your trainer tracks muscle gain, fat loss, and fluid distribution in each body segment. Basic members receive a complimentary welcome scan; Premium members scan quarterly; Elite members scan monthly.</p>
+            <p style="font-size:0.92rem;color:var(--gray-2);line-height:1.8;margin-bottom:30px">The InBody 770 uses 6 frequencies to generate 30 impedance values — measuring muscle gain, fat loss, and fluid distribution in every body segment. Basic members receive a complimentary welcome scan; Premium members scan quarterly; Elite members scan monthly.</p>
             <a href="landing.html" class="btn-primary">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-              Book My Free Consultation + Scan
+              Book My Free Consult + Scan
             </a>
           </div>
         </div>
@@ -401,18 +444,18 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="process-section" aria-labelledby="process-h2">
+    <section class="pt-section" aria-labelledby="process-h2">
       <div class="container">
         <div class="process-grid">
           <div>
             <span class="section-label">How It Works</span>
-            <h2 class="section-title" id="process-h2">Your First<br/><em>3 Steps</em></h2>
-            <p class="section-sub" style="margin-bottom:0">From the moment you book to your first real workout, we make it simple.</p>
-            <div class="guarantee-box" style="margin-top:24px">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <h2 class="section-title" id="process-h2">Your First<br/><em>Three Steps</em></h2>
+            <p class="section-sub" style="margin-bottom:0">From the moment you book to your first real workout, we keep it simple — and completely pressure-free.</p>
+            <div class="guarantee-box" data-reveal>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               <div>
-                <strong>Zero Pressure Guarantee</strong>
-                <p>The consultation is completely free with no obligation. Come in, meet your trainer, and decide from there. No hard sell, no awkwardness.</p>
+                <strong>Zero-Pressure Guarantee</strong>
+                <p>The consultation is 100% free with no obligation. Come in, meet your coach, and decide from there. No hard sell, no awkwardness.</p>
               </div>
             </div>
           </div>
@@ -435,7 +478,7 @@
               <div class="step-num" aria-label="Step 3">3</div>
               <div class="step-text">
                 <h4>Get Your Custom Plan</h4>
-                <p>Your trainer builds your program, explains the approach, and you're ready to start — with a roadmap built specifically for you.</p>
+                <p>Your coach builds your program, walks you through the approach, and you start — with a roadmap built specifically for you.</p>
               </div>
             </div>
           </div>
@@ -447,7 +490,7 @@
     <section class="cta-banner" aria-labelledby="pt-cta-h2">
       <div class="container">
         <span class="section-label">Take the First Step</span>
-        <h2 class="section-title" id="pt-cta-h2">Your Free Consultation<br/>Is Waiting</h2>
+        <h2 class="section-title" id="pt-cta-h2">Your Free Consultation<br/>Is <em>Waiting</em></h2>
         <p class="section-sub">Spots fill fast. Claim yours today — 100% free, zero obligation, zero pressure.</p>
         <div class="cta-btns">
           <a href="landing.html" class="btn-primary">Book My Free Consultation</a>

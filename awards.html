@@ -16,143 +16,245 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
-    .awards-intro {
-      padding: 96px 0 64px;
-      text-align: center;
-    }
-    .awards-intro .eyebrow {
-      font-family: var(--font-subtitle);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 16px;
-    }
-    .awards-intro h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      line-height: 1.05;
-      margin-bottom: 24px;
-    }
-    .awards-intro p {
-      font-size: 1.05rem;
-      color: var(--gray-2);
-      max-width: 640px;
-      margin: 0 auto;
-      line-height: 1.8;
+    /* ── Section rhythm ────────────────────────────────── */
+    .aw-section { padding: 130px 0; }
+    .aw-section.alt {
+      background: var(--black-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    /* ── Awards grid ── */
-    .awards-section { padding: 32px 0 96px; }
-
-    .awards-grid {
+    /* ── Intro ─────────────────────────────────────────── */
+    .aw-intro-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 80px;
+      align-items: center;
     }
-    @media (max-width: 960px) { .awards-grid { grid-template-columns: repeat(2, 1fr); } }
+    .aw-intro-grid .lead:last-of-type { margin-bottom: 0; }
 
-    @media (max-width: 768px) {
-      .awards-intro  { padding: 64px 0 40px; }
-      .awards-section { padding: 24px 0 64px; }
-      .badge-strip   { padding: 48px 0; }
-    }
-
-    @media (max-width: 560px) {
-      .awards-grid   { grid-template-columns: 1fr; }
-      .awards-intro  { padding: 48px 0 32px; }
-      .awards-section { padding: 20px 0 48px; }
-    }
-
-    .award-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
+    .aw-intro-figure {
+      position: relative;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(ellipse 70% 90% at 50% 0%, rgba(215,26,33,0.14) 0%, transparent 70%),
+        var(--black-3);
+      padding: 56px 44px;
+      text-align: center;
       overflow: hidden;
-      backdrop-filter: blur(10px);
+    }
+    .aw-intro-figure .ghost-num {
+      position: absolute;
+      top: -18px; right: 14px;
+      font-size: 9rem;
+    }
+    .aw-crest {
+      width: 96px; height: 96px;
+      margin: 0 auto 26px;
+      border-radius: 50%;
+      background: rgba(215,26,33,0.10);
+      border: 1px solid rgba(215,26,33,0.30);
       display: flex;
-      flex-direction: column;
-      transition: transform var(--transition), box-shadow var(--transition);
+      align-items: center;
+      justify-content: center;
+      color: var(--red-light);
     }
-    .award-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .award-img {
-      width: 100%;
-      aspect-ratio: 4/3;
-    }
-
-    .award-body {
-      padding: 28px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .award-year {
-      font-family: var(--font-subtitle);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 8px;
-    }
-    .award-body h3 {
+    .aw-crest svg { width: 44px; height: 44px; }
+    .aw-intro-figure h3 {
       font-family: var(--font-display);
-      font-size: 1.55rem;
-      font-weight: 600;
+      font-weight: 400;
+      font-size: clamp(2rem, 3vw, 2.6rem);
       letter-spacing: 0.02em;
       text-transform: uppercase;
-      line-height: 1.15;
-      margin-bottom: 10px;
+      line-height: 1;
+      margin-bottom: 12px;
     }
-    .award-body p {
-      font-size: 0.9rem;
-      color: var(--gray-3);
-      line-height: 1.75;
+    .aw-intro-figure p {
+      font-size: 0.93rem;
+      color: var(--gray-2);
+      line-height: 1.72;
+      max-width: 320px;
+      margin: 0 auto;
     }
 
-    /* ── Badge strip ── */
-    .badge-strip {
-      padding: 64px 0;
-      border-top: 1px solid var(--glass-border);
-      border-bottom: 1px solid var(--glass-border);
-      margin-bottom: 0;
-    }
+    /* ── Badge strip ───────────────────────────────────── */
     .badge-strip-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
     }
     .badge-item {
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-lg);
-      padding: 20px 32px;
+      padding: 38px 22px 32px;
       text-align: center;
-      min-width: 160px;
-      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: border-color var(--transition), transform var(--transition),
+                  box-shadow var(--transition);
     }
-    .badge-item .badge-icon {
-      font-size: 2rem;
-      margin-bottom: 8px;
-      display: block;
+    .badge-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.34s var(--ease);
     }
+    .badge-item:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-glow);
+    }
+    .badge-item:hover::before { transform: scaleX(1); }
+    .badge-icon {
+      width: 56px; height: 56px;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      background: rgba(215,26,33,0.10);
+      border: 1px solid rgba(215,26,33,0.24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red-light);
+      flex-shrink: 0;
+    }
+    .badge-icon svg { width: 26px; height: 26px; }
     .badge-item span:last-child {
       font-family: var(--font-subtitle);
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
+      color: var(--gray-1);
+      line-height: 1.55;
+    }
+
+    /* ── Awards grid ───────────────────────────────────── */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .award-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition), transform var(--transition),
+                  box-shadow var(--transition);
+    }
+    .award-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.34s var(--ease);
+      z-index: 3;
+    }
+    .award-card:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-card);
+    }
+    .award-card:hover::before { transform: scaleX(1); }
+
+    /* editorial header — year numeral + medal icon, no photo */
+    .award-head {
+      position: relative;
+      padding: 36px 30px 30px;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(ellipse 80% 120% at 85% 0%, rgba(215,26,33,0.13) 0%, transparent 68%),
+        var(--black-3);
+      overflow: hidden;
+    }
+    .award-year-big {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 4.4rem;
+      line-height: 0.86;
+      letter-spacing: 0.02em;
+      color: var(--white);
+    }
+    .award-head .award-medal {
+      position: absolute;
+      top: 26px; right: 26px;
+      width: 46px; height: 46px;
+      border-radius: var(--radius-sm);
+      background: rgba(215,26,33,0.10);
+      border: 1px solid rgba(215,26,33,0.24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red-light);
+    }
+    .award-head .award-medal svg { width: 22px; height: 22px; }
+    .award-presenter {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: var(--font-subtitle);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      border: 1px solid rgba(215,26,33,0.30);
+      border-radius: var(--radius-sm);
+      padding: 6px 11px;
+    }
+
+    .award-body {
+      padding: 30px 30px 34px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .award-body h3 {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+    .award-body p {
+      font-size: 0.92rem;
       color: var(--gray-2);
+      line-height: 1.74;
+    }
+
+    /* ── Responsive ────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .aw-intro-grid { grid-template-columns: 1fr; gap: 48px; }
+      .badge-strip-inner { grid-template-columns: repeat(3, 1fr); }
+      .awards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .aw-section { padding: 84px 0; }
+      .award-year-big { font-size: 3.8rem; }
+    }
+    @media (max-width: 560px) {
+      .aw-section { padding: 62px 0; }
+      .badge-strip-inner { grid-template-columns: repeat(2, 1fr); }
+      .awards-grid { grid-template-columns: 1fr; }
+      .aw-intro-figure { padding: 44px 26px; }
+      .award-head { padding: 30px 24px 26px; }
+      .award-body { padding: 26px 24px 30px; }
     }
   </style>
 
@@ -180,15 +282,24 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="site-nav" aria-label="Site navigation">
     <div class="container">
-      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home"><img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="42" /></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home">
+        <img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="42" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-menu" id="navMenu">
+        <button class="nav-close-btn" id="navClose" aria-label="Close navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
         <a href="index.html" class="nav-link">Home</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="personal-training.html" role="menuitem">Personal Training</a>
             <a href="personal-training.html#inbody" role="menuitem">InBody 770</a>
@@ -198,7 +309,10 @@
         <a href="classes.html" class="nav-link">Classes</a>
         <a href="rates.html" class="nav-link">Rates</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            More
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="promos.html" role="menuitem">Promos</a>
             <a href="rent-our-roof.html" role="menuitem">Rent Our Roof</a>
@@ -210,115 +324,223 @@
     </div>
   </nav>
 
-  <!-- ══ PAGE HERO ══ -->
-  <header class="page-hero">
-    <div class="page-hero-bg" style="background-image:url('hero.mp4');"></div>
-    <div class="page-hero-overlay"></div>
-    <div class="container page-hero-content">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>Awards</span>
-      </nav>
-      <p class="page-hero-eyebrow">Recognition</p>
-      <h1>Community Awards<br />&amp; Recognitions</h1>
-      <p class="page-hero-sub">Proudly recognized by King City and York Region for setting the standard in fitness, wellness, and community service.</p>
+  <!-- PAGE HERO -->
+  <header class="page-hero" aria-labelledby="page-title">
+    <div class="page-hero-bg">
+      <img src="g-acelogo.jpg" alt="ACE Performance Gym logo on the red feature wall" />
+    </div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Awards</span>
+        </nav>
+        <span class="section-label">Recognition</span>
+        <h1 class="section-title" id="page-title">Community Awards<br/>&amp; <em>Recognitions</em></h1>
+        <p class="page-hero-sub">Proudly recognized by King City and York Region for setting the standard in fitness, wellness, and community service.</p>
+        <div class="hero-meta" aria-hidden="true">
+          <div class="hero-meta-item"><strong>6</strong><span>Community Awards</span></div>
+          <div class="hero-meta-item"><strong>5★</strong><span>Google Rating</span></div>
+          <div class="hero-meta-item"><strong>3+</strong><span>Years Strong</span></div>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
 
-    <!-- ══ INTRO ══ -->
-    <section class="awards-intro">
+    <!-- INTRO -->
+    <section class="aw-section" aria-labelledby="intro-h2">
       <div class="container">
-        <p class="eyebrow">Our Accolades</p>
-        <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;text-transform:uppercase;letter-spacing:0.02em;margin-bottom:24px;">Built on Trust. Proven by the Community.</h2>
-        <p>Since opening our doors, ACE Performance Gym has been committed to delivering world-class fitness experiences to King City and the surrounding York Region. These awards reflect the dedication of our team and the loyalty of our members.</p>
-      </div>
-    </section>
-
-    <!-- ══ BADGE STRIP ══ -->
-    <section class="badge-strip">
-      <div class="container">
-        <div class="badge-strip-inner">
-          <div class="badge-item">
-            <span class="badge-icon">🏆</span>
-            <span>Best Gym<br />King City</span>
+        <div class="aw-intro-grid">
+          <div>
+            <span class="section-label">Our Accolades</span>
+            <h2 class="section-title" id="intro-h2">Built on Trust.<br/>Proven by the <em>Community.</em></h2>
+            <p class="lead">Since opening our doors, ACE Performance Gym has been committed to delivering world-class fitness experiences to King City and the surrounding York Region.</p>
+            <p class="lead">These awards reflect the dedication of our team and the loyalty of our members — recognition earned, not claimed.</p>
           </div>
-          <div class="badge-item">
-            <span class="badge-icon">⭐</span>
-            <span>Top Rated<br />York Region</span>
-          </div>
-          <div class="badge-item">
-            <span class="badge-icon">🌟</span>
-            <span>Excellence in<br />Wellness</span>
-          </div>
-          <div class="badge-item">
-            <span class="badge-icon">🤝</span>
-            <span>Community<br />Choice Award</span>
-          </div>
-          <div class="badge-item">
-            <span class="badge-icon">💪</span>
-            <span>Top Fitness<br />Facility</span>
+          <div class="aw-intro-figure" data-reveal="scale">
+            <span class="ghost-num" aria-hidden="true">06</span>
+            <div class="aw-crest" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+              </svg>
+            </div>
+            <h3>Recognized Six Times Over</h3>
+            <p>Best Gym, Excellence in Wellness, Top Fitness Facility and more — across three consecutive years of community voting and regional awards.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══ AWARDS GRID ══ -->
-    <section class="awards-section">
+    <!-- STATS ROW -->
+    <div class="stats-row" role="complementary" aria-label="Recognition statistics">
+      <div class="stat-item">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Verified Reviews</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Community Awards</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years Strong</div>
+      </div>
+    </div>
+
+    <!-- BADGE STRIP -->
+    <section class="aw-section alt" aria-labelledby="badges-h2">
       <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">Earned Recognition</span>
+            <h2 class="section-title" id="badges-h2">A Wall of<br/><em>Honours</em></h2>
+          </div>
+          <p class="section-sub">Each badge represents a vote of confidence from the people, peers, and organizations that know King City fitness best.</p>
+        </div>
+
+        <div class="badge-strip-inner">
+          <div class="badge-item">
+            <span class="badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </span>
+            <span>Best Gym<br/>King City</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </span>
+            <span>Top Rated<br/>York Region</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            </span>
+            <span>Excellence in<br/>Wellness</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <span>Community<br/>Choice Award</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5C18 6.5 21 9.5 21 13c0 4.5-9 8.5-9 8.5S3 17.5 3 13c0-3.5 3-6.5 6.5-6.5"/><path d="m9 11 2 2 4-4"/></svg>
+            </span>
+            <span>Top Fitness<br/>Facility</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="text-marquee" aria-hidden="true">
+      <div class="text-marquee-track">
+        <span class="fill">Recognized</span><span class="dot">&bull;</span><span>Award-Winning</span><span class="dot">&bull;</span><span class="fill">Community Trusted</span><span class="dot">&bull;</span><span>King City</span><span class="dot">&bull;</span>
+        <span class="fill">Recognized</span><span class="dot">&bull;</span><span>Award-Winning</span><span class="dot">&bull;</span><span class="fill">Community Trusted</span><span class="dot">&bull;</span><span>King City</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+
+    <!-- AWARDS GRID -->
+    <section class="aw-section" aria-labelledby="awards-h2">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">The Honour Roll</span>
+            <h2 class="section-title" id="awards-h2">Every Award,<br/><em>Earned</em></h2>
+          </div>
+          <p class="section-sub">Six recognitions across three years — each one a milestone in our commitment to King City's health and performance.</p>
+        </div>
+
         <div class="awards-grid">
 
           <div class="award-card">
-            <div class="img-ph award-img">Award Photo 1</div>
+            <div class="award-head">
+              <div class="award-medal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <span class="award-year-big">2024</span>
+              <span class="award-presenter">King City Residents' Vote</span>
+            </div>
             <div class="award-body">
-              <p class="award-year">2024</p>
               <h3>Community Choice Award — Best Gym</h3>
               <p>Voted best gym in King City by local residents for outstanding facilities, staff, and results-driven programming.</p>
             </div>
           </div>
 
           <div class="award-card">
-            <div class="img-ph award-img">Award Photo 2</div>
+            <div class="award-head">
+              <div class="award-medal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              </div>
+              <span class="award-year-big">2024</span>
+              <span class="award-presenter">York Region Business Awards</span>
+            </div>
             <div class="award-body">
-              <p class="award-year">2024</p>
               <h3>Excellence in Wellness</h3>
               <p>York Region Business Awards recognized ACE for its commitment to holistic member wellness, including nutrition coaching and InBody body composition analysis.</p>
             </div>
           </div>
 
           <div class="award-card">
-            <div class="img-ph award-img">Award Photo 3</div>
+            <div class="award-head">
+              <div class="award-medal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              </div>
+              <span class="award-year-big">2023</span>
+              <span class="award-presenter">King Township</span>
+            </div>
             <div class="award-body">
-              <p class="award-year">2023</p>
               <h3>Top Fitness Facility — King Township</h3>
               <p>Awarded by King Township for providing premium fitness infrastructure — including Technogym Biostrength equipment and the 11,000 sq ft rooftop track — to the local community.</p>
             </div>
           </div>
 
           <div class="award-card">
-            <div class="img-ph award-img">Award Photo 4</div>
+            <div class="award-head">
+              <div class="award-medal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="m6.41 6.41 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m14.76 9.24 2.83-2.83"/><circle cx="12" cy="15" r="6"/></svg>
+              </div>
+              <span class="award-year-big">2023</span>
+              <span class="award-presenter">York Region Business Excellence</span>
+            </div>
             <div class="award-body">
-              <p class="award-year">2023</p>
               <h3>Best New Business — York Region</h3>
               <p>Recognized at the York Region Business Excellence Awards for exceptional launch impact and rapid community integration.</p>
             </div>
           </div>
 
           <div class="award-card">
-            <div class="img-ph award-img">Award Photo 5</div>
+            <div class="award-head">
+              <div class="award-medal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5C18 6.5 21 9.5 21 13c0 4.5-9 8.5-9 8.5S3 17.5 3 13c0-3.5 3-6.5 6.5-6.5"/><path d="m9 11 2 2 4-4"/></svg>
+              </div>
+              <span class="award-year-big">2022</span>
+              <span class="award-presenter">King City Community</span>
+            </div>
             <div class="award-body">
-              <p class="award-year">2022</p>
               <h3>Community Impact Award</h3>
               <p>Honored for creating corporate wellness partnerships and first responder programs that strengthen the health of the King City workforce.</p>
             </div>
           </div>
 
           <div class="award-card">
-            <div class="img-ph award-img">Award Photo 6</div>
+            <div class="award-head">
+              <div class="award-medal" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <span class="award-year-big">2022</span>
+              <span class="award-presenter">100+ Verified Reviews</span>
+            </div>
             <div class="award-body">
-              <p class="award-year">2022</p>
               <h3>Top-Rated Gym — Google Reviews</h3>
               <p>Maintained a 5-star rating across 100+ verified Google reviews, reflecting consistent member satisfaction across all services.</p>
             </div>
@@ -328,15 +550,13 @@
       </div>
     </section>
 
-    <!-- ══ CTA BANNER ══ -->
-    <section class="cta-banner">
-      <div class="container cta-banner-inner">
-        <div>
-          <p class="cta-banner-eyebrow">Join a Recognized Community</p>
-          <h2>Experience What the Awards Are About</h2>
-          <p>Start your journey with a free 3-day pass — no strings attached.</p>
-        </div>
-        <div class="cta-banner-actions">
+    <!-- CTA BANNER -->
+    <section class="cta-banner" aria-labelledby="cta-h2">
+      <div class="container">
+        <span class="section-label">Join a Recognized Community</span>
+        <h2 class="section-title" id="cta-h2">Experience What the<br/>Awards Are <em>About</em></h2>
+        <p class="section-sub">Start your journey with a free 3-day pass — no strings attached. Come see why King City keeps voting ACE the best.</p>
+        <div class="cta-btns">
           <a href="landing.html" class="btn-primary">Claim Your Free Pass</a>
           <a href="rates.html" class="btn-secondary">View Membership Rates</a>
         </div>
@@ -370,6 +590,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

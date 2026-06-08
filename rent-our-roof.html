@@ -16,157 +16,312 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/main.css" />
   <style>
-    .roof-intro { padding: 96px 0; }
-    .roof-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-      margin-bottom: 80px;
-    }
-    .roof-img { height: 440px; border-radius: var(--radius-xl); }
-    .roof-text p { font-size: 1rem; color: var(--gray-2); line-height: 1.8; margin-bottom: 16px; }
-
-    .rates-table-section { padding: 96px 0; background: var(--black-2); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
-
-    .rates-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 48px;
+    /* ── Section rhythm ────────────────────────────────── */
+    .roof-section { padding: 130px 0; }
+    .roof-section.alt {
+      background: var(--black-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .rates-table th {
+    /* ── Editorial intro — text + framed panel ─────────── */
+    .intro-panel {
+      background: var(--black-3);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 44px 42px 40px;
+    }
+    .intro-panel .panel-eyebrow {
       font-family: var(--font-subtitle);
-      font-size: 0.7rem;
+      font-size: 0.66rem;
       font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .intro-panel h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 2.2rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 26px;
+    }
+    .intro-panel .benefit-list { margin-bottom: 32px; }
+    .intro-quote {
+      border-top: 1px solid var(--line);
+      padding-top: 26px;
+    }
+    .intro-quote p {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.7rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--white);
+    }
+    .intro-quote p em { font-style: normal; color: var(--red); }
+    .intro-quote span {
+      display: block;
+      margin-top: 12px;
+      font-family: var(--font-subtitle);
+      font-size: 0.66rem;
+      font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gray-3);
-      padding: 14px 20px;
-      text-align: left;
-      border-bottom: 1px solid var(--glass-border);
+    }
+    .intro-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 36px;
     }
 
+    /* ── Event formats grid ────────────────────────────── */
+    .formats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .format-card { padding: 40px 34px 36px; }
+    .format-card .ghost-num {
+      position: absolute;
+      top: 22px; right: 26px;
+    }
+    .format-card h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 1.7rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin: 4px 0 12px;
+    }
+    .format-card p {
+      font-size: 0.93rem;
+      color: var(--gray-2);
+      line-height: 1.74;
+    }
+
+    /* ── Cinematic image band ──────────────────────────── */
+    .roof-band {
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .roof-band-bg { position: absolute; inset: 0; z-index: 0; }
+    .roof-band-bg img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 38%;
+      transform: scale(1.08);
+      animation: hero-kenburns 24s ease-in-out infinite alternate;
+    }
+    .roof-band-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.78) 100%),
+        linear-gradient(100deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.3) 62%, transparent 100%);
+    }
+    .roof-band .container { position: relative; z-index: 2; }
+    .roof-band h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 0.94;
+      max-width: 640px;
+    }
+    .roof-band h2 em { font-style: normal; color: var(--red); }
+    .roof-band p {
+      font-size: 1.04rem;
+      color: var(--gray-1);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-top: 22px;
+    }
+
+    /* ── Rates table ───────────────────────────────────── */
+    .rates-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .rates-table th {
+      font-family: var(--font-subtitle);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-3);
+      padding: 18px 22px;
+      text-align: left;
+      background: var(--black-3);
+      border-bottom: 1px solid var(--line);
+    }
     .rates-table td {
-      padding: 16px 20px;
+      padding: 20px 22px;
       font-size: 0.925rem;
       color: var(--gray-2);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--line);
     }
-
     .rates-table tr:last-child td { border-bottom: none; }
-
     .rates-table td:first-child {
       font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-weight: 400;
+      font-size: 1.55rem;
+      letter-spacing: 0.01em;
       color: var(--red);
     }
-
-    .rates-table tr:hover td { background: var(--glass-bg); }
+    .rates-table tbody tr { transition: background var(--transition); }
+    .rates-table tbody tr:hover td { background: var(--glass-bg); }
 
     .rates-note-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-md);
-      padding: 20px 24px;
-      margin-top: 28px;
-      font-size: 0.875rem;
+      padding: 22px 26px;
+      margin-top: 32px;
+      font-size: 0.9rem;
       color: var(--gray-2);
-      line-height: 1.7;
+      line-height: 1.72;
     }
+    .rates-note-box svg { color: var(--red-light); flex-shrink: 0; margin-top: 2px; }
+    .rates-note-box strong { color: var(--white); font-weight: 600; }
 
-    .day-pass-section { padding: 88px 0; }
-
+    /* ── Day pass add-on ───────────────────────────────── */
     .day-pass-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 52px;
+      gap: 64px;
       align-items: center;
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      padding: 52px 48px;
-      backdrop-filter: blur(16px);
+      border-radius: var(--radius-lg);
+      padding: 64px 56px;
+      position: relative;
+      overflow: hidden;
     }
-
+    .day-pass-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+    }
     .day-pass-card h2 {
       font-family: var(--font-display);
-      font-size: 2.4rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 14px;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 3.4vw, 3rem);
+      letter-spacing: 0.01em;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
-
-    .day-pass-card p { font-size: 0.95rem; color: var(--gray-2); line-height: 1.8; margin-bottom: 16px; }
-
+    .day-pass-card p {
+      font-size: 0.98rem;
+      color: var(--gray-2);
+      line-height: 1.82;
+      margin-bottom: 16px;
+    }
+    .day-pass-card p:last-of-type { margin-bottom: 0; }
     .day-pass-price {
       text-align: center;
-      background: rgba(215,26,33,0.06);
-      border: 1px solid rgba(215,26,33,0.16);
-      border-radius: var(--radius-lg);
-      padding: 40px 32px;
+      background: var(--black-3);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 56px 36px;
     }
-
     .day-pass-price strong {
       display: block;
       font-family: var(--font-display);
-      font-size: 5rem;
-      font-weight: 600;
+      font-weight: 400;
+      font-size: 5.4rem;
       color: var(--red);
       line-height: 1;
+      margin-bottom: 14px;
     }
-
     .day-pass-price span {
       font-family: var(--font-subtitle);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gray-3);
+      line-height: 1.9;
     }
 
-    .gallery-roof { padding: 88px 0; background: var(--black-2); border-top: 1px solid var(--glass-border); }
-    .gallery-roof-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 48px;
-    }
-    .gallery-roof-item { height: 220px; border-radius: var(--radius-lg); overflow: hidden; }
-    .gallery-roof-item .img-ph { height: 100%; border-radius: 0; border: none; }
-
+    /* ── Contact box ───────────────────────────────────── */
     .contact-box {
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      padding: 52px;
+      border-radius: var(--radius-lg);
+      padding: 72px 56px;
       text-align: center;
-      backdrop-filter: blur(16px);
-      margin-top: 52px;
+      position: relative;
+      overflow: hidden;
     }
-
-    .contact-box h2 { font-family: var(--font-display); font-size: 2.6rem; font-weight: 600; margin-bottom: 12px; }
-    .contact-box p { font-size: 1rem; color: var(--gray-2); margin-bottom: 28px; line-height: 1.7; }
-    .contact-methods { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 0%, rgba(215,26,33,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .contact-box > * { position: relative; z-index: 1; }
+    .contact-box .section-label { justify-content: center; }
+    .contact-box h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .contact-box h2 em { font-style: normal; color: var(--red); }
+    .contact-box p {
+      font-size: 1.02rem;
+      color: var(--gray-2);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.72;
+    }
+    .contact-methods { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
     @media (max-width: 900px) {
-      .roof-split { grid-template-columns: 1fr; gap: 40px; }
-      .roof-img { height: 280px; }
-      .day-pass-card { grid-template-columns: 1fr; gap: 32px; padding: 36px 28px; }
-      .gallery-roof-grid { grid-template-columns: repeat(2, 1fr); }
-      .contact-box { padding: 36px 24px; }
+      .formats-grid { grid-template-columns: 1fr; }
+      .day-pass-card { grid-template-columns: 1fr; gap: 40px; padding: 44px 32px; }
+      .roof-band { min-height: 380px; }
     }
-
     @media (max-width: 768px) {
-      .roof-intro, .rates-table-section, .day-pass-section, .gallery-roof { padding: 64px 0; }
+      .roof-section { padding: 84px 0; }
+      .contact-box { padding: 52px 32px; }
+      .intro-panel { padding: 36px 28px 34px; }
     }
-
     @media (max-width: 560px) {
-      .gallery-roof-grid { grid-template-columns: 1fr; }
-      .rates-table th, .rates-table td { padding: 12px 14px; }
-      .roof-intro, .rates-table-section, .day-pass-section, .gallery-roof { padding: 48px 0; }
-      .contact-box h2 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+      .roof-section { padding: 62px 0; }
+      .rates-table th, .rates-table td { padding: 14px 16px; }
+      .format-card { padding: 34px 26px 30px; }
+      .contact-box { padding: 44px 24px; }
+      .day-pass-price { padding: 44px 28px; }
     }
   </style>
 </head>
@@ -174,21 +329,35 @@
 
   <nav class="site-nav" aria-label="Site navigation">
     <div class="container">
-      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home"><img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="42" /></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home">
+        <img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="42" />
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
       <div class="nav-menu" id="navMenu">
+        <button class="nav-close-btn" id="navClose" aria-label="Close navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
         <a href="index.html" class="nav-link">Home</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">Services <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="personal-training.html" role="menuitem">Personal Training</a>
+            <a href="personal-training.html#inbody" role="menuitem">InBody 770</a>
             <a href="facilities.html" role="menuitem">Facilities</a>
           </div>
         </div>
         <a href="classes.html" class="nav-link">Classes</a>
         <a href="rates.html" class="nav-link">Rates</a>
         <div class="nav-item">
-          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">More <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></button>
+          <button class="nav-link dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            More
+            <svg class="chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
           <div class="nav-dropdown" role="menu">
             <a href="promos.html" role="menuitem">Promos</a>
             <a href="rent-our-roof.html" role="menuitem" style="color:var(--white)">Rent Our Roof</a>
@@ -200,59 +369,162 @@
     </div>
   </nav>
 
+  <!-- PAGE HERO -->
   <header class="page-hero" aria-labelledby="page-title">
-    <div class="page-hero-bg"><div class="img-ph" style="background:linear-gradient(135deg,#0a0a0a,#111)"><span>Rooftop Hero Photo</span></div></div>
+    <div class="page-hero-bg">
+      <img src="roof-hero.jpg" alt="Open-air event on the ACE Performance Gym rooftop turf at sunset, overlooking King City" />
+    </div>
     <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="container">
       <div class="page-hero-content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span aria-current="page">Rent Our Roof</span>
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span>More</span>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">Rent Our Roof</span>
         </nav>
         <span class="section-label">11,000 Sq Ft Rooftop</span>
-        <h1 class="section-title" id="page-title">Rent An <em>Experience</em></h1>
+        <h1 class="section-title" id="page-title">Rent An<br/><em>Experience</em></h1>
+        <p class="page-hero-sub">An open-air turf rooftop above King City — built for corporate days, team retreats, and group workouts no traditional venue can match.</p>
+        <div class="hero-meta" aria-hidden="true">
+          <div class="hero-meta-item"><strong>11K</strong><span>Sq Ft of Turf</span></div>
+          <div class="hero-meta-item"><strong>$200</strong><span>From / Hour</span></div>
+          <div class="hero-meta-item"><strong>20+</strong><span>Guests Per Event</span></div>
+        </div>
+        <div style="margin-top:30px">
+          <a href="tel:+19058333130" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Book the Rooftop
+          </a>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
 
-    <section class="roof-intro" aria-labelledby="roof-h2">
-      <div class="container">
-        <div class="roof-split">
-          <div class="roof-text">
-            <span class="section-label">For Your Next Event</span>
-            <h2 class="section-title" id="roof-h2">For Your Next Event<br/>or <em>Company Retreat</em></h2>
-            <p>Enjoy this special place where you can connect with your teams, friends, and colleagues — all while breathing in the fresh air and admiring the sunset from the comfort of our 11,000 sq ft rooftop.</p>
-            <p>Whether it's a corporate wellness day, a team-building retreat, a community fitness event, or an outdoor group workout, ACE's rooftop provides an unforgettable backdrop that no traditional event venue can match.</p>
-            <p>It's an experience you will not forget.</p>
-            <br/>
-            <a href="tel:+19058333130" class="btn-primary">Call to Book</a>
-            <span style="display:inline-block;width:12px"></span>
-            <a href="mailto:annalisa@acegym.club" class="btn-secondary">Email Annalisa</a>
-          </div>
-          <div class="roof-img img-ph">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 20h20M4 20V10M20 20V10M12 4l8 6H4l8-6z"/></svg>
-            <span>Rooftop Event Photo</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="stats-row" role="complementary">
+    <!-- STATS ROW -->
+    <div class="stats-row" role="complementary" aria-label="Rooftop statistics">
       <div class="stat-item"><div class="stat-num">11K</div><div class="stat-label">Sq Ft Rooftop</div></div>
       <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Min Participants</div></div>
       <div class="stat-item"><div class="stat-num">$200</div><div class="stat-label">Starting Rate / Hr</div></div>
       <div class="stat-item"><div class="stat-num">$10</div><div class="stat-label">Day Pass Add-On</div></div>
     </div>
 
+    <!-- EDITORIAL INTRO -->
+    <section class="roof-section" aria-labelledby="roof-h2">
+      <div class="container">
+        <div class="split wide-text">
+          <div>
+            <span class="section-label">For Your Next Event</span>
+            <h2 class="section-title" id="roof-h2">For Your Next Event<br/>or <em>Company Retreat</em></h2>
+            <p class="lead">Enjoy this special place where you can connect with your teams, friends, and colleagues — all while breathing in the fresh air and admiring the sunset from the comfort of our 11,000 sq ft rooftop.</p>
+            <p class="lead">Whether it's a corporate wellness day, a team-building retreat, a community fitness event, or an outdoor group workout, ACE's rooftop provides an unforgettable backdrop that <strong>no traditional event venue can match.</strong></p>
+            <p class="lead">It's an experience you will not forget.</p>
+            <div class="intro-ctas">
+              <a href="tel:+19058333130" class="btn-primary">Call to Book</a>
+              <a href="mailto:annalisa@acegym.club" class="btn-secondary">Email Annalisa</a>
+            </div>
+          </div>
+          <div class="intro-panel" data-reveal="right">
+            <span class="panel-eyebrow">Every Rental Includes</span>
+            <h3>What You Get</h3>
+            <ul class="benefit-list">
+              <li>Full use of the 11,000 sq ft open-air rooftop turf</li>
+              <li>Panoramic sunset views over King City</li>
+              <li>Flexible booking blocks from one hour to a full day</li>
+              <li>Space designed to host 20-plus guests with room to move</li>
+              <li>Optional full-facility access for your entire group</li>
+            </ul>
+            <div class="intro-quote">
+              <p>An experience you will <em>not forget.</em></p>
+              <span>The ACE Rooftop · King City</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT FORMATS -->
+    <section class="roof-section alt" aria-labelledby="formats-h2">
+      <div class="container">
+        <div class="section-header-row">
+          <div>
+            <span class="section-label">Ways to Use the Space</span>
+            <h2 class="section-title" id="formats-h2">Built for Every<br/><em>Kind of Day</em></h2>
+          </div>
+          <p class="section-sub">One rooftop, many possibilities. However your group wants to gather, the open-air turf adapts around it.</p>
+        </div>
+
+        <div class="formats-grid">
+          <div class="glass-card format-card">
+            <span class="ghost-num" aria-hidden="true">01</span>
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Corporate Wellness Day</h3>
+            <p>Get your whole team out of the office and into the fresh air. The rooftop turns a wellness initiative into a memorable day above King City — fresh air, sunset views, and space to move.</p>
+          </div>
+          <div class="glass-card format-card">
+            <span class="ghost-num" aria-hidden="true">02</span>
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Team-Building Retreat</h3>
+            <p>Connect with colleagues somewhere that feels nothing like a boardroom. An open-air retreat backdrop that builds energy and trust — the kind of day teams talk about long after.</p>
+          </div>
+          <div class="glass-card format-card">
+            <span class="ghost-num" aria-hidden="true">03</span>
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Community Fitness Event</h3>
+            <p>Bring people together for something bigger. As a proud member of King City, ACE's rooftop is the perfect home for community fitness events that draw a crowd and a view.</p>
+          </div>
+          <div class="glass-card format-card">
+            <span class="ghost-num" aria-hidden="true">04</span>
+            <div class="icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5l11 11"/><path d="M21 21l-1-1"/><path d="M3 3l1 1"/><path d="M18 22l4-4"/><path d="M2 6l4-4"/><path d="M3 10l7-7"/><path d="M14 21l7-7"/></svg>
+            </div>
+            <h3>Private Group Workout</h3>
+            <p>An outdoor group workout with your circle, your pace, your playlist. The full turf is yours — no shared floor, no waiting, just a session under open sky.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="text-marquee" aria-hidden="true">
+      <div class="text-marquee-track">
+        <span class="fill">Fresh Air</span><span class="dot">&bull;</span><span>Sunset Views</span><span class="dot">&bull;</span><span class="fill">Open Turf</span><span class="dot">&bull;</span><span>Above King City</span><span class="dot">&bull;</span>
+        <span class="fill">Fresh Air</span><span class="dot">&bull;</span><span>Sunset Views</span><span class="dot">&bull;</span><span class="fill">Open Turf</span><span class="dot">&bull;</span><span>Above King City</span><span class="dot">&bull;</span>
+      </div>
+    </div>
+
+    <!-- CINEMATIC IMAGE BAND -->
+    <section class="roof-band" aria-labelledby="band-h2">
+      <div class="roof-band-bg" aria-hidden="true">
+        <img src="roof-hero.jpg" alt="" />
+      </div>
+      <div class="roof-band-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div data-reveal>
+          <span class="section-label">The Backdrop</span>
+          <h2 id="band-h2">Eleven Thousand<br/>Square Feet of <em>Sky</em></h2>
+          <p>Open turf, panoramic views, and the kind of golden-hour light no indoor venue can replicate. This is where your event happens.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- RATES TABLE -->
-    <section class="rates-table-section" aria-labelledby="rooftop-rates-h2">
+    <section class="roof-section alt" aria-labelledby="rooftop-rates-h2">
       <div class="container">
         <span class="section-label">Pricing</span>
         <h2 class="section-title" id="rooftop-rates-h2">Rooftop <em>Rates</em></h2>
         <p class="section-sub">All packages require a minimum of 20 participants. Rates include use of the full rooftop turf space.</p>
 
-        <div style="overflow-x:auto">
+        <div style="overflow-x:auto" data-reveal>
           <table class="rates-table" aria-label="Rooftop rental rates">
             <thead>
               <tr>
@@ -297,21 +569,22 @@
           </table>
         </div>
 
-        <div class="rates-note-box">
-          <strong>Please note:</strong> Shower and towel service are not included with rooftop rentals. These can be added on for an additional fee per person.
+        <div class="rates-note-box" data-reveal>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <div><strong>Please note:</strong> Shower and towel service are not included with rooftop rentals. These can be added on for an additional fee per person.</div>
         </div>
       </div>
     </section>
 
     <!-- DAY PASS ADD-ON -->
-    <section class="day-pass-section" aria-labelledby="daypass-h2">
+    <section class="roof-section" aria-labelledby="daypass-h2">
       <div class="container">
-        <div class="day-pass-card">
+        <div class="day-pass-card" data-reveal>
           <div>
             <span class="section-label">Optional Add-On</span>
             <h2 id="daypass-h2">Full Gym Access<br/>for Your Group</h2>
             <p>Want to give your participants access to the full ACE Performance Gym experience beyond just the rooftop? For an extra $10 per person — the regular price of a day pass — each participant can receive a full day pass to explore the entire 25,000 sq ft facility.</p>
-            <p>That includes the gym floor, sauna, ACE Bar & Co., locker rooms, shower facilities, and more. It's the full ACE experience for your entire group.</p>
+            <p>That includes the gym floor, sauna, ACE Bar &amp; Co., locker rooms, shower facilities, and more. It's the full ACE experience for your entire group.</p>
           </div>
           <div class="day-pass-price">
             <strong>$10</strong>
@@ -321,22 +594,12 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="gallery-roof" aria-labelledby="roof-gallery-h2">
+    <!-- CTA -->
+    <section class="cta-banner" aria-labelledby="contact-h2">
       <div class="container">
-        <span class="section-label">Our Rooftop</span>
-        <h2 class="section-title" id="roof-gallery-h2">See the <em>Space</em></h2>
-        <div class="gallery-roof-grid">
-          <div class="gallery-roof-item"><div class="img-ph"><span>Rooftop View 1</span></div></div>
-          <div class="gallery-roof-item"><div class="img-ph"><span>Rooftop Event Setup</span></div></div>
-          <div class="gallery-roof-item"><div class="img-ph"><span>Sunset View</span></div></div>
-          <div class="gallery-roof-item"><div class="img-ph"><span>Group Training</span></div></div>
-          <div class="gallery-roof-item"><div class="img-ph"><span>Turf Surface</span></div></div>
-          <div class="gallery-roof-item"><div class="img-ph"><span>King City Skyline</span></div></div>
-        </div>
-
-        <div class="contact-box">
-          <h2>Ready to Book?</h2>
+        <div class="contact-box" data-reveal>
+          <span class="section-label">Reserve Your Date</span>
+          <h2>Ready to <em>Book?</em></h2>
           <p>Contact Annalisa to check availability and reserve your date. We'll walk you through everything and make sure your event is a success.</p>
           <div class="contact-methods">
             <a href="tel:+19058333130" class="btn-primary">
@@ -354,7 +617,9 @@
   <footer class="site-footer" aria-label="Site footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="46" /><p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
+        <div class="footer-brand">
+          <img src="ace-logo.png" alt="ACE Performance Gym" width="120" height="46" />
+          <p class="footer-tagline">The Boutique Gym for All Your Fitness Needs.</p>
           <div class="footer-social">
             <a href="https://www.instagram.com/aceperformancegym" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
             <a href="https://www.facebook.com/ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
@@ -362,13 +627,17 @@
             <a href="https://www.youtube.com/@ACEPerformanceGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#000" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
           </div>
         </div>
-        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Services"><h4>Services</h4><ul><li><a href="personal-training.html">Personal Training</a></li><li><a href="personal-training.html#inbody">InBody 770</a></li><li><a href="facilities.html">Facilities</a></li><li><a href="classes.html">Classes</a></li></ul></nav>
         <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><ul><li><a href="rates.html">Rates</a></li><li><a href="promos.html">Promos</a></li><li><a href="rent-our-roof.html">Rent Our Roof</a></li><li><a href="awards.html">Awards</a></li></ul></nav>
         <div class="footer-col"><h4>Contact</h4><address>1700 King Rd, Unit #32<br/>King City, ON L7B 0N1</address><a href="tel:+19058333130">(905) 833-3130</a><a href="mailto:info@acegym.club">info@acegym.club</a><div class="footer-hours"><p>Mon–Fri: 5:00 AM – 10:00 PM</p><p>Sat–Sun: 7:00 AM – 7:00 PM</p></div></div>
       </div>
-      <div class="footer-bottom"><p>© 2025 ACE Performance Gym. All rights reserved.</p><p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p></div>
+      <div class="footer-bottom">
+        <p>© 2025 ACE Performance Gym. All rights reserved.</p>
+        <p>1700 King Rd, Unit #32 · King City, ON · <a href="tel:+19058333130">(905) 833-3130</a></p>
+      </div>
     </div>
   </footer>
+
   <script src="js/main.js" defer></script>
 </body>
 </html>
