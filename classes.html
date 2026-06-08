@@ -90,45 +90,50 @@
       margin: 24px 0 4px;
     }
 
-    /* ── Instructor cards — monogram, no photo ─────────── */
+    /* ── Instructor cards — photo ──────────────────────── */
     .instructor-card { display: flex; flex-direction: column; }
-    .instructor-monogram {
+    .instructor-photo {
       position: relative;
-      height: 196px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(ellipse 75% 110% at 50% 0%, rgba(215,26,33,0.22) 0%, transparent 62%),
-        linear-gradient(160deg, var(--black-4) 0%, #0a0a0a 100%);
+      height: 320px;
+      background: var(--black-4);
       border-bottom: 1px solid var(--line);
       overflow: hidden;
     }
-    .instructor-monogram::before {
+    .instructor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+      transition: transform 0.55s var(--ease);
+    }
+    .instructor-card:hover .instructor-photo img { transform: scale(1.045); }
+    .instructor-photo::before {
       content: '';
       position: absolute;
       left: 0; right: 0; bottom: 0;
       height: 2px;
       background: var(--red);
+      z-index: 3;
     }
-    .instructor-monogram span {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 5.4rem;
-      line-height: 1;
-      letter-spacing: 0.04em;
-      color: var(--white);
-      text-shadow: 0 14px 40px rgba(0,0,0,0.6);
+    .instructor-photo::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 96px;
+      background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, transparent 100%);
+      z-index: 1;
     }
-    .instructor-monogram .im-tag {
+    .instructor-photo .im-tag {
       position: absolute;
       bottom: 14px; right: 16px;
+      z-index: 2;
       font-family: var(--font-subtitle);
       font-size: 0.58rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gray-3);
+      color: var(--gray-1);
     }
     .instructor-body { padding: 28px 26px 30px; }
 
@@ -155,8 +160,7 @@
       .cl-section { padding: 84px 0; }
       .notice-bar { margin-bottom: 44px; }
       .class-card-media { height: 200px; }
-      .instructor-monogram { height: 168px; }
-      .instructor-monogram span { font-size: 4.4rem; }
+      .instructor-photo { height: 280px; }
     }
     @media (max-width: 560px) {
       .cl-section { padding: 62px 0; }
@@ -373,9 +377,9 @@
         <div class="instructors-grid">
 
           <article class="instructor-card" aria-labelledby="ashley-name">
-            <div class="instructor-monogram" aria-hidden="true">
-              <span>AS</span>
-              <span class="im-tag">Instructor</span>
+            <div class="instructor-photo">
+              <img src="instructor-ashley.avif" alt="Ashley Soldera, ACE Performance Gym instructor" width="680" height="680" loading="lazy" />
+              <span class="im-tag" aria-hidden="true">Instructor</span>
             </div>
             <div class="instructor-body">
               <div class="instructor-tags">
@@ -389,9 +393,9 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="anna-name">
-            <div class="instructor-monogram" aria-hidden="true">
-              <span>AS</span>
-              <span class="im-tag">Instructor</span>
+            <div class="instructor-photo">
+              <img src="instructor-anna.avif" alt="Anna Stavrakos, ACE Performance Gym spin instructor" width="680" height="680" loading="lazy" />
+              <span class="im-tag" aria-hidden="true">Instructor</span>
             </div>
             <div class="instructor-body">
               <div class="instructor-tags">
@@ -403,9 +407,9 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="nadia-name">
-            <div class="instructor-monogram" aria-hidden="true">
-              <span>NR</span>
-              <span class="im-tag">Instructor</span>
+            <div class="instructor-photo">
+              <img src="instructor-nadia.avif" alt="Nadia Racco, ACE Performance Gym spin and strength instructor" width="680" height="680" loading="lazy" />
+              <span class="im-tag" aria-hidden="true">Instructor</span>
             </div>
             <div class="instructor-body">
               <div class="instructor-tags">
@@ -418,9 +422,9 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="victor-name">
-            <div class="instructor-monogram" aria-hidden="true">
-              <span>VD</span>
-              <span class="im-tag">Instructor</span>
+            <div class="instructor-photo">
+              <img src="instructor-victor.avif" alt="Victor De Giorgio, ACE Performance Gym HIIT and team training instructor" width="680" height="680" loading="lazy" />
+              <span class="im-tag" aria-hidden="true">Instructor</span>
             </div>
             <div class="instructor-body">
               <div class="instructor-tags">
@@ -433,9 +437,9 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="paniz-name">
-            <div class="instructor-monogram" aria-hidden="true">
-              <span>PR</span>
-              <span class="im-tag">Instructor</span>
+            <div class="instructor-photo">
+              <img src="instructor-paniz.avif" alt="Paniz Riahizadeh, ACE Performance Gym yoga and personal training instructor" width="680" height="680" loading="lazy" />
+              <span class="im-tag" aria-hidden="true">Instructor</span>
             </div>
             <div class="instructor-body">
               <div class="instructor-tags">
@@ -449,9 +453,9 @@
           </article>
 
           <article class="instructor-card" aria-labelledby="alessia-name">
-            <div class="instructor-monogram" aria-hidden="true">
-              <span>AG</span>
-              <span class="im-tag">Instructor</span>
+            <div class="instructor-photo">
+              <img src="instructor-alessia.avif" alt="Alessia Gileppo, ACE Performance Gym spin instructor" width="680" height="680" loading="lazy" />
+              <span class="im-tag" aria-hidden="true">Instructor</span>
             </div>
             <div class="instructor-body">
               <div class="instructor-tags">

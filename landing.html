@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Personal Training Consultation — ACE Performance Gym</title>
-  <meta name="description" content="Book your free personal training consultation at ACE Performance Gym in King City. Expert coaches, personalized programs, real results." />
+  <title>Free 3-Day Gym Pass — ACE Performance Gym, King City</title>
+  <meta name="description" content="Claim your FREE 3-day pass to ACE Performance Gym in King City. Full access to our 25,000 sq ft facility — Technogym floor, sauna, rooftop track, and every group class. No card. No commitment." />
 
   <!-- Meta Pixel -->
   <script>
@@ -33,46 +33,38 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* ── Surfaces ── */
       --black:        #000000;
       --black-2:      #070707;
       --black-3:      #101010;
       --black-4:      #181818;
 
-      /* ── Brand red ── */
       --red:          #d71a21;
       --red-light:    #e8342a;
       --red-dark:     #a01318;
 
-      /* ── Neutrals ── */
       --gray-mid:     #a6a6a6;
       --white:        #ffffff;
       --gray-1:       #ededed;
       --gray-2:       #a9a9a9;
       --gray-3:       #8a8a8a;
 
-      /* ── Lines & panels ── */
       --glass-bg:     #0e0e0e;
       --glass-border: rgba(255,255,255,0.09);
       --line:         rgba(255,255,255,0.08);
       --line-strong:  rgba(255,255,255,0.16);
 
-      /* ── Radius — architectural, near-sharp ── */
       --radius-sm:    3px;
       --radius-md:    4px;
       --radius-lg:    6px;
       --radius-xl:    10px;
 
-      /* ── Elevation — neutral, no colored glow ── */
       --shadow-card:  0 30px 80px -34px rgba(0,0,0,0.95);
       --shadow-glow:  0 24px 64px -32px rgba(0,0,0,0.9);
 
-      /* ── Type ── */
       --font-display:  'Bebas Neue', 'Arial Narrow', sans-serif;
       --font-body:     'Inter', system-ui, sans-serif;
       --font-subtitle: 'Inter', system-ui, sans-serif;
 
-      /* ── Motion ── */
       --transition:    0.28s cubic-bezier(0.22,1,0.36,1);
       --ease:          cubic-bezier(0.22,1,0.36,1);
     }
@@ -100,6 +92,8 @@
       outline-offset: 3px;
       border-radius: 2px;
     }
+
+    img { max-width: 100%; display: block; }
 
     /* ── Utilities ──────────────────────────────────── */
     .container {
@@ -171,98 +165,6 @@
       transform: translateY(-2px);
     }
 
-    /* ── HERO ───────────────────────────────────────── */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding-top: 80px;
-    }
-
-    img { max-width: 100%; display: block; }
-
-    .hero-video {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      z-index: 0;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(105deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 48%, rgba(0,0,0,0.22) 100%),
-        linear-gradient(0deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0) 42%);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-subtitle);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--red-light);
-      background: rgba(215,26,33,0.08);
-      border: 1px solid rgba(215,26,33,0.22);
-      border-radius: var(--radius-sm);
-      padding: 8px 16px;
-      margin-bottom: 32px;
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--red);
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(3.2rem, 8vw, 6.5rem);
-      line-height: 0.92;
-      letter-spacing: 0.012em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 em {
-      font-style: normal;
-      display: block;
-      color: var(--red);
-    }
-
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--gray-2);
-      max-width: 480px;
-      margin-bottom: 40px;
-      line-height: 1.72;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
     .btn-primary {
       display: inline-flex;
       align-items: center;
@@ -293,72 +195,9 @@
     }
 
     .btn-primary:active { transform: translateY(0); }
-
     .btn-primary svg { flex-shrink: 0; }
 
-    .hero-note {
-      font-family: var(--font-subtitle);
-      font-size: 0.74rem;
-      letter-spacing: 0.04em;
-      color: var(--gray-3);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-note::before {
-      content: '';
-      width: 14px; height: 14px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a8a8a' stroke-width='2'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;
-      flex-shrink: 0;
-    }
-
-    /* ── TRUST BAR ──────────────────────────────────── */
-    .trust-bar {
-      background: var(--black-2);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 22px 0;
-    }
-
-    .trust-bar .container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-subtitle);
-      font-size: 0.74rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-2);
-      white-space: nowrap;
-    }
-
-    .trust-icon {
-      width: 16px; height: 16px;
-      color: var(--red-light);
-      flex-shrink: 0;
-    }
-
-    .trust-divider {
-      width: 1px;
-      height: 18px;
-      background: var(--line-strong);
-    }
-
-    /* ── BENEFITS ───────────────────────────────────── */
-    .benefits {
-      padding: 140px 0;
-    }
-
+    /* ── Section labels & titles ────────────────────── */
     .section-label {
       display: inline-flex;
       align-items: center;
@@ -400,293 +239,70 @@
       color: var(--gray-2);
       max-width: 560px;
       line-height: 1.72;
-      margin-bottom: 56px;
+      margin-bottom: 36px;
     }
 
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
-
-    .benefit-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 36px 32px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
-    }
-
-    .benefit-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--red);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.34s var(--ease);
-    }
-
-    .benefit-card:hover {
-      border-color: var(--line-strong);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .benefit-card:hover::before { transform: scaleX(1); }
-
-    .benefit-number {
-      font-family: var(--font-display);
-      font-size: 5rem;
-      line-height: 1;
-      color: rgba(255,255,255,0.04);
-      position: absolute;
-      top: 16px; right: 20px;
-      letter-spacing: -0.02em;
-    }
-
-    .benefit-icon-wrap {
-      width: 46px; height: 46px;
-      border-radius: var(--radius-sm);
-      background: rgba(215,26,33,0.10);
-      border: 1px solid rgba(215,26,33,0.22);
-      display: flex;
+    /* ── Offer tag + rating ─────────────────────────── */
+    .offer-tag {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 22px;
-      color: var(--red-light);
-    }
-
-    .benefit-card h3 {
+      gap: 10px;
       font-family: var(--font-subtitle);
-      font-size: 1.05rem;
+      font-size: 0.76rem;
       font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: 0.01em;
-    }
-
-    .benefit-card p {
-      font-size: 0.92rem;
-      color: var(--gray-2);
-      line-height: 1.7;
-    }
-
-    /* ── SOCIAL PROOF ───────────────────────────────── */
-    .social-proof {
-      padding: 140px 0;
-      background: var(--black-2);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 8px;
-    }
-
-    .review-card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 36px 32px;
-      transition: border-color var(--transition), transform var(--transition),
-                  box-shadow var(--transition);
-    }
-
-    .review-card:hover {
-      border-color: var(--line-strong);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-glow);
-    }
-
-    .stars {
-      display: flex;
-      gap: 3px;
-      margin-bottom: 20px;
-      color: var(--red);
-    }
-
-    .review-card blockquote {
-      font-size: 1rem;
-      color: var(--gray-1);
-      line-height: 1.78;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      background: rgba(215,26,33,0.10);
+      border: 1px solid rgba(215,26,33,0.28);
+      border-radius: var(--radius-sm);
+      padding: 9px 18px;
       margin-bottom: 26px;
-      font-style: normal;
     }
 
-    .reviewer {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-    }
-
-    .reviewer-avatar {
-      width: 42px; height: 42px;
+    .offer-tag::before {
+      content: '';
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--red);
+    }
+
+    .rating {
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--white);
-      flex-shrink: 0;
+      gap: 14px;
+      margin: 22px 0 6px;
+      flex-wrap: wrap;
     }
 
-    .reviewer-info strong {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .reviewer-info span {
-      font-size: 0.78rem;
-      color: var(--gray-3);
-    }
-
-    /* ── WHAT TO EXPECT ─────────────────────────────── */
-    .expect {
-      padding: 140px 0;
-    }
-
-    .expect-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-      margin-top: 8px;
-    }
-
-    .expect-steps {
+    .rating .stars {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 22px;
-      padding: 26px 24px;
-      border-radius: var(--radius-md);
-      border: 1px solid transparent;
-      transition: background var(--transition), border-color var(--transition);
-      cursor: default;
-    }
-
-    .step:hover {
-      background: var(--glass-bg);
-      border-color: var(--line);
-    }
-
-    .step-num {
-      flex-shrink: 0;
-      width: 44px; height: 44px;
-      border-radius: var(--radius-sm);
-      background: var(--red);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      color: var(--white);
-      margin-top: 2px;
-    }
-
-    .step-text h4 {
-      font-family: var(--font-subtitle);
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      margin-bottom: 7px;
-    }
-
-    .step-text p {
-      font-size: 0.92rem;
-      color: var(--gray-2);
-      line-height: 1.68;
-    }
-
-    .expect-visual {
-      position: relative;
-    }
-
-    .expect-card-big {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      padding: 56px 48px;
-      text-align: center;
-      box-shadow: var(--shadow-card);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-big {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 5.5rem;
-      line-height: 1;
+      gap: 4px;
       color: var(--red);
-      margin-bottom: 8px;
     }
 
-    .stat-label {
+    .rating-text {
       font-family: var(--font-subtitle);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gray-3);
-      max-width: 240px;
-      margin: 0 auto 38px;
-      line-height: 1.6;
+      font-size: 0.95rem;
+      color: var(--gray-2);
+      letter-spacing: 0.01em;
     }
 
-    .stat-row {
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      padding-top: 34px;
-      border-top: 1px solid var(--line);
-    }
-
-    .stat-mini strong {
-      display: block;
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 2rem;
+    .rating-text strong {
       color: var(--white);
-      line-height: 1;
-      margin-bottom: 6px;
+      font-weight: 700;
     }
 
-    .stat-mini span {
-      font-family: var(--font-subtitle);
-      font-size: 0.62rem;
-      font-weight: 600;
-      color: var(--gray-3);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-
-    /* ── FORM SECTION ───────────────────────────────── */
-    .form-section {
-      padding: 140px 0;
+    /* ── CLAIM SECTION (offer + form) ───────────────── */
+    .claim {
+      padding: 130px 0;
       background: var(--black-2);
       border-top: 1px solid var(--line);
       position: relative;
       overflow: hidden;
     }
 
-    .form-wrap {
+    .claim-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 72px;
@@ -695,9 +311,38 @@
       z-index: 1;
     }
 
-    .form-left { padding-top: 8px; }
+    .claim-left { padding-top: 8px; }
 
-    .form-left .section-sub { margin-bottom: 36px; }
+    /* What's included list */
+    .pass-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 28px;
+      margin: 4px 0 34px;
+    }
+
+    .pass-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      font-size: 0.96rem;
+      color: var(--gray-1);
+      line-height: 1.5;
+    }
+
+    .pass-check {
+      width: 24px; height: 24px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      background: rgba(215,26,33,0.10);
+      border: 1px solid rgba(215,26,33,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red-light);
+      margin-top: 1px;
+    }
 
     .guarantee-box {
       display: flex;
@@ -737,9 +382,7 @@
       box-shadow: var(--shadow-card);
     }
 
-    .form-header {
-      margin-bottom: 30px;
-    }
+    .form-header { margin-bottom: 30px; }
 
     .form-header h3 {
       font-family: var(--font-display);
@@ -784,9 +427,7 @@
       color: var(--gray-3);
     }
 
-    .field input,
-    .field select,
-    .field textarea {
+    .field input {
       width: 100%;
       min-height: 48px;
       background: var(--black-3);
@@ -802,33 +443,8 @@
       -webkit-appearance: none;
     }
 
-    .field select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238a8a8a' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 15px center;
-      padding-right: 38px;
-      cursor: pointer;
-    }
-
-    .field select option {
-      background: var(--black-3);
-      color: var(--white);
-    }
-
-    .field input::placeholder,
-    .field textarea::placeholder { color: var(--gray-3); }
-
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--red);
-    }
-
-    .field textarea {
-      resize: vertical;
-      min-height: 92px;
-      line-height: 1.6;
-    }
+    .field input::placeholder { color: var(--gray-3); }
+    .field input:focus { border-color: var(--red); }
 
     .form-submit {
       width: 100%;
@@ -842,115 +458,6 @@
       text-align: center;
       margin-top: 16px;
       line-height: 1.6;
-    }
-
-    /* ── FOOTER ─────────────────────────────────────── */
-    footer {
-      background: var(--black-2);
-      border-top: 1px solid var(--line);
-      padding: 40px 0;
-    }
-
-    footer .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .footer-logo img {
-      height: 44px;
-      width: auto;
-      display: block;
-    }
-
-    .footer-info {
-      font-size: 0.82rem;
-      color: var(--gray-3);
-      text-align: right;
-      line-height: 1.8;
-    }
-
-    .footer-info a {
-      color: var(--gray-3);
-      text-decoration: none;
-      transition: color var(--transition);
-    }
-
-    .footer-info a:hover { color: var(--white); }
-
-    /* ── RESPONSIVE: tablet ────────────────────────── */
-    @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .nav-cta { padding: 11px 18px; font-size: 0.7rem; }
-
-      .hero { min-height: 100svh; padding-top: 72px; padding-bottom: 48px; }
-      .hero-overlay {
-        background:
-          linear-gradient(160deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.68) 58%, rgba(0,0,0,0.5) 100%);
-      }
-      .hero h1 { font-size: clamp(2.8rem, 12vw, 4rem); }
-      .hero-sub { font-size: 1rem; max-width: 100%; }
-      .hero-cta-group { flex-direction: column; align-items: stretch; }
-      .btn-primary { justify-content: center; width: 100%; }
-      .hero-note { justify-content: center; }
-
-      .trust-bar .container { gap: 14px 24px; justify-content: flex-start; }
-      .trust-divider { display: none; }
-
-      .benefits { padding: 88px 0; }
-      .benefits-grid { grid-template-columns: 1fr; }
-
-      .social-proof { padding: 88px 0; }
-      .reviews-grid { grid-template-columns: 1fr; }
-
-      .expect { padding: 88px 0; }
-      .expect-grid { grid-template-columns: 1fr; gap: 44px; }
-      .expect-card-big { padding: 40px 28px; }
-      .stat-big { font-size: 4.4rem; }
-
-      .form-section { padding: 88px 0; }
-      .form-wrap { grid-template-columns: 1fr; gap: 44px; }
-      .form-card { padding: 32px 24px; }
-      .field-row { grid-template-columns: 1fr; }
-      .form-submit { width: 100%; justify-content: center; }
-
-      .section-title { font-size: clamp(2.4rem, 9vw, 3.4rem); }
-      .section-sub { margin-bottom: 40px; }
-
-      footer .container { flex-direction: column; align-items: flex-start; gap: 14px; }
-      .footer-info { text-align: left; }
-    }
-
-    /* ── RESPONSIVE: small phones ───────────────────── */
-    @media (max-width: 560px) {
-      .nav-cta { padding: 10px 16px; font-size: 0.66rem; letter-spacing: 0.1em; }
-
-      .hero { padding-top: 68px; padding-bottom: 40px; }
-      .hero h1 { font-size: clamp(2.4rem, 14vw, 3.2rem); margin-bottom: 20px; }
-      .hero-badge { font-size: 0.64rem; padding: 7px 14px; }
-      .hero-sub { font-size: 0.95rem; margin-bottom: 32px; }
-
-      .benefits { padding: 64px 0; }
-      .social-proof { padding: 64px 0; }
-      .expect { padding: 64px 0; }
-      .form-section { padding: 64px 0; }
-
-      .benefit-card { padding: 28px 24px; }
-      .benefit-number { font-size: 3.5rem; }
-
-      .review-card { padding: 28px 24px; }
-
-      .step { padding: 20px 16px; gap: 16px; }
-
-      .expect-card-big { padding: 36px 24px; }
-      .stat-row { gap: 22px; }
-
-      .form-card { padding: 28px 20px; }
-      .guarantee-box { flex-direction: column; gap: 12px; }
-
-      .trust-bar .container { gap: 12px 20px; }
     }
 
     /* ── Success State ──────────────────────────────── */
@@ -992,65 +499,67 @@
       line-height: 1.7;
     }
 
-    .success-msg .calendar-divider {
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--black-2);
+      border-top: 1px solid var(--line);
+      padding: 40px 0;
+    }
+
+    footer .container {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .success-msg .calendar-divider::before,
-    .success-msg .calendar-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--line);
+    .footer-logo img { height: 44px; width: auto; display: block; }
+
+    .footer-info {
+      font-size: 0.82rem;
+      color: var(--gray-3);
+      text-align: right;
+      line-height: 1.8;
     }
 
-    /* ── Pillars Marquee ────────────────────────────── */
-    .pillars-marquee {
-      overflow: hidden;
-      width: 100%;
-      line-height: 0;
-      position: relative;
-      background: var(--black);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 22px 0;
+    .footer-info a {
+      color: var(--gray-3);
+      text-decoration: none;
+      transition: color var(--transition);
     }
 
-    .pillars-track {
-      display: flex;
-      flex-wrap: nowrap;
-      width: fit-content;
-      will-change: transform;
-      opacity: 0.5;
-      -webkit-animation: pillars-scroll 55s linear infinite;
-              animation: pillars-scroll 55s linear infinite;
+    .footer-info a:hover { color: var(--white); }
+
+    /* ── RESPONSIVE: tablet ────────────────────────── */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .nav-cta { padding: 11px 18px; font-size: 0.7rem; }
+
+      .btn-primary { justify-content: center; width: 100%; }
+
+      .claim { padding: 88px 0; }
+      .claim-wrap { grid-template-columns: 1fr; gap: 44px; }
+      .form-card { padding: 32px 24px; }
+      .field-row { grid-template-columns: 1fr; }
+      .form-submit { width: 100%; justify-content: center; }
+
+      .section-title { font-size: clamp(2.4rem, 9vw, 3.4rem); }
+      .section-sub { margin-bottom: 32px; }
+
+      footer .container { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .footer-info { text-align: left; }
     }
 
-    .pillars-track img {
-      height: 32px;
-      width: auto;
-      flex: 0 0 auto;
-      display: block;
-      margin: 0 38px;
-    }
+    /* ── RESPONSIVE: small phones ───────────────────── */
+    @media (max-width: 560px) {
+      .nav-cta { padding: 10px 16px; font-size: 0.66rem; letter-spacing: 0.1em; }
 
-    @-webkit-keyframes pillars-scroll {
-      from { -webkit-transform: translateX(0);    transform: translateX(0); }
-      to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
+      .claim { padding: 64px 0; }
+      .pass-list { grid-template-columns: 1fr; gap: 14px; }
+      .form-card { padding: 28px 20px; }
+      .guarantee-box { flex-direction: column; gap: 12px; }
     }
-    @keyframes pillars-scroll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
-    @media (max-width: 768px) { .pillars-track { -webkit-animation-duration: 30s; animation-duration: 30s; } }
-    @media (prefers-reduced-motion: reduce) {
-      .pillars-track { animation: none; -webkit-animation: none; }
-    }
-
   </style>
 </head>
 <body>
@@ -1058,319 +567,77 @@
   <!-- ── NAV ───────────────────────────────────────── -->
   <nav aria-label="Site navigation">
     <div class="container">
-      <a href="#" class="nav-logo" aria-label="ACE Performance Gym">
+      <a href="index.html" class="nav-logo" aria-label="ACE Performance Gym — Home">
         <img src="ace-logo.png" alt="ACE Performance Gym" />
       </a>
-      <a href="#book" class="nav-cta">Book Free Consult</a>
+      <a href="#claim" class="nav-cta">Claim My Free Pass</a>
     </div>
   </nav>
 
 
-  <!-- ── HERO ──────────────────────────────────────── -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
-      <source src="hero.mp4" type="video/mp4" />
-    </video>
-    <div class="hero-overlay" aria-hidden="true"></div>
+  <!-- ── CLAIM: OFFER + FORM ────────────────────────── -->
+  <section class="claim" id="claim" aria-labelledby="claim-heading">
     <div class="container">
-      <div class="hero-content">
+      <div class="claim-wrap">
 
-        <div class="hero-badge">King City's Premier Gym</div>
-
-        <h1 id="hero-heading">
-          Your Best<br/>
-          Body<br/>
-          <em>Starts Here</em>
-        </h1>
-
-        <p class="hero-sub">
-          Stop guessing. Stop spinning your wheels. Book your <strong>free personal training consultation</strong> and walk out with a plan built around your goals — not a cookie-cutter template.
-        </p>
-
-        <div class="hero-cta-group">
-          <a href="#book" class="btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Claim My Free Session
-          </a>
-          <span class="hero-note">100% free. No commitment required.</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── TRUST BAR ─────────────────────────────────── -->
-  <div class="trust-bar" role="complementary" aria-label="Trust indicators">
-    <div class="container">
-
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        5-Star Rated Gym
-      </div>
-
-      <div class="trust-divider" aria-hidden="true"></div>
-
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Expert Certified Trainers
-      </div>
-
-      <div class="trust-divider" aria-hidden="true"></div>
-
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        InBody 770 Assessments
-      </div>
-
-      <div class="trust-divider" aria-hidden="true"></div>
-
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Results in 30 Days
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ── PILLARS MARQUEE ──────────────────────────────── -->
-  <div class="pillars-marquee" aria-hidden="true">
-    <div class="pillars-track">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-      <img src="pillars-banner.png" alt="">
-    </div>
-  </div>
-
-
-  <!-- ── BENEFITS ───────────────────────────────────── -->
-  <section class="benefits" aria-labelledby="benefits-heading">
-    <div class="container">
-      <p class="section-label">Why ACE Personal Training</p>
-      <h2 class="section-title" id="benefits-heading">Training That<br/>Actually Works</h2>
-      <p class="section-sub">Our trainers don't run the same program for everyone. Everything is built around your body, your schedule, and your goals.</p>
-
-      <div class="benefits-grid">
-
-        <div class="benefit-card">
-          <div class="benefit-number" aria-hidden="true">01</div>
-          <div class="benefit-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <div class="claim-left">
+          <div class="offer-tag">Free · 3-Day Pass</div>
+          <h1 class="section-title" id="claim-heading">Train Free<br/>For <em>3 Full Days</em></h1>
+          <div class="rating" role="img" aria-label="Rated 5 out of 5 stars by our members">
+            <span class="stars" aria-hidden="true">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </span>
+            <span class="rating-text"><strong>5-Star Rated</strong> &middot; King City's Premier Gym</span>
           </div>
-          <h3>Programs Built for You</h3>
-          <p>Your trainer designs every workout around your fitness level, goals, and any limitations. No guesswork. No one-size-fits-all templates.</p>
-        </div>
+          <p class="section-sub">Full access to our 25,000 sq ft facility — Technogym floor, sauna, rooftop track, and every group class. No scaled-down trial, no credit card, no commitment. Here's everything your pass unlocks:</p>
 
-        <div class="benefit-card">
-          <div class="benefit-number" aria-hidden="true">02</div>
-          <div class="benefit-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          </div>
-          <h3>Measurable Progress</h3>
-          <p>We track everything with InBody 770 body composition scans so you always know exactly how your body is changing — no more guessing.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-number" aria-hidden="true">03</div>
-          <div class="benefit-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          </div>
-          <h3>Expert Accountability</h3>
-          <p>Having a dedicated trainer in your corner means no more skipped sessions, poor form, or plateau. You show up. We handle the rest.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-number" aria-hidden="true">04</div>
-          <div class="benefit-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>Premium Equipment</h3>
-          <p>Train on AI-driven Technogym Biostrength machines in an electrifying facility designed to push your performance to the next level.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-number" aria-hidden="true">05</div>
-          <div class="benefit-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Injury-Free Approach</h3>
-          <p>Our coaches prioritize proper form and progressive overload — so you get stronger without setting yourself back.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-number" aria-hidden="true">06</div>
-          <div class="benefit-icon-wrap">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <h3>Boutique Community</h3>
-          <p>Train in a close-knit environment where your trainer knows your name, your goals, and what it takes to bring out your best.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── SOCIAL PROOF ───────────────────────────────── -->
-  <section class="social-proof" aria-labelledby="reviews-heading">
-    <div class="container">
-      <p class="section-label">Member Stories</p>
-      <h2 class="section-title" id="reviews-heading">Real People.<br/>Real Results.</h2>
-
-      <div class="reviews-grid">
-
-        <div class="review-card">
-          <div class="stars" aria-label="5 out of 5 stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote>"I tried two other gyms before ACE and nothing stuck. Within 6 weeks of working with my trainer here, I lost 12 lbs and actually enjoy coming in. The free consultation was what got me started — no pressure, just a real plan."</blockquote>
-          <div class="reviewer">
-            <div class="reviewer-avatar" aria-hidden="true">S</div>
-            <div class="reviewer-info">
-              <strong>Sarah M.</strong>
-              <span>Lost 18 lbs in 3 months</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="stars" aria-label="5 out of 5 stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote>"Massimo is the real deal. He took the time to actually understand where I was at before writing a single workout. Six weeks in I've gained 8 lbs of muscle and the back pain I'd had for years is gone. Best investment I've made."</blockquote>
-          <div class="reviewer">
-            <div class="reviewer-avatar" aria-hidden="true">D</div>
-            <div class="reviewer-info">
-              <strong>Daniel R.</strong>
-              <span>+8 lbs lean muscle in 6 weeks</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="stars" aria-label="5 out of 5 stars">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <blockquote>"As someone who's never worked with a personal trainer before, I was nervous. The free consult put me at ease completely. My trainer built a plan around my schedule and I'm seeing results faster than I ever thought possible."</blockquote>
-          <div class="reviewer">
-            <div class="reviewer-avatar" aria-hidden="true">J</div>
-            <div class="reviewer-info">
-              <strong>Jennifer K.</strong>
-              <span>First-time gym member, now 4 months in</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── WHAT TO EXPECT ─────────────────────────────── -->
-  <section class="expect" aria-labelledby="expect-heading">
-    <div class="container">
-      <p class="section-label">The Consultation</p>
-      <h2 class="section-title" id="expect-heading">What Happens<br/>At Your Consult</h2>
-
-      <div class="expect-grid">
-
-        <div class="expect-steps">
-          <div class="step">
-            <div class="step-num" aria-label="Step 1">1</div>
-            <div class="step-text">
-              <h4>Tell Us Your Goals</h4>
-              <p>We learn what matters to you — weight loss, muscle gain, athletic performance, or feeling better in your daily life.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num" aria-label="Step 2">2</div>
-            <div class="step-text">
-              <h4>InBody Assessment</h4>
-              <p>Get a precise breakdown of your body composition — muscle mass, fat percentage, and baseline metabolic data.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num" aria-label="Step 3">3</div>
-            <div class="step-text">
-              <h4>We Match You With the Right Trainer</h4>
-              <p>Based on your goals, personality, and schedule, we pair you with the trainer best suited to get you results.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="expect-visual">
-          <div class="expect-card-big">
-            <div class="stat-big">ACE</div>
-            <p class="stat-label">Achieve. Conquer. Excel.</p>
-            <div class="stat-row">
-              <div class="stat-mini">
-                <strong>3+</strong>
-                <span>Years Experience</span>
-              </div>
-              <div class="stat-mini">
-                <strong>100%</strong>
-                <span>Free Consult</span>
-              </div>
-              <div class="stat-mini">
-                <strong>0</strong>
-                <span>Obligation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── BOOKING FORM ───────────────────────────────── -->
-  <section class="form-section" id="book" aria-labelledby="form-heading">
-    <div class="container">
-      <div class="form-wrap">
-
-        <div class="form-left">
-          <p class="section-label">Book Your Spot</p>
-          <h2 class="section-title" id="form-heading">Claim Your<br/>Free Consult</h2>
-          <p class="section-sub">Spots fill up fast. Take 60 seconds to fill out the form and we'll be in touch within 24 hours to confirm your time.</p>
+          <ul class="pass-list">
+            <li>
+              <span class="pass-check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Full 25,000 sq ft training floor
+            </li>
+            <li>
+              <span class="pass-check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              AI-powered Technogym equipment
+            </li>
+            <li>
+              <span class="pass-check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Infrared &amp; dry-heat sauna
+            </li>
+            <li>
+              <span class="pass-check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Rooftop turf track
+            </li>
+            <li>
+              <span class="pass-check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              All group classes included
+            </li>
+            <li>
+              <span class="pass-check" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Full towel service
+            </li>
+          </ul>
 
           <div class="guarantee-box">
             <svg class="guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <div>
-              <strong>Zero Pressure Guarantee</strong>
-              <p>This is a genuine consultation — not a sales call. Come in, meet your trainer, and decide from there. No obligation, no awkwardness.</p>
+              <strong>No Strings Attached</strong>
+              <p>This is a genuine 3-day trial — no credit card, no auto-enrollment, no pressure. Come train, see if we're your kind of gym, and decide from there.</p>
             </div>
           </div>
         </div>
 
         <div class="form-card">
           <div class="form-header">
-            <h3>Let's Get Started</h3>
-            <p>Fill in your details below — takes under 60 seconds.</p>
+            <h3>Claim Your Pass</h3>
+            <p>Takes under 30 seconds — we'll reach out to set your start day.</p>
           </div>
 
-          <form id="consultForm" novalidate>
+          <form id="passForm" novalidate>
             <div class="field-group">
               <div class="field-row">
                 <div class="field">
@@ -1392,28 +659,11 @@
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone" placeholder="(905) 555-0100" autocomplete="tel" required />
               </div>
-
-              <div class="field">
-                <label for="goal">Primary Goal</label>
-                <select id="goal" name="goal" required>
-                  <option value="" disabled selected>Select your main goal…</option>
-                  <option value="weight-loss">Lose Weight &amp; Burn Fat</option>
-                  <option value="muscle">Build Muscle &amp; Strength</option>
-                  <option value="performance">Improve Athletic Performance</option>
-                  <option value="health">General Health &amp; Fitness</option>
-                  <option value="other">Something Else</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="message">Anything else we should know? <em style="font-style:normal;color:var(--gray-3)">(optional)</em></label>
-                <textarea id="message" name="message" placeholder="Injuries, schedule preferences, experience level…"></textarea>
-              </div>
             </div>
 
             <button type="submit" class="btn-primary form-submit">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Book My Free Consultation
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              Get My Free 3-Day Pass
             </button>
 
             <p class="form-privacy">
@@ -1426,7 +676,7 @@
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3>You're In!</h3>
-            <p class="success-sub">We'll be in touch within a few hours to lock in your consultation. Get ready — this is where it starts.</p>
+            <p class="success-sub">Check your phone — we'll be in touch shortly to set up your 3-day pass. See you on the floor.</p>
           </div>
 
         </div>
@@ -1451,7 +701,7 @@
 
 
   <script>
-    // ── Paste your GHL Inbound Webhook URL here ──────────
+    // ── GHL Inbound Webhook ──────────────────────────────
     const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/cidIARY63GFxzXEITrQl/webhook-trigger/c1dc53a9-f2f0-4018-ba4a-a981e742384f';
     // ─────────────────────────────────────────────────────
 
@@ -1467,7 +717,7 @@
     });
 
     // Form submission
-    const form = document.getElementById('consultForm');
+    const form = document.getElementById('passForm');
     const successMsg = document.getElementById('successMsg');
 
     form.addEventListener('submit', async e => {
@@ -1496,10 +746,8 @@
         lastName:    form.lastName.value.trim(),
         email:       form.email.value.trim(),
         phone:       form.phone.value.trim(),
-        goal:        form.goal.value,
-        message:     form.message.value.trim(),
-        source:      'PT Landing Page',
-        tags:        ['personal-training-lead'],
+        source:      '3-Day Pass Landing Page',
+        tags:        ['free-3-day-pass-lead'],
       };
 
       try {
@@ -1526,7 +774,7 @@
     });
   </script>
 
-<script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 
 </body>
