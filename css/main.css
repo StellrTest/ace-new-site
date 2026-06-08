@@ -1577,6 +1577,7 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   width: max-content;
+  will-change: transform;
   animation: text-marquee 42s linear infinite;
 }
 .text-marquee-track span {
